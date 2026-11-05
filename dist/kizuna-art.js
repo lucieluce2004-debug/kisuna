@@ -27,8 +27,8 @@
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const menuButton=document.createElement('button');
   menuButton.type='button';menuButton.className='kza-menu-button';menuButton.id='kzaMenuButton';
-  menuButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Tout</span>';
-  menuButton.setAttribute('aria-label','Ouvrir toutes les destinations');menuButton.setAttribute('aria-haspopup','dialog');menuButton.setAttribute('aria-controls','kzaNavigation');nav.append(menuButton);
+  menuButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Explorer</span>';
+  menuButton.setAttribute('aria-label','Ouvrir toutes les destinations');menuButton.setAttribute('aria-haspopup','dialog');menuButton.setAttribute('aria-controls','kzaNavigation');document.querySelector('.kg-settings')?.before(menuButton); if(!menuButton.isConnected)document.querySelector('header').append(menuButton);
   const dialog=document.createElement('dialog');dialog.id='kzaNavigation';dialog.className='kza-navigation';dialog.setAttribute('aria-labelledby','kzaNavigationTitle');
   dialog.innerHTML='<header><div><p class="kza-eyebrow">KIZUNA · TON VOYAGE</p><h2 id="kzaNavigationTitle">Où allons-nous ?</h2></div><button type="button" class="kza-close" aria-label="Fermer les destinations">×</button></header><div class="kza-destinations"></div><p class="kza-menu-note">Chaque lien continue ton aventure dans Kizuna.</p>';
   document.body.append(dialog);
@@ -42,13 +42,14 @@
     const current=destinations.find(d=>d[0]===active());
     root.dataset.artSection=active();
     document.querySelectorAll('.kz-shell-nav a[data-tab]').forEach(a=>{
-      const primary=['home','boosts','col','universes'].includes(a.dataset.tab);a.classList.toggle('kza-primary-destination',primary);
+      const primary=['home','boosts','col','nexus','market'].includes(a.dataset.tab);a.classList.toggle('kza-primary-destination',primary);
       a.title=destinations.find(d=>d[0]===a.dataset.tab)?.[1]||a.textContent.trim();
     });
-    menuButton.classList.toggle('active',!['home','boosts','col','universes'].includes(active()));
+    menuButton.classList.toggle('active',!['home','boosts','col','nexus','market'].includes(active()));
     menuButton.setAttribute('aria-expanded',String(dialog.open));
     const context=document.getElementById('kzaHeaderContext');if(context)context.textContent=current?.[1]||'Kizuna';
   }
+  for(const key of ['home','boosts','col','nexus','market']) { const link=nav.querySelector('[data-tab="'+key+'"]'); if(link)nav.append(link); }
   const context=document.createElement('span');context.id='kzaHeaderContext';context.className='kza-header-context';context.setAttribute('aria-hidden','true');document.querySelector('.brand-logo')?.after(context);
   menuButton.addEventListener('click',()=>{lastFocus=document.activeElement;renderMenu();dialog.showModal();sync();});
   dialog.querySelector('.kza-close').addEventListener('click',()=>dialog.close());
