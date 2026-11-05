@@ -1,0 +1,123 @@
+/* KIZUNA Rebirth: shared scene, action and disclosure primitives. */
+body.rebirth{--rb-night:#101326;--rb-ink:#f7f4ff;--rb-cyan:#57d9ef;--rb-gold:#ffc96b;--rb-panel:#14243bea;color:var(--rb-ink);background:#101326}
+body.rebirth.kz-art .kz-shell-nav a:not(.kza-primary-destination){display:none!important}
+body.rebirth.kz-art .kza-menu-button{position:static;margin:0;width:auto;min-width:80px;min-height:44px;border:1px solid #ffffff30;border-radius:10px;display:flex;gap:8px;padding:8px 14px;background:#202b4b;color:#f7f4ff}
+body.rebirth.kz-art .kza-menu-button svg{width:20px;height:20px}
+body.rebirth.kz-art :is(button,summary,a):focus-visible{outline:3px solid var(--rb-cyan);outline-offset:4px}
+body.rebirth.kz-art :is(button,summary){touch-action:manipulation}
+body.rebirth.kz-art :is(.primary-btn,.kb-open){background:var(--rb-gold);color:#172036;border:1px solid #ffe7bc;box-shadow:0 5px 0 #a97736,0 12px 35px #0007;min-height:54px;border-radius:12px;clip-path:none;transition:transform .16s,box-shadow .16s}
+body.rebirth.kz-art :is(.primary-btn,.kb-open):active{transform:translateY(3px);box-shadow:0 2px 0 #a97736}
+body.rebirth.kz-art .rb-disclosure{color:#f7f4ff;background:#101d30e8;border:1px solid #a0c9e332;border-radius:12px;text-align:left}
+body.rebirth.kz-art .rb-disclosure summary{cursor:pointer;padding:14px 18px;font-size:13px;min-height:44px;list-style-position:inside;color:#e5e9f8}
+body.rebirth.kz-art .rb-disclosure[open]>:not(summary){margin:12px;max-width:calc(100% - 24px)}
+body.rebirth.kz-art #kzHome>.wrap{max-width:1600px;padding:0 24px}
+body.rebirth.kz-art .ka-lobby-scene{isolation:isolate;position:relative;display:grid;grid-template-columns:minmax(240px,1fr) minmax(300px,1.1fr) minmax(220px,.85fr);grid-template-rows:auto 1fr;gap:12px;min-height:650px;height:calc(100svh - 205px);max-height:850px;padding:42px 40px 28px;border:0;border-radius:0 0 36px 36px;background:linear-gradient(90deg,#091327ba,transparent 60%),linear-gradient(0deg,#101326 0%,transparent 40%),url('assets/rebirth/city.webp') center/cover}
+body.rebirth.kz-art .ka-lobby-scene:before,body.rebirth.kz-art .ka-lobby-scene:after{display:none}
+body.rebirth.kz-art .ka-lobby-intro{grid-column:1;grid-row:1;position:relative;inset:auto;align-self:start;padding:0;z-index:2}
+body.rebirth.kz-art .ka-lobby-intro h1{font-size:clamp(38px,4.2vw,68px);line-height:.98;letter-spacing:-.025em;text-transform:none;max-width:440px;margin:22px 0;color:#f7f4ff;text-shadow:0 3px 24px #081428}
+body.rebirth.kz-art .ka-lobby-intro em{color:#ffc96b}
+body.rebirth.kz-art .ka-lobby-eyebrow{font-size:10px;letter-spacing:.16em;color:#b7eff7}
+body.rebirth.kz-art .ka-lobby-coordinate,body.rebirth.kz-art .kg-preview-note,body.rebirth.kz-art .kg-lobby-seal,body.rebirth.kz-art .ka-lobby-orbit{display:none}
+body.rebirth.kz-art .ka-lobby-invocation{grid-column:2;grid-row:1/3;align-self:end;position:relative;inset:auto;width:auto;padding:0;z-index:2}
+body.rebirth.kz-art .kz-featured-booster{display:flex;flex-direction:column;align-items:center;gap:0;background:none;border:0;padding:0;transform:none;box-shadow:none}
+body.rebirth.kz-art .kg-pack-stage{height:310px;width:100%;margin:0;min-height:0;display:grid;place-items:center}
+body.rebirth.kz-art .kg-pack-stage:before{width:340px;height:95px;bottom:0;background:radial-gradient(ellipse,#57d9ef66,transparent 70%);border:2px solid #a4faff88;box-shadow:0 0 40px #57d9ef44}
+body.rebirth.kz-art .kg-hero-pack{width:175px;height:258px;transform:rotate(-7deg);animation:rb-float 7s ease-in-out infinite;border:1px solid #f9de9c;box-shadow:10px 16px 0 #030b1f55,0 24px 65px #091b42;z-index:3}
+body.rebirth.kz-art .kg-lobby-fan{display:none}
+body.rebirth.kz-art .kg-hero-pack #kzFeaturedLogo{width:85px;height:85px}
+body.rebirth.kz-art .kz-featured-copy{width:100%;text-align:center;max-width:360px;padding:0}
+body.rebirth.kz-art .kz-featured-copy h2{font-size:30px;margin:10px 0 4px}
+body.rebirth.kz-art .kz-featured-copy p{margin:5px 0;font-size:12px}
+body.rebirth.kz-art .kz-featured-facts{justify-content:center;font-size:12px;margin:12px 0}
+body.rebirth.kz-art #kzFeaturedOpen{width:100%;font-size:18px;margin:0 0 14px}
+body.rebirth.kz-art #kzFeaturedCost{font-size:12px;color:#e1edf3}
+body.rebirth.kz-art .ka-lobby-companion{grid-column:3;grid-row:1/3;align-self:center;position:relative;inset:auto;width:auto;max-width:280px;justify-self:end;padding:16px;background:#10132688;border-radius:24px}
+body.rebirth.kz-art .ka-companion-label{font-size:10px}
+body.rebirth.kz-art .ka-companion-empty{min-height:180px;padding:20px 10px}
+body.rebirth.kz-art .ka-companion-empty strong{font-size:24px}
+body.rebirth.kz-art .ka-companion-crest{font-size:54px}
+body.rebirth.kz-art .ka-lobby-hud{grid-column:1;grid-row:2;position:relative;inset:auto;align-self:end;width:auto;padding:0}
+body.rebirth.kz-art .kz-home-progress{background:none;border:0;padding:0;width:auto}
+body.rebirth.kz-art .rb-journal{max-width:310px}
+body.rebirth.kz-art .ka-lobby-journeys{margin:-4px auto 0;position:relative;z-index:3;padding:12px 0;max-width:1000px;border:0}
+body.rebirth.kz-art .kg-activity-map{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+body.rebirth.kz-art .kg-destination,body.rebirth.kz-art .rb-activities>summary{display:flex;align-items:center;gap:14px;padding:18px;border:1px solid #8ca4c64a;border-radius:16px;background:linear-gradient(125deg,#263e50,#17253e);min-height:88px;text-align:left;cursor:pointer;color:#f7f4ff;clip-path:none}
+body.rebirth.kz-art .kg-destination:nth-child(2){background:linear-gradient(125deg,#4a3933,#24243b)}
+body.rebirth.kz-art .kg-destination i,body.rebirth.kz-art .rb-activities i{font-size:28px;color:#57d9ef}
+body.rebirth.kz-art .kg-destination strong,body.rebirth.kz-art .rb-activities strong{display:block;font-size:18px}
+body.rebirth.kz-art .kg-destination small,body.rebirth.kz-art .rb-activities small{display:block;font-size:11px;color:#c4d3e2;margin-top:4px}
+body.rebirth.kz-art .rb-activities{position:relative;list-style:none}
+body.rebirth.kz-art .rb-activities>div{position:absolute;bottom:100%;right:0;width:290px;padding:8px;background:#101326;border:1px solid #567083;border-radius:16px;box-shadow:0 20px 40px #0009}
+body.rebirth.kz-art .rb-activities .kg-destination{width:100%;margin:5px 0;min-height:64px}
+body.rebirth.kz-art .rb-discoveries{max-width:1000px;margin:12px auto 30px}
+body.rebirth.kz-art #kgActivityFooter,body.rebirth.kz-art #home-pulls{display:none}
+/* The actual selected pack becomes the focal point; the rail is the selector. */
+body.rebirth.kz-art #boosters>.wrap{max-width:1400px}
+body.rebirth.kz-art #boosters .kb-layout{display:grid;grid-template-columns:1fr;gap:18px;max-width:1200px;margin:auto}
+body.rebirth.kz-art .rb-booster-stage{position:relative;isolation:isolate;min-height:470px;padding:30px 40px;border-radius:28px;background:linear-gradient(90deg,#10132622,#101326dd),url('assets/rebirth/city.webp') center 66%/cover;display:grid;grid-template-columns:1fr 360px;align-items:center}
+body.rebirth.kz-art .rb-altar{grid-column:1;grid-row:1;display:grid;place-items:center;min-height:340px;position:relative}
+body.rebirth.kz-art .rb-altar:before{content:'';position:absolute;width:290px;height:290px;border:2px solid #8be7ee;border-radius:50%;box-shadow:0 0 40px #57d9ef66,inset 0 0 40px #57d9ef33;transform:rotateX(62deg) translateY(180px)}
+body.rebirth.kz-art .rb-altar span{display:grid;place-items:center;font-size:78px;color:#ffe3a4;width:185px;height:275px;border:3px double #f8d393;border-radius:8px;background:linear-gradient(160deg,#16384c88,#101326bb),var(--rb-pack-image,none) center/cover,#203850;box-shadow:12px 14px 0 #040e2799,0 0 80px #57d9ef55;transform:rotate(-7deg);animation:rb-float 7s ease-in-out infinite}
+body.rebirth.kz-art #boosters .kb-panel{grid-column:2;position:static;width:auto;border:0;border-radius:20px;padding:24px;background:#101d30e8;box-shadow:none;display:flex;flex-direction:column;gap:12px}
+body.rebirth.kz-art #boosters .kb-sel{order:0;margin:0;padding:0;border:0}
+body.rebirth.kz-art #boosters .kb-sel h3{font-size:26px}
+body.rebirth.kz-art #boosters .kb-open{order:1;width:100%;margin:0}
+body.rebirth.kz-art #boosters .kb-foot{order:2;margin:0;color:#d5e8ee}
+body.rebirth.kz-art .rb-multiple{order:3}
+body.rebirth.kz-art .rb-odds{order:4}
+body.rebirth.kz-art .rb-odds[open]{max-height:380px;overflow:auto}
+body.rebirth.kz-art #boosters .kb-main{min-width:0;min-height:0;padding:20px 28px;background:#15253b;border:1px solid #8395b52b;border-radius:24px}
+body.rebirth.kz-art #boosters .kb-main:before,body.rebirth.kz-art #boosters .kb-main:after{display:none}
+body.rebirth.kz-art #boosters .kb-head{display:flex;justify-content:space-between;gap:16px;align-items:center}
+body.rebirth.kz-art #boosters .kb-head h2{font-size:24px;margin:0}
+body.rebirth.kz-art #boosters .kg-rail-controls{margin:12px 0}
+body.rebirth.kz-art #boosters #kGrid{padding:10px;gap:16px;min-height:0}
+body.rebirth.kz-art #boosters #kGrid .kb-card{flex-basis:130px;min-width:130px;min-height:190px}
+body.rebirth.kz-art #boosters #kGrid .kb-card .kg-pack-illustration{opacity:.65}
+/* A continuous place through preparation, revelation and recap. */
+body.rebirth.kz-art #kyaraRevealRoot{background:linear-gradient(0deg,#101326f5,#10132699),url('assets/rebirth/city.webp') center/cover}
+body.rebirth.kz-art #kyaraRevealRoot[data-rarity="M"]{background:radial-gradient(ellipse at center,#ad6b2433,#101326e8),url('assets/rebirth/city.webp') center/cover}
+body.rebirth.kz-art .kr-current-card{filter:drop-shadow(0 18px 36px #0009)}
+body.rebirth.kz-art .kr-card-caption h1{font-size:clamp(30px,4vw,62px);letter-spacing:-.025em}
+body.rebirth.kz-art #kyaraRevealRoot[data-rarity="M"] .kr-card-caption h1{color:#ffc96b;text-shadow:0 0 30px #ffc96b66}
+body.rebirth.kz-art .rb-summary-more{align-self:center;min-width:180px}
+@keyframes rb-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@media(max-width:1100px){body.rebirth.kz-art .ka-lobby-scene{padding:28px 22px;grid-template-columns:1fr 1.2fr .9fr;gap:6px}body.rebirth.kz-art .ka-lobby-intro h1{font-size:40px}body.rebirth.kz-art .ka-companion-label{flex-wrap:wrap}body.rebirth.kz-art .ka-lobby-companion{padding:10px}body.rebirth.kz-art #boosters .kb-head{flex-wrap:wrap}}
+@media(max-width:700px){
+ body.rebirth.kz-art .kz-shell-nav{display:flex!important;justify-content:space-around;gap:0;padding-bottom:env(safe-area-inset-bottom)}
+ body.rebirth.kz-art .kz-shell-nav a.kza-primary-destination{display:flex!important;flex:1;min-width:0;width:auto;padding:8px 2px;font-size:10px}
+ body.rebirth.kz-art .kza-menu-button{min-width:44px;padding:8px}body.rebirth.kz-art .kza-menu-button span{display:none}
+ body.rebirth.kz-art #kzHome>.wrap{padding:0 12px}body.rebirth.kz-art .ka-lobby-scene{height:auto;max-height:none;min-height:0;padding:24px 16px;grid-template-columns:1fr;grid-template-rows:auto auto auto auto;gap:20px;background-position:48% center;border-radius:0 0 24px 24px}
+ body.rebirth.kz-art .ka-lobby-intro{grid-column:1;grid-row:1;text-align:center}body.rebirth.kz-art .ka-lobby-intro h1{font-size:38px;margin:14px 0}body.rebirth.kz-art .ka-lobby-eyebrow{font-size:9px}
+ body.rebirth.kz-art .ka-lobby-invocation{grid-column:1;grid-row:2;justify-self:stretch}body.rebirth.kz-art .kg-pack-stage{height:245px}body.rebirth.kz-art .kg-hero-pack{width:145px;height:215px}body.rebirth.kz-art .kz-featured-copy{max-width:320px}
+ body.rebirth.kz-art .ka-lobby-companion{grid-column:1;grid-row:4;justify-self:stretch;max-width:none}body.rebirth.kz-art .ka-companion-empty{min-height:0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}body.rebirth.kz-art .ka-companion-empty strong{font-size:20px}body.rebirth.kz-art .ka-companion-empty p{font-size:12px}body.rebirth.kz-art .ka-companion-card{max-height:270px}
+ body.rebirth.kz-art .ka-lobby-hud{grid-column:1;grid-row:3;width:100%}body.rebirth.kz-art .rb-journal{max-width:none}
+ body.rebirth.kz-art .kg-activity-map{gap:6px}body.rebirth.kz-art .kg-destination,body.rebirth.kz-art .rb-activities>summary{padding:12px 8px;display:flex;flex-direction:column;gap:8px;min-height:100px;text-align:center}body.rebirth.kz-art .kg-destination strong,body.rebirth.kz-art .rb-activities strong{font-size:13px}body.rebirth.kz-art .kg-destination small,body.rebirth.kz-art .rb-activities small,body.rebirth.kz-art .kg-destination em{display:none}body.rebirth.kz-art .rb-activities>div{width:260px}
+ body.rebirth.kz-art .rb-booster-stage{grid-template-columns:1fr;padding:16px;gap:14px;background-position:45% center}body.rebirth.kz-art .rb-altar{min-height:270px}body.rebirth.kz-art .rb-altar span{width:145px;height:220px}body.rebirth.kz-art #boosters .kb-panel{grid-column:1;padding:18px;width:100%}body.rebirth.kz-art #boosters .kb-main{padding:16px}body.rebirth.kz-art #boosters .kb-head h2{font-size:24px}body.rebirth.kz-art #boosters .kb-tabs{flex-wrap:wrap}body.rebirth.kz-art #boosters .kg-rail-controls>span{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){body.rebirth.kz-art *{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+html[data-kz-motion="reduced"] body.rebirth.kz-art *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+/* Retire legacy !important layout constraints at the two replaced scenes. */
+body.rebirth.kz-art #boosters .kb-layout{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+body.rebirth.kz-art #boosters .kb-main{grid-row:2!important;background:#15253b!important;padding:20px 28px!important;border-radius:24px!important;min-height:0!important}
+body.rebirth.kz-art #boosters .kb-panel{position:static!important;display:flex!important;flex-direction:column;grid-row:auto!important;border:1px solid #a4d8e633!important;border-radius:20px!important;background:#101d30ed!important;padding:24px!important;box-shadow:none!important}
+body.rebirth.kz-art #boosters .kb-head h2{font-size:24px!important;max-width:none}
+body.rebirth.kz-art #boosters #kGrid .kpack{flex:0 0 130px!important;width:130px!important;max-width:130px!important;min-height:220px!important}
+body.rebirth.kz-art #boosters #kGrid .kp-face{height:180px!important;min-height:180px!important}
+body.rebirth.kz-art #boosters #kGrid .kp-mark,body.rebirth.kz-art #boosters #kGrid .kp-mark img{width:55px!important;height:55px!important}
+body.rebirth.kz-art #boosters #kGrid .kp-title{font-size:18px!important}
+body.rebirth.kz-art #boosters #kGrid .kp-sub,body.rebirth.kz-art #boosters #kGrid .kp-pill{font-size:9px!important}
+body.rebirth.kz-art #boosters .kb-open{margin:0!important;border-radius:12px!important}
+body.rebirth.kz-art .ka-lobby-scene{background-image:linear-gradient(90deg,#09132766,transparent 70%),linear-gradient(0deg,#101326 0%,transparent 48%),url('assets/rebirth/city.webp')!important}
+body.rebirth.kz-art .kg-activity-map .kg-destination{display:flex!important;min-height:88px;padding:18px!important;border-radius:16px!important;clip-path:none!important}
+@media(max-width:700px){body.rebirth.kz-art #boosters .rb-booster-stage{grid-row:1}body.rebirth.kz-art #boosters .kb-panel{grid-row:auto!important}body.rebirth.kz-art #boosters .kb-main{padding:16px!important}body.rebirth.kz-art .kg-activity-map .kg-destination{padding:12px 8px!important}}
+body.rebirth.kz-art .rb-pack-facts{order:0;font-size:13px;color:#f9dda2;margin:0}
+body.rebirth.kz-art #boosters .kb-head{flex-direction:row!important;align-items:center!important;margin-bottom:10px!important}
+body.rebirth.kz-art #boosters .kg-rail-controls{margin:8px 0!important}
+body.rebirth.kz-art #boosters #kGrid:not([hidden]){padding:16px 10px!important}
+body.rebirth.kz-art #boosters .rb-booster-stage{overflow:hidden}
+@media(max-width:700px){body.rebirth.kz-art #boosters .kb-head{flex-direction:column!important;align-items:flex-start!important}}
+body.rebirth.kz-art #kyaraRevealRoot.ksm-scene{background:linear-gradient(0deg,#101326f5,#101326bb),url('assets/rebirth/city.webp') center/cover!important}
+body.rebirth.kz-art #kyaraRevealRoot.ksm-scene[data-rarity="M"]{background:radial-gradient(ellipse at center,#ad6b2433,#101326ed),url('assets/rebirth/city.webp') center/cover!important}
+body.rebirth.kz-art #kyaraRevealRoot.ksm-charging .kr-pack-art{filter:drop-shadow(0 0 40px #57d9ef);transition:filter .5s}
+body.rebirth.kz-art #kyaraRevealRoot[data-rarity="M"] .kr-current-card{filter:drop-shadow(0 0 35px #ffc96b66)}
