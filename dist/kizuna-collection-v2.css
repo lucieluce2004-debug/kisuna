@@ -1,0 +1,73 @@
+/* KIZUNA Collection · the album is the object, controls stay within reach. */
+body.theme-kizuna #collection .cx-hero{align-items:center;gap:28px;padding:28px 30px!important;border:1px solid var(--kz-line);background:linear-gradient(120deg,#171929,#1e1d30)!important;border-radius:18px!important}
+body.theme-kizuna #collection .col-title{margin:4px 0 20px!important}
+body.theme-kizuna #collection .cx-bar{padding:20px!important;margin:24px 0 12px!important;border:1px solid var(--kz-line)!important;background:var(--kz-surface)!important;border-radius:14px!important}
+body.theme-kizuna #collection .col-top{gap:18px}
+body.theme-kizuna #collection .col-top .col-input{width:100%;max-width:570px!important;min-height:46px;font-size:14px!important}
+body.theme-kizuna #collection .col-seg{display:flex;gap:4px;flex-shrink:0;padding:4px;border:1px solid var(--kz-line);border-radius:9px;background:#11121e}
+body.theme-kizuna #collection .col-seg button{min-height:40px;padding:8px 18px;font-size:12px;color:var(--kz-muted);border-radius:6px}
+body.theme-kizuna #collection .col-seg button.on{background:#36304e!important;color:var(--kz-text)!important;box-shadow:inset 0 0 0 1px #8f7abf55}
+body.theme-kizuna #collection .col-filters{display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px;margin:20px 0 0;font-size:12px}
+body.theme-kizuna #collection .col-filters label{display:flex;flex-direction:column;align-items:stretch;gap:7px;color:#bcb9ce;min-width:150px;flex:1}
+body.theme-kizuna #collection .col-filters #colUniverseFilter[hidden]{display:none!important}
+body.theme-kizuna #collection .col-filters select{width:100%;min-height:44px;padding:10px 12px;font-size:12px;color:var(--kz-text);border-color:#514b68!important}
+body.theme-kizuna #collection #colFiltersReset{min-height:44px;align-self:flex-end;white-space:nowrap;font-size:11px}
+body.theme-kizuna #collection .col-chips{display:flex;gap:7px;margin:18px 0 0;flex-wrap:wrap}
+body.theme-kizuna #collection .col-chip{min-height:38px;padding:7px 11px!important;font-size:11px!important;line-height:1.4;color:var(--kz-text)!important;background:#202134!important;border:1px solid #414156!important;border-radius:7px!important}
+body.theme-kizuna #collection .col-chip em{font-size:10px;color:#c8bfdc!important;opacity:1}
+body.theme-kizuna #collection .col-chip.on{color:#f5f2fa!important;background:#39314f!important;border-color:#baa4ee!important;box-shadow:none!important}
+body.theme-kizuna #collection .col-chip.on em{color:#eee8ff!important}
+body.theme-kizuna #collection .col-count{font-size:12px!important;color:var(--kz-muted)!important;padding:10px 0 15px!important}
+body.theme-kizuna #collection .col-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 20px}
+body.theme-kizuna #collection .col-item-unit{min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:9px}
+body.theme-kizuna #collection .col-cell{border:0!important;background:transparent!important;border-radius:12px!important;position:relative;padding:0!important;aspect-ratio:.69;overflow:visible!important;transition:transform .2s}
+body.theme-kizuna #collection .col-cell .fcard{height:100%;width:100%;overflow:visible!important}
+body.theme-kizuna #collection .col-cell .fcard:hover{transform:none}
+body.theme-kizuna #collection .col-cell .tcard{height:100%!important}
+body.theme-kizuna #collection .col-cell .cv{display:none!important}
+body.theme-kizuna #collection .col-cell:after{display:none!important}
+body.theme-kizuna #collection .col-cell.miss .fcard{filter:none!important}
+body.theme-kizuna #collection .col-cell.miss .tcard{filter:grayscale(.58) brightness(.76)!important;border-color:#6d687d!important}
+body.theme-kizuna #collection .col-cell.reserved .tcard{filter:saturate(.8)!important}
+body.theme-kizuna #collection .col-cell.reserved{box-shadow:0 0 0 1px #d9b86f66!important}
+body.theme-kizuna #collection .missing-lock{top:45%;left:10%;right:10%;padding:8px 4px;font-size:9px;color:#f5f2fa;background:#0d0e18df;border-color:#b0a3ca55}
+body.theme-kizuna #collection .col-cell:has(.fcard.flipped) .missing-lock{display:none!important}
+body.theme-kizuna #collection .tback{font-size:11px;overflow:auto;padding:14px!important;background:linear-gradient(145deg,#26233b,#171929)!important}
+body.theme-kizuna #collection .tback h3{font-size:18px;line-height:1.25;margin:10px 0}
+body.theme-kizuna #collection .tback .bg{gap:7px}
+body.theme-kizuna #collection .tback .bg small{font-size:9px}
+body.theme-kizuna #collection .tback .bg b{font-size:16px}
+body.theme-kizuna #collection .tback .bf a{display:inline-flex;align-items:center;min-height:36px;font-size:10px}
+body.theme-kizuna #collection .kz-col-status{display:flex;gap:4px;flex-wrap:wrap;align-items:center;min-height:24px}
+body.theme-kizuna #collection .kz-col-badge{padding:4px 6px;border-radius:5px;font-size:9px;line-height:1.35;font-weight:650;color:#cac5d8;background:#242336;border:1px solid #3e3a51}
+body.theme-kizuna #collection .kz-col-badge.is-owned{color:#b9e2c8;border-color:#54776555;background:#14302566}
+body.theme-kizuna #collection .kz-col-badge.is-reserved{color:#f0d79f;border-color:#9c834755;background:#3b302166}
+body.theme-kizuna #collection .kz-col-badge.is-wanted{color:#d6c7ff;border-color:#9580ce66;background:#31234666}
+body.theme-kizuna #collection .kz-col-actions{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+body.theme-kizuna #collection .kz-col-actions button{display:inline-flex;align-items:center;justify-content:center;flex:1;min-height:40px;padding:8px 7px;margin:0!important;border:1px solid #4c465f!important;border-radius:6px!important;background:#1d1c2c!important;color:#ded6ef!important;font-size:10px;line-height:1.4;text-align:center}
+body.theme-kizuna #collection .kz-col-actions button:hover,body.theme-kizuna #collection .kz-col-actions button[aria-pressed=true]{border-color:#b49ce6!important;background:#312944!important;color:#fff!important}
+body.theme-kizuna #collection .kz-col-actions .col-market-sell-btn{color:#e7c986!important;border-color:#706143!important;background:#27231e!important}
+body.theme-kizuna #collection .col-empty{grid-column:1/-1;padding:55px 24px!important;font-size:14px!important;line-height:1.9;color:var(--kz-muted)!important;text-align:center;background:#17192999!important;border:1px dashed #4b445d!important;border-radius:14px!important}
+body.theme-kizuna #collection .col-empty b{display:block;font:600 30px/1.2 var(--display);color:var(--kz-text);margin-bottom:14px}
+body.theme-kizuna #collection #colMore{display:flex;margin:28px auto 8px;min-height:46px}
+body.theme-kizuna #collection #colMore[hidden]{display:none!important}
+body.theme-kizuna #collection .col-albums{gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
+body.theme-kizuna #collection button.col-album{padding:23px!important;border-radius:14px!important;border:1px solid #3f3a50!important;background:linear-gradient(140deg,#1e1e30,#171929)!important;box-shadow:0 10px 24px #03040b22}
+body.theme-kizuna #collection .col-album.is-complete{border-color:#d9b86f99!important;background:linear-gradient(140deg,#2a261f,#171929)!important}
+body.theme-kizuna #collection .kz-album-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin:0 0 8px}
+body.theme-kizuna #collection .kz-album-heading h3{font:600 26px/1.15 var(--display);margin:0!important;overflow-wrap:anywhere}
+body.theme-kizuna #collection .kz-album-percent{flex-shrink:0;padding:4px 7px;background:#313043;border:1px solid #50465e;border-radius:6px;color:var(--kz-gold);font-size:11px;font-weight:700}
+body.theme-kizuna #collection .col-album small{font-size:12px!important;color:#bdb6ce!important}
+body.theme-kizuna #collection .col-album .col-bar{height:4px;margin:15px 0!important;background:#363146!important}
+body.theme-kizuna #collection .col-album .col-bar i{background:var(--kz-gold)!important}
+body.theme-kizuna #collection .col-album .th{gap:7px!important}
+body.theme-kizuna #collection .col-album .th img{border-radius:7px!important;border:1px solid #554862!important;aspect-ratio:1!important;object-fit:cover}
+body.theme-kizuna #collection .col-album .th img.no{filter:grayscale(.8) brightness(.6)!important;opacity:.8!important}
+body.theme-kizuna #collection .col-album-open{margin-top:17px!important;font-size:12px;color:#d9c697!important}
+body.theme-kizuna #collection #colAlbumDetail{padding:20px!important;border-left:3px solid var(--kz-gold)!important;background:#1e1e30!important}
+body.theme-kizuna #collection #colAlbumTitle{font:600 30px/1.15 var(--display);margin-bottom:8px}
+body.theme-kizuna #collection #colAlbumProgress{color:#c3b8d2;font-size:12px}
+@media(max-width:1100px){body.theme-kizuna #collection .col-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 17px}body.theme-kizuna #collection .col-albums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){body.theme-kizuna #collection .cx-hero{padding:23px 20px!important;gap:20px}body.theme-kizuna #collection .cx-bar{padding:16px!important}body.theme-kizuna #collection .col-top{flex-direction:column;align-items:stretch}body.theme-kizuna #collection .col-seg{align-self:flex-start}body.theme-kizuna #collection .col-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:23px 12px}body.theme-kizuna #collection .col-filters{gap:12px}body.theme-kizuna #collection .col-filters label{min-width:140px}body.theme-kizuna #collection #colFiltersReset{flex:1}body.theme-kizuna #collection .kz-col-actions button{flex-basis:calc(50% - 5px);min-height:42px}body.theme-kizuna #collection .kz-col-actions .col-market-sell-btn{flex-basis:100%}body.theme-kizuna #collection .col-album .th{gap:5px!important}body.theme-kizuna #collection button.col-album{padding:18px!important}}
+@media(max-width:520px){body.theme-kizuna #collection .col-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 13px}body.theme-kizuna #collection .col-albums{grid-template-columns:1fr;gap:17px}body.theme-kizuna #collection .col-filters label{min-width:100%;flex-basis:100%}body.theme-kizuna #collection .col-chips{flex-wrap:nowrap;overflow-x:auto;padding:4px 4px 9px;margin-inline:-4px}body.theme-kizuna #collection .col-chip{white-space:nowrap;flex-shrink:0;min-height:40px}body.theme-kizuna #collection .kz-col-status{min-height:29px}body.theme-kizuna #collection .kz-col-badge{font-size:9px}body.theme-kizuna #collection .tback{padding:10px!important}body.theme-kizuna #collection .tback h3{font-size:15px}body.theme-kizuna #collection .tback .bg{gap:4px}body.theme-kizuna #collection .tback .bg b{font-size:14px}body.theme-kizuna #collection .kz-album-heading h3{font-size:29px}body.theme-kizuna #collection #colAlbumTitle{font-size:27px}}
+@media(prefers-reduced-motion:reduce){body.theme-kizuna #collection .fin,body.theme-kizuna #collection .col-cell,body.theme-kizuna #collection .col-album{transition:none!important}body.theme-kizuna #collection .col-cell:hover,body.theme-kizuna #collection .col-album:hover{transform:none!important}}

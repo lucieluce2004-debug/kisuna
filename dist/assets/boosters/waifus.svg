@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna — Waifus</title>
+  <desc id="desc">Un regard d’héroïne anime surmonté d’une fleur lunaire et d’une étoile, en cyan et magenta.</desc>
+  <defs>
+    <linearGradient id="petal" x1="96" y1="48" x2="160" y2="111" gradientUnits="userSpaceOnUse"><stop stop-color="#f5f5ff"/><stop offset="1" stop-color="#f15acb"/></linearGradient>
+    <linearGradient id="iris" x1="112" y1="128" x2="146" y2="173" gradientUnits="userSpaceOnUse"><stop stop-color="#4ce7fa"/><stop offset="1" stop-color="#f15acb"/></linearGradient>
+  </defs>
+  <path d="M128 14 207 46 242 128 207 210 128 242 49 210 14 128 49 46Z" fill="none" stroke="#4ce7fa" stroke-width="2" opacity=".38"/>
+  <path d="m128 29 69 28 29 71-29 70-69 29-69-29-29-70 29-71Z" fill="#11111b" fill-opacity=".82"/>
+  <path d="M79 61a76 76 0 0 0 0 134 67 67 0 0 1-14-126Z" fill="#4ce7fa"/>
+  <path d="m128 48 13 22 25-2-12 22 10 22-26-3-17 18-4-25-22-13 23-11Z" fill="url(#petal)" stroke="#11111b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m127 74 10 10-6 13-12-6 1-13Z" fill="#11111b"/>
+  <path d="M65 145q28-30 59-29 35 0 70 27-34 37-66 38-35 0-63-36Z" fill="#f5f5ff" stroke="#11111b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M106 123q-10 31 8 49 16 15 31-1 15-17 4-46Z" fill="url(#iris)"/>
+  <path d="M126 130q-8 11 0 25 8-14 0-25Z" fill="#11111b"/>
+  <path d="M61 144q30-29 65-28 34 0 70 25M174 129l10-12M185 136l13-8M77 132l-8-11" fill="none" stroke="#f5f5ff" stroke-width="5" stroke-linecap="square"/>
+  <path d="M87 185q39 23 79 0" fill="none" stroke="#f15acb" stroke-width="5" stroke-linecap="round"/>
+  <path d="m190 64 5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" fill="#4ce7fa"/>
+  <path d="m128 204 5 9 10 2-7 7 1 10-9-5-9 5 1-10-7-7 10-2Z" fill="#f15acb"/>
+</svg>

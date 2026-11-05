@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna — Seinen</title>
+  <desc id="desc">Un croissant nocturne magenta veille derrière un œil angulaire cyan, au cœur d’un blason néon.</desc>
+  <path d="M128 14 207 46 242 128 207 210 128 242 49 210 14 128 49 46Z" fill="#11111b" fill-opacity=".82" stroke="#4ce7fa" stroke-width="2.5" stroke-opacity=".34"/>
+  <g fill="none" stroke-width="5" stroke-linejoin="round">
+    <path d="M51 79 64 58 95 45M161 45 192 58 205 79M49 178 64 199 94 211M162 211 192 199 207 178" stroke="#4ce7fa" stroke-opacity=".66"/>
+    <path d="M166 43C115 31 71 67 67 115c-5 55 34 96 85 98-38-19-57-53-52-91 4-36 28-64 66-79Z" fill="#28142d" stroke="#f15acb"/>
+    <path d="M48 131 77 107 106 97h45l29 10 28 24-28 24-29 10h-45l-29-10Z" fill="#11111b" stroke="#4ce7fa"/>
+    <path d="m69 131 22-16 21-6h32l21 6 22 16-22 16-21 6h-32l-21-6Z" stroke="#f5f5ff" stroke-width="3" stroke-opacity=".75"/>
+    <path d="m128 104 24 27-24 27-24-27Z" fill="#1d2436" stroke="#4ce7fa"/>
+    <path d="m128 117 10 14-10 14-10-14Z" fill="#f5f5ff" stroke="#f5f5ff" stroke-width="2"/>
+    <path d="M172 65v20m-10-10h20" stroke="#f5f5ff" stroke-width="3"/>
+    <path d="m193 87 4 5-4 5-4-5Z" fill="#f15acb" stroke="#f15acb" stroke-width="2"/>
+    <path d="m113 187 15 12 19-9" stroke="#f15acb" stroke-width="4"/>
+  </g>
+</svg>

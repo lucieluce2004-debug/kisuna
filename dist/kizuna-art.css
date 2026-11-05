@@ -1,0 +1,103 @@
+/* Phase A: shared visual language. Economics and route visibility remain in their existing modules. */
+body.theme-kizuna.kz-game.kz-art {
+  --art-ink:#080e1b;--art-surface:#101f30;--art-paper:#fff5dc;--art-muted:#b3c4ce;
+  --art-gold:#ffcf63;--art-teal:#65ead7;--art-coral:#ff8295;--art-line:#9ec9d329;
+  --art-accent:var(--art-gold);--art-radius:18px 5px 18px 5px;--art-ease:cubic-bezier(.2,.8,.2,1);
+  --kz-text:var(--art-paper);--kz-text-muted:var(--art-muted);--kz-surface:var(--art-surface);
+  --kz-gold:var(--art-gold);--kg-honey:var(--art-gold);--kg-cyan:var(--art-teal);
+  color:var(--art-paper);font-family:Manrope,system-ui,sans-serif;
+  background:radial-gradient(ellipse at 80% 0%,#13364266,transparent 45%),var(--art-ink)!important;
+  min-height:100vh;isolation:isolate;
+}
+.kz-art[data-tab=col],.kz-art[data-tab=universes]{--art-accent:#80e7b0}
+.kz-art[data-tab=market]{--art-accent:var(--art-coral)}
+.kz-art[data-tab=nexus]{--art-accent:#8cc8ff}
+.kz-art[data-tab=community],.kz-art[data-tab=profile]{--art-accent:#cfb5ff}
+body.kz-art :is(h1,h2,h3,h4){font-family:Rajdhani,Manrope,sans-serif;letter-spacing:.01em}
+body.kz-art :is(button,a,input,select,textarea):focus-visible{outline:3px solid var(--art-teal)!important;outline-offset:4px!important}
+body.kz-art :is(input,select,textarea){color:var(--art-paper);background-color:#0c1928;border-color:#587184;accent-color:var(--art-teal)}
+body.kz-art input::placeholder,body.kz-art textarea::placeholder{color:#a1b2c2;opacity:1}
+body.kz-art :is(button,a){-webkit-tap-highlight-color:transparent}
+body.kz-art button:disabled{cursor:not-allowed}
+body.kz-art .wrap{max-width:1440px!important;width:calc(100% - 64px)!important}
+body.kz-art main{min-width:0;padding-bottom:30px}
+body.kz-art #colAlbumDetail{scroll-margin-top:92px}
+@media(min-width:761px) and (max-width:1100px){body.kz-art #colAlbumDetail{scroll-margin-top:148px}}
+@media(max-width:760px){body.kz-art #colAlbumDetail{scroll-margin-top:82px}}
+body.kz-art :is(.primary-btn,.kz-btn-primary,.ka-btn-primary,.kza-button-primary){background:linear-gradient(110deg,#ffe5a2,#e9b84f)!important;color:#16232c!important;border:1px solid #ffe4a0!important;border-radius:var(--art-radius)!important;box-shadow:0 4px 0 #966a294f!important;font-weight:800;min-height:44px;transition:filter .18s,transform .18s}
+body.kz-art :is(.primary-btn,.kz-btn-primary,.ka-btn-primary,.kza-button-primary):hover:not(:disabled){filter:brightness(1.08);transform:translateY(-2px)}
+body.kz-art :is(.soft-btn,.ghost-btn,.kza-button-secondary){border:1px solid #7894a45c!important;background:#152739!important;color:#ecf5f2!important;border-radius:12px 4px 12px 4px!important;min-height:42px}
+body.kz-art :is(.primary-btn,.soft-btn,.ghost-btn):active:not(:disabled){transform:translateY(1px)}
+.kza-eyebrow{font-size:10px;font-weight:800;letter-spacing:.19em;color:var(--art-accent);text-transform:uppercase}
+.kza-progress{height:5px;background:#fff1;border-radius:10px;overflow:hidden}.kza-progress>i{display:block;height:100%;background:var(--art-accent)}
+.kza-rarity{display:inline-flex;align-items:center;gap:6px;color:var(--rarity-color,var(--art-accent));font-size:11px;font-weight:800}.kza-rarity:before{content:'◆';font-size:8px}
+.kza-reward{border:1px solid var(--art-line);border-top:2px solid var(--art-accent);background:linear-gradient(140deg,#1d3443,#101b2c);padding:18px;border-radius:var(--art-radius)}
+.kza-tabs{display:flex;gap:6px;padding:4px;border-bottom:1px solid var(--art-line);overflow-x:auto}.kza-tabs>button{display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--art-muted);white-space:nowrap;cursor:pointer}.kza-tabs>[aria-selected=true]{color:var(--art-accent);border-bottom-color:var(--art-accent);background:#91b3be0c}
+.kza-mission{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--art-line)}.kza-mission>i{display:grid;place-items:center;width:46px;height:52px;clip-path:polygon(50% 0,100% 24%,100% 76%,50% 100%,0 76%,0 24%);background:#61cbb324;color:var(--art-accent);font:normal 27px Rajdhani}.kza-new{display:inline-flex;gap:5px;align-items:center;color:#071d23;background:var(--art-teal);border-radius:3px;padding:3px 6px;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+body.kz-art .kg-celebration{background:linear-gradient(110deg,#132c37,#183d3b)!important;border:1px solid #ffe4a077!important;border-left:4px solid var(--art-gold)!important;color:var(--art-paper);border-radius:var(--art-radius)!important;box-shadow:0 15px 70px #0009!important}
+body.kz-art .kz-notice-dialog{background:linear-gradient(145deg,#193644,#101b2d);border-color:#91b8aa66;border-radius:var(--art-radius)}
+/* Navigation: instrument rail on desktop, a compact dock on touch screens. */
+body.theme-kizuna.kz-game.kz-art .topline{position:sticky;top:0;height:76px!important;min-height:76px!important;background:#080f1bed!important;border-bottom:1px solid var(--art-line)!important;backdrop-filter:blur(20px);z-index:1000}
+body.theme-kizuna.kz-game.kz-art .top-inner{height:76px!important;min-height:76px!important;width:calc(100% - 48px)!important;max-width:none!important;padding:0!important;gap:20px!important;flex-wrap:nowrap!important}
+body.theme-kizuna.kz-game.kz-art .brand-logo{width:142px!important;min-width:100px;flex-shrink:0}
+body.kz-art .kza-header-context{font:700 13px Rajdhani,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:#a2b8c8;padding-left:22px;border-left:1px solid #64778a4f;white-space:nowrap}
+body.theme-kizuna.kz-game.kz-art .top-actions{margin-left:auto;gap:10px;flex-wrap:nowrap;min-width:0}
+body.theme-kizuna.kz-game.kz-art .top-actions :is(.kz-wallet,.kz-notifications,.status-pill){border:1px solid #57718466!important;background:#152639!important;border-radius:10px!important;min-height:40px;color:#e9f4ef!important}
+body.kz-art .top-actions .kz-wallet{color:var(--art-gold)!important}
+body.kz-art .top-actions .account-entry{font-size:11px!important;white-space:nowrap;padding:8px 13px!important}
+body.kz-art .kg-settings summary{min-width:36px;min-height:40px;border-color:#57718466;background:#152639}
+body.kz-art .kg-settings-panel{background:#102133;border-color:#607c8b;box-shadow:0 20px 80px #000a}
+body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav{gap:5px!important;overflow:visible}
+body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav :is(a,.kza-menu-button){display:flex;position:relative;align-items:center;justify-content:center;gap:7px;min-height:52px;padding:10px!important;border:1px solid transparent!important;border-radius:14px 4px 14px 4px!important;background:transparent!important;box-shadow:none!important;color:#b7c8d3!important;font:600 11px Manrope,sans-serif!important;letter-spacing:0!important;text-decoration:none;transition:background .2s,color .2s,transform .2s;cursor:pointer}
+body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav :is(a,.kza-menu-button):hover{background:#233c4a66!important;color:#fff5dc!important;transform:none}
+body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav :is(a.active,.kza-menu-button.active){background:linear-gradient(120deg,#31483e,#1a2a31)!important;border-color:#c8b46f5c!important;color:#fff0bf!important;box-shadow:inset 2px 0 #ffcf63!important}
+body.kz-art .nav.kz-shell-nav a.active:after{display:none!important}
+body.kz-art .nav.kz-shell-nav a svg,body.kz-art .kza-menu-button svg{width:23px;height:23px;color:var(--dest,var(--art-gold))!important;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+body.kz-art .nav.kz-shell-nav #staffNav:before{display:none}
+body.kz-art .kza-menu-button{appearance:none}
+body.theme-kizuna.kz-game.kz-art .topline{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.theme-kizuna.kz-game.kz-art .topline{z-index:50}
+@media(min-width:1101px){
+ body.kz-art main,body.kz-art>footer{margin-left:104px}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav{position:fixed!important;inset:76px auto 0 0!important;width:104px!important;height:calc(100dvh - 76px)!important;max-height:none;display:flex!important;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:24px 10px 16px!important;background:linear-gradient(180deg,#0c1725,#080f1b)!important;border:0;border-right:1px solid var(--art-line);overflow-y:auto;scrollbar-width:thin}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav :is(a,.kza-menu-button){flex-direction:column;flex:0 0 auto;width:100%;height:65px;min-height:60px;box-sizing:border-box}
+ body.kz-art .nav.kz-shell-nav .kza-menu-button{margin-top:auto}
+}
+@media(min-width:761px) and (max-width:1100px){
+ body.theme-kizuna.kz-game.kz-art .topline{height:132px!important}
+ body.theme-kizuna.kz-game.kz-art .top-inner{flex-wrap:wrap!important;height:132px!important;align-content:center;gap:8px 16px!important}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav{position:static!important;display:flex!important;order:4;width:100%!important;max-width:100%;height:50px!important;padding:0!important;flex:none;justify-content:center;background:transparent!important;border:0!important;overflow-x:auto;overflow-y:hidden;bottom:auto;box-shadow:none!important}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav :is(a,.kza-menu-button){min-height:44px;height:44px;box-sizing:border-box;flex-direction:row;flex:0 0 auto;font-size:10px!important;padding:8px!important}
+ body.kz-art .nav.kz-shell-nav a svg{width:19px;height:19px}
+}
+/* Accessible shared destination dialog; activities keep their existing routes. */
+.kza-navigation{width:min(830px,calc(100vw - 32px));max-height:calc(100dvh - 40px);padding:30px;background:radial-gradient(ellipse at 100% 0,#1f57504a,transparent 60%),#101d2d;color:var(--art-paper);border:1px solid #718c897a;border-radius:24px 5px 24px 5px;box-shadow:0 35px 120px #000b;overflow:auto}
+.kza-navigation::backdrop{background:#030915d9;backdrop-filter:blur(8px)}
+.kza-navigation>header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px}.kza-navigation h2{font-size:34px;margin:4px 0}.kza-navigation p{margin:0}
+.kza-close{width:44px;height:44px;flex-shrink:0;border:1px solid #7894a45c;border-radius:50%;background:#263c4c;color:#f9edce;font-size:26px;cursor:pointer}
+.kza-destinations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kza-destinations button{display:flex;align-items:center;gap:13px;text-align:left;min-height:85px;padding:14px;border:1px solid #86b8bb29;border-radius:12px 3px 12px 3px;background:#122838;color:#f6f3e6;cursor:pointer;transition:background .15s,border-color .15s}
+.kza-destinations button:hover,.kza-destinations button[aria-current]{background:#263e40;border-color:#ffcf6377}.kza-destinations i{font:normal 26px Rajdhani,serif;color:var(--art-teal);width:26px;text-align:center}.kza-destinations strong{display:block;font:700 19px Rajdhani,sans-serif}.kza-destinations small{display:block;margin-top:4px;font-size:10px;color:#b4c7cf;line-height:1.6}.kza-destinations b{margin-left:auto;color:#ffcf63;font-size:15px}.kza-menu-note{color:#a9bdc9;font-size:11px;padding-top:22px}
+@media(max-width:760px){
+ body.kz-art .wrap{width:calc(100% - 28px)!important}body.kz-art main{padding-bottom:88px}
+ body.theme-kizuna.kz-game.kz-art .topline,body.theme-kizuna.kz-game.kz-art .top-inner{height:66px!important;min-height:66px!important}
+ body.theme-kizuna.kz-game.kz-art .top-inner{width:calc(100% - 24px)!important;gap:8px!important}
+ body.theme-kizuna.kz-game.kz-art .brand-logo{width:105px!important;min-width:84px}
+ body.kz-art .kza-header-context{display:none}
+ body.theme-kizuna.kz-game.kz-art .top-actions{gap:6px}
+ body.kz-art .top-actions .profile-entry #usernameLabel,body.kz-art .kg-settings summary>span{display:none!important}
+ body.kz-art .top-actions .status-pill{padding:3px!important;min-width:34px;max-width:36px}
+ body.kz-art .top-actions .account-entry{font-size:10px!important;padding:7px 9px!important;max-width:91px;white-space:normal;line-height:1.3;min-height:38px}
+ body.kz-art .top-actions .kz-wallet{padding:5px 7px;gap:5px;font-size:11px}
+ body.kz-art .top-actions .kz-notifications{min-width:34px;width:34px;padding:6px}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav{position:fixed!important;inset:auto 0 0!important;width:100%!important;height:calc(68px + env(safe-area-inset-bottom))!important;min-height:68px;display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;padding:5px 8px calc(5px + env(safe-area-inset-bottom))!important;gap:3px!important;background:#0d1b2af5!important;border:0!important;border-top:1px solid #70928a55!important;box-shadow:0 -10px 35px #050c1944!important;transform:none!important;overflow:visible;z-index:1001}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav a:not(.kza-primary-destination){display:none!important}
+ body.theme-kizuna.kz-game.kz-art .nav.kz-shell-nav :is(a,.kza-menu-button){flex-direction:column;gap:5px!important;min-height:54px;height:54px;padding:5px 2px!important;font-size:9px!important;width:auto!important;min-width:0;border-radius:10px 3px 10px 3px!important}
+ body.kz-art .nav.kz-shell-nav a svg,body.kz-art .kza-menu-button svg{width:21px;height:21px}
+ .kza-navigation{padding:20px;width:calc(100vw - 24px);max-height:calc(100dvh - 26px)}.kza-navigation h2{font-size:28px}.kza-destinations{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.kza-destinations button{padding:12px 9px;gap:8px;min-height:78px}.kza-destinations strong{font-size:17px}.kza-destinations b{display:none}.kza-destinations small{font-size:10px}.kza-destinations i{width:21px;font-size:22px}
+}
+@media(max-width:400px){body.theme-kizuna.kz-game.kz-art .brand-logo{width:87px!important;min-width:75px}body.theme-kizuna.kz-game.kz-art .top-inner{width:calc(100% - 16px)!important;gap:4px!important}body.theme-kizuna.kz-game.kz-art .top-actions{gap:4px}.kz-art .kg-settings summary{min-width:30px;width:30px;padding:5px}.kz-art .top-actions .kz-wallet{padding:5px}.kz-art .kza-destinations small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){body.kz-art *,body.kz-art *:before,body.kz-art *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+html[data-kz-motion=reduced] body.kz-art *,html[data-kz-motion=reduced] body.kz-art *:before,html[data-kz-motion=reduced] body.kz-art *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+/* Adventure is a complete destination; legacy wiki/tutorial sections belong to their own routes. */
+body.kz-art[data-tab="adventure"] #mainContent>section:not(#kzAdventurePage){display:none!important}

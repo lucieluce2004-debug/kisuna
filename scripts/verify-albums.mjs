@@ -1,0 +1,98 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {JSDOM,VirtualConsole} from 'jsdom';
+const errors=[],requests=[],consoleBridge=new VirtualConsole();
+consoleBridge.on('jsdomError',error=>{if(!/Could not parse CSS stylesheet/.test(error.message))errors.push(error.message);});
+const dom=new JSDOM(await fs.readFile('dist/index.html','utf8'),{url:'https://kizuna.example.test/',runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:consoleBridge});
+const w=dom.window;w.scrollTo=()=>{};w.AbortSignal=AbortSignal;
+w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;};
+w.fetch=async()=>{throw new Error('Unexpected network');};
+const visibleCardIds=()=>[...w.document.querySelectorAll('#colGrid [data-colcard]')].map(node=>node.dataset.colcard).sort();
+const ownedIdentities=()=>Array.from(w.KizunaGame.getSnapshot().owned,copy=>({id:copy.id,at:copy.at}));
+const tileFor=key=>[...w.document.querySelectorAll('button.col-album[data-open-album]')].find(node=>node.dataset.openAlbum===key);
+const setControl=(id,value)=>{const control=w.document.getElementById(id);control.value=value;control.dispatchEvent(new w.Event('input',{bubbles:true}));};
+const progress=()=>w.document.getElementById('colAlbumProgress').textContent.replace(/\s+/g,'');
+const assertAlphabetical=()=>{const titles=[...w.document.querySelectorAll('#colAlbums .col-album h3')].map(node=>node.textContent);assert.deepEqual(titles,[...titles].sort(new Intl.Collator('fr',{sensitivity:'base',numeric:true}).compare),'Album names are sorted in French alphabetical order without size or managed-album priority');};
+try{
+  for(const script of w.document.scripts){const src=script.getAttribute('src');w.eval(src?await fs.readFile(path.join('dist',src),'utf8'):script.textContent);if(src==='kizuna-config.js')w.KIZUNA_CONFIG={};}
+  await new Promise(resolve=>setTimeout(resolve,30));
+  const cards=Array.from(w.KizunaGame.getSnapshot().cards),first=cards[0],second=cards.find(card=>card.series!==first.series),third=cards.find(card=>card.series!==first.series&&card.id!==second.id);
+  assert.ok(third);
+  const id='11111111-1111-4111-8111-111111111111',emptyId='22222222-2222-4222-8222-222222222222';
+  const name=first.series.toUpperCase();
+  const owned={owned:[{id:first.id,at:1700000000000},{id:first.id,at:1700000000100}],chakra:500,username:'Joueur A'};
+  w.KizunaGame.applySnapshot(owned);const before=ownedIdentities();
+  w.KizunaGame.setAlbumDefinitions([{id,name,anime_id:20,card_ids:[first.id,second.id]},{id:emptyId,name:'<b id="unsafe-album">Nouvel anime</b>',anime_id:269,card_ids:[]},{id:'33333333-3333-4333-8333-333333333333',name:'Éclair',card_ids:[]},{id:'44444444-4444-4444-8444-444444444444',name:'Zèbre',card_ids:[]}]);
+  w.KizunaGame.showAlbums();
+  assertAlphabetical();
+  const album=w.document.querySelector('[data-album-id="'+id+'"]');
+  assert.ok(album);assert.equal(album.tagName,'BUTTON');assert.equal(album.type,'button');assert.ok(album.tabIndex>=0,'Album tiles use native keyboard-accessible buttons');assert.equal(album.dataset.openAlbum,'album:'+id);assert.equal(album.querySelector('small').textContent,'1/2 cartes');
+  const coverSources=[...album.querySelectorAll('.ka-cover-character')].map(image=>image.getAttribute('src'));
+  assert.equal(coverSources.length,2);assert.ok(coverSources.every(src=>[first.image,second.image].includes(src)),'A managed album cover uses only its actual member portraits, including cross-anime membership');
+  assert.equal([...w.document.querySelectorAll('.col-album h3')].filter(node=>node.textContent.toLowerCase()===name.toLowerCase()).length,1,'Case variants must share one album');
+  assert.equal(w.document.querySelector('#unsafe-album'),null,'Album names are text');
+  assert.equal(w.document.querySelector('[data-album-id="'+emptyId+'"] small').textContent,'0/0 cartes');
+  assert.ok(!w.document.querySelector('[data-album-id="'+emptyId+'"] .col-bar i').style.width.includes('NaN'));
+  assert.deepEqual(ownedIdentities(),before,'Album membership cannot grant owned cards');
+
+  const implicit=[...w.document.querySelectorAll('button[data-open-album]')].find(tile=>tile.dataset.openAlbum.startsWith('series:'));
+  assert.ok(implicit,'The retained implicit anime albums are clickable too');
+  const implicitKey=implicit.dataset.openAlbum,implicitName=implicit.querySelector('h3').textContent,implicitSearch=implicitName.slice(0,4);
+  const implicitExpected=cards.filter(card=>card.series.trim().toLowerCase()===implicitKey.slice('series:'.length)).map(card=>card.id).sort();
+  assert.ok(implicitExpected.length>=2);
+  setControl('colSearch',implicitSearch);const filteredImplicit=tileFor(implicitKey);assert.ok(filteredImplicit);filteredImplicit.focus();assert.equal(w.document.activeElement,filteredImplicit);filteredImplicit.click();
+  assert.equal(w.document.querySelector('#colAlbumDetail').hidden,false);assert.equal(w.document.querySelector('#colAlbums').hidden,true);assert.equal(w.document.querySelector('#colGrid').hidden,false);assert.equal(w.document.querySelector('#colAlbumTitle').textContent,implicitName);
+  assert.equal(visibleCardIds().length,Math.min(8,implicitExpected.length),'The binder opens with eight cards per spread');
+  assert.deepEqual([...w.document.querySelectorAll('#kgBookFolio>span')].filter((_,index)=>index!==1).map(node=>node.textContent),['01','02']);
+  w.document.querySelector('[data-kg-album-mode="grid"]').click();
+  assert.equal(w.document.getElementById('kgBookFolio').hidden,true,'Physical page numbers do not persist in the continuous grid');
+  while(!w.document.querySelector('#colMore').hidden)w.document.querySelector('#colMore').click();
+  assert.deepEqual(visibleCardIds(),implicitExpected,'The complete grid contains every canonical card from that anime and no other series');
+  assert.equal(w.document.querySelector('#colSearch').value,'','Album detail starts with a clean card search');
+  w.document.querySelector('#colAlbumBack').click();await new Promise(resolve=>w.requestAnimationFrame(resolve));assert.equal(w.document.querySelector('#colAlbums').hidden,false);assert.equal(w.document.querySelector('#colAlbumDetail').hidden,true);assert.equal(w.document.querySelector('#colSearch').value,implicitSearch,'Back restores the album-list search');assert.equal(w.document.activeElement.dataset.openAlbum,implicitKey,'Back returns keyboard focus to the opened tile');
+
+  w.KizunaGame.showAlbums(id);assert.equal(w.document.querySelectorAll('.col-album').length,1,'Existing album links retain their filtered-list behaviour');
+  setControl('colUniv',first.series);const managedTile=tileFor('album:'+id);assert.ok(managedTile);managedTile.click();
+  assert.equal(w.document.querySelector('#colAlbumTitle').textContent,name);assert.match(progress(),/^1\/2cartesobtenues/);assert.deepEqual(visibleCardIds(),[first.id,second.id].sort(),'Managed membership supports cards from different anime despite the previous universe filter');
+  assert.equal(w.document.querySelector('#colOwn').value,'all','Opening an album includes unowned cards');
+  assert.ok(w.document.querySelector('#colGrid [data-colcard="'+first.id+'"].owned'));assert.ok(w.document.querySelector('#colGrid [data-colcard="'+second.id+'"].miss .missing-lock'));
+  setControl('colOwn','own');assert.deepEqual(visibleCardIds(),[first.id]);setControl('colOwn','miss');assert.deepEqual(visibleCardIds(),[second.id]);setControl('colOwn','all');
+  setControl('colSearch',first.name);assert.deepEqual(visibleCardIds(),[first.id]);setControl('colSearch','');
+  w.document.querySelector('#colChips [data-r="Rare"]').click();assert.deepEqual(visibleCardIds(),[],'Rarity filters remain scoped to the selected album');w.document.querySelector('#colChips [data-r="all"]').click();assert.deepEqual(visibleCardIds(),[first.id,second.id].sort());
+  w.document.querySelector('#colGrid [data-colcard="'+first.id+'"]').click();assert.ok(w.document.querySelector('#detailBackdrop.open'),'A card inside the album still opens its local character sheet');assert.equal(w.document.querySelector('#detailTitle').textContent,first.name);assert.equal(w.document.querySelector('#colAlbumDetail').hidden,false,'The selected album stays behind the character sheet');w.document.querySelector('#detailClose').click();assert.deepEqual(visibleCardIds(),[first.id,second.id].sort());
+  assert.deepEqual(ownedIdentities(),before);assert.equal(w.KizunaGame.getSnapshot().chakra,500);assert.equal(w.KizunaGame.getSnapshot().username,'Joueur A');
+
+  w.KizunaGame.setAlbumDefinitions([{id,name,anime_id:20,card_ids:[first.id,third.id]},{id:emptyId,name:'<b id="unsafe-album">Nouvel anime</b>',anime_id:269,card_ids:[]}]);
+  assert.equal(w.document.querySelector('#colAlbumTitle').textContent,name);assert.deepEqual(visibleCardIds(),[first.id,third.id].sort(),'A membership refresh updates the open album using its stable UUID');assert.equal(visibleCardIds().includes(second.id),false);
+  w.KizunaGame.setAlbumDefinitions([{id,name,anime_id:20,card_ids:[]},{id:emptyId,name:'<b id="unsafe-album">Nouvel anime</b>',anime_id:269,card_ids:[]}]);
+  assert.deepEqual(visibleCardIds(),[],'Empty managed memberships never fall back to the implicit series');assert.match(progress(),/^0\/0cartesobtenues/);assert.ok(!progress().includes('NaN'));assert.ok(w.document.querySelector('#colGrid .col-empty'));
+  w.document.querySelector('#colAlbumBack').click();assert.equal(w.document.querySelector('#colSearch').value,name);assert.equal(tileFor('album:'+id).querySelector('small').textContent,'0/0 cartes');
+  w.KizunaGame.showAlbums();tileFor('album:'+emptyId).click();assert.equal(w.document.querySelector('#colAlbumTitle').textContent,'<b id="unsafe-album">Nouvel anime</b>');assert.equal(w.document.querySelector('#unsafe-album'),null);assert.deepEqual(visibleCardIds(),[]);
+  w.KizunaGame.setAlbumDefinitions([{id,name,anime_id:20,card_ids:[first.id,second.id]}]);assert.equal(w.document.querySelector('#colAlbumDetail').hidden,true,'Deleting the selected album returns to the list');assert.equal(w.document.querySelector('#colAlbums').hidden,false);assert.equal(tileFor('album:'+emptyId),undefined);
+
+  w.KizunaGame.applySnapshot({owned:[],chakra:500,username:'Joueur B'});w.KizunaGame.showAlbums(id);
+  assert.equal(w.document.querySelector('[data-album-id="'+id+'"] small').textContent,'0/2 cartes','Album progression belongs to the current player');tileFor('album:'+id).click();assert.match(progress(),/^0\/2cartesobtenues/);assert.equal(w.document.querySelectorAll('#colGrid .col-cell.miss').length,2);assert.deepEqual(ownedIdentities(),[]);
+  w.KIZUNA_CONFIG={supabaseUrl:'https://unit.supabase.co',supabaseKey:'public-test'};w.KizunaBackend.ensureCatalogue=async()=>{};
+  w.fetch=async value=>{
+    const url=new URL(value);requests.push(url.pathname+url.search);
+    let rows;
+    if(url.pathname.endsWith('/kizuna_albums'))rows=[{id,name:'Album distant',anime_id:20,cover_image:''}];
+    else if(url.pathname.endsWith('/kizuna_album_cards'))rows=Number(url.searchParams.get('offset'))===0?Array.from({length:1000},(_,index)=>({album_id:'unrelated',card_id:String(index)})):[{album_id:id,card_id:second.id}];
+    else throw new Error('Unexpected request');
+    return {ok:true,json:async()=>rows};
+  };
+  const loaded=await w.KizunaAlbums.refresh();assert.equal(loaded[0].card_ids[0],second.id);assert.ok(requests.some(url=>url.includes('offset=1000')),'Membership pagination must not truncate after 1000 rows');
+  const copy=w.KizunaAlbums.getAlbums();copy[0].card_ids.length=0;assert.equal(w.KizunaAlbums.getAlbums()[0].card_ids.length,1,'Callers cannot mutate the shared cache');
+  w.fetch=async()=>({ok:false});await assert.rejects(w.KizunaAlbums.refresh());assert.equal(w.KizunaAlbums.getAlbums()[0].name,'Album distant','A failed refresh preserves the last successful definitions');
+  const account=w.KizunaAccount.getSnapshot;
+  w.KizunaAccount.getSnapshot=()=>({...account(),user:{id:'album-admin'},isAdmin:true,staffRole:'admin',loading:false});
+  const staffRequests=[];w.KizunaAccount.staffRequest=async value=>{staffRequests.push(value);return {players:[],page:1,hasNext:false};};
+  w.document.dispatchEvent(new w.CustomEvent('kizuna:account-change'));await new Promise(resolve=>setTimeout(resolve,25));
+  w.document.querySelector('#kizunaAlbumToolbar button').click();
+  assert.equal(w.document.body.dataset.tab,'staff');
+  assert.equal(w.document.querySelector('[data-ks-tab="cards"]').getAttribute('aria-pressed'),'true');
+  assert.equal(staffRequests.length,0,'Opening anime album creation must not start the registrations request and disable the Cards tab');
+  assert.deepEqual(errors,[]);
+  console.log(JSON.stringify({existingAlbumLayout:'preserved',frenchAlphabeticalOrder:'passed',nativeClickableTiles:'implicit and managed',exactAlbumMembers:'cross-anime managed supported',missingAndOwnedCards:'visible and filterable',characterSheetFromAlbum:'passed',backRestoresSearchAndFocus:'passed',membershipRefresh:'updates open detail',emptyAlbumAndDeletion:'passed',caseInsensitiveMerge:'passed',escapedNames:'passed',noCardsGranted:'passed',perPlayerCompletion:'passed',publicPagination:'passed',failureRetainsAlbums:'passed',network:'mocked only'}));
+}finally{await new Promise(resolve=>setTimeout(resolve,30));dom.window.close();}

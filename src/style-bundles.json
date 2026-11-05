@@ -1,0 +1,52 @@
+[
+  {
+    "output": "kizuna-base.bundle.css",
+    "inputs": [
+      "v20.css",
+      "kizuna-fonts.css",
+      "kizuna-theme.css",
+      "kizuna-components.css",
+      "booster-logos.css",
+      "kizuna-bright.css",
+      "kizuna-account.css",
+      "kizuna-profile.css",
+      "kizuna-staff.css"
+    ]
+  },
+  {
+    "output": "kizuna-game.bundle.css",
+    "inputs": [
+      "kizuna-identity.css",
+      "kizuna-shell.css",
+      "kizuna-boosters-v2.css",
+      "kizuna-collection-v2.css",
+      "kizuna-wiki-v2.css",
+      "kizuna-viewer-v2.css",
+      "kizuna-adventure.css",
+      "kizuna-market-v3.css",
+      "kizuna-exchange.css",
+      "kizuna-market-inbox.css",
+      "kizuna-studio.css",
+      "kizuna-mythic-art.css",
+      "kizuna-mythic.css",
+      "kizuna-anomalies.css",
+      "kizuna-play.css",
+      "kizuna-summoning.css",
+      "kizuna-nexus.css",
+      "kizuna-nexus-effects.css",
+      "kizuna-nexus-admin.css",
+      "kizuna-art.css",
+      "kizuna-art-lobby.css",
+      "kizuna-art-boosters.css",
+      "kizuna-art-collection.css",
+      "kizuna-art-adventure.css",
+      "kizuna-art-nexus.css",
+      "kizuna-art-awakening.css",
+      "kizuna-art-anomalies.css",
+      "kizuna-art-spaces.css",
+      "kizuna-art-finish.css",
+      "kizuna-art-admin.css",
+      "kizuna-art-exchange.css"
+    ]
+  }
+]

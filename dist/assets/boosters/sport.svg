@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna — Sport</title>
+  <desc id="desc">Un ballon d’énergie frappé d’un éclair magenta, porté par des ailes angulaires et des lauriers cyan.</desc>
+  <path d="M128 14 207 46 242 128 207 210 128 242 49 210 14 128 49 46Z" fill="#11111b" fill-opacity=".82" stroke="#4ce7fa" stroke-width="2.5" stroke-opacity=".34"/>
+  <g stroke-width="5" stroke-linejoin="round">
+    <path d="m77 111-44-25 10 33 29 17-34-7 16 27 28 6M179 111l44-25-10 33-29 17 34-7-16 27-28 6" fill="#1b1b2b" stroke="#4ce7fa"/>
+    <circle cx="128" cy="116" r="62" fill="#131825" stroke="#4ce7fa"/>
+    <path d="m128 54 0 30M74 86l28 14M74 146l28-17M128 178v-31M182 146l-27-17M182 86l-27 14" fill="none" stroke="#4ce7fa" stroke-width="3.5" stroke-opacity=".8"/>
+    <path d="m128 83 29 21-11 34h-36l-11-34Z" fill="#26324a" stroke="#f5f5ff" stroke-width="3.5"/>
+    <path d="m141 64-38 56 25 1-14 48 42-62-26-1Z" fill="#f15acb" stroke="#11111b" stroke-width="5"/>
+    <path d="M86 173c4 23 17 37 42 46 25-9 38-23 42-46" fill="none" stroke="#4ce7fa" stroke-width="4"/>
+    <path d="m89 187-15-3 4 14 18 2M101 205l-14 2 8 12 18-4M167 187l15-3-4 14-18 2M155 205l14 2-8 12-18-4" fill="#15252c" stroke="#4ce7fa" stroke-width="3.5"/>
+  </g>
+  <path d="m128 31 4 7-4 7-4-7Z" fill="#f5f5ff"/>
+</svg>

@@ -1,0 +1,44 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {JSDOM,VirtualConsole} from 'jsdom';
+import {transform} from 'esbuild';
+const errors=[],vc=new VirtualConsole();vc.on('jsdomError',error=>{if(!/Could not parse CSS/.test(error.message))errors.push(error.message)});
+const dom=new JSDOM(await fs.readFile('dist/index.html','utf8'),{url:'https://kizuna.example/',runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:vc});
+const w=dom.window,d=w.document,copy=x=>JSON.parse(JSON.stringify(x)),wait=()=>new Promise(resolve=>setTimeout(resolve,45));
+const fixedNow=Date.now();w.Date.now=()=>fixedNow;
+w.scrollTo=()=>{};w.fetch=async()=>{throw Error('Unexpected network')};w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'))};
+const click=selector=>{const button=d.querySelector(selector);assert.ok(button,selector);button.click();return button;};
+const id='cseed-0013';
+try{
+ for(const script of d.scripts){const src=script.getAttribute('src');w.eval(src?await fs.readFile(path.join('dist',src),'utf8'):script.textContent);if(src==='kizuna-config.js')w.KIZUNA_CONFIG={};}await wait();
+ // Exercise the real cascade: the legacy tier label rule also matches illustration status spans.
+ const artStyles=d.createElement('style');artStyles.textContent=(await Promise.all(['kizuna-mythic-art.css','kizuna-mythic.css','kizuna-art-awakening.css'].map(file=>fs.readFile(path.join('dist',file),'utf8')))).join('\n');d.head.append(artStyles);
+ const M=w.KizunaMythic,G=w.KizunaGame,A=w.KizunaAdventure;
+ G.applySnapshot({username:'Art test',owned:[{id,at:100}],chakra:1250,stock:{free:25,inv:8,t:Date.now(),pm:12,pl:4,day:'kept'}});
+ const economy=()=>copy(G.getSnapshot()),before=economy();
+ A.navigate('awakening',id);await wait();
+ assert.ok(d.querySelector('.kaw-altar .km-composition'),'Illustration is inside the altar');assert.ok(d.querySelector('.kaw-inscription .km-levels'),'Controls are separate from the portrait');
+ assert.equal(d.querySelectorAll('.km-levels [data-km-preview-level]').length,4);assert.equal(d.querySelectorAll('.km-levels .kaw-tier-image').length,4);
+ const thumbnail=d.querySelector('[data-km-preview-level="1"] .kma-card'),image=thumbnail.querySelector('[data-kma-portrait]'),warning=thumbnail.querySelector('.kma-art-warning'),unavailable=thumbnail.querySelector('.kma-unavailable');
+ const display=element=>w.getComputedStyle(element).display;
+ for(const status of d.querySelectorAll('.kaw-tier-image .kma-unavailable,.kaw-tier-image .kma-art-warning'))assert.equal(display(status),'none','Loaded thumbnails never display image-error labels');
+ const fallback=image.dataset.kmaFallback;assert.ok(fallback,'Illustrated stage has the original portrait as fallback');
+ image.dispatchEvent(new w.Event('error'));assert.equal(image.getAttribute('src'),fallback);assert.equal(display(warning),'block','A failed illustration announces the fallback');assert.equal(display(unavailable),'none','The fallback portrait has not failed');
+ image.dispatchEvent(new w.Event('error'));assert.equal(display(warning),'none','Do not promise a fallback after both images fail');assert.equal(display(unavailable),'block','A failed fallback reports the unavailable portrait');
+ click('[data-km-preview-level="3"]');assert.equal(d.querySelector('.km-stage').dataset.kawLocked,'true');assert.equal(d.querySelector('[data-km-equip]').disabled,true);assert.match(d.querySelector('.kaw-form-state').textContent,/verrouillé/);assert.equal(d.querySelector('[data-kaw-unlock]'),null);assert.deepEqual(economy(),before);
+ let user='art-a',data={[id]:{resonance:1,unlocked:1,selected:0}},pending=null,calls=[];
+ w.KizunaAccount.getSnapshot=()=>({user:{id:user},loading:false,economy:false,status:'synced'});
+ w.KizunaAccount.adventureRequest=async()=>({state:w.KizunaAdventureRules.empty(),definitions:w.KizunaAdventureSeed,revision:0,server_now:Date.now()});
+ w.KizunaAccount.mythicRequest=async(action,payload)=>{calls.push(action);if(pending)return new Promise(resolve=>{pending.resolve=resolve});if(action==='select')data[payload.id].selected=payload.level;return {progress:copy(data),rules:{thresholds:[1,3,6],revision:1}};};
+ d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));await wait();assert.equal(d.querySelector('[data-kaw-unlock]'),null,'Initial synchronized progress is not a new unlock');
+ const selector=d.querySelector('.km-selector'),list=d.querySelector('.km-card-list');list.scrollTop=320;
+ click('[data-km-preview-level="1"]');assert.equal(d.querySelector('.km-stage').dataset.kawLocked,'false');click('[data-km-equip="1"]');await wait();assert.equal(M.state(id).selected,1);assert.equal(d.querySelector('.km-selector'),selector);assert.equal(d.querySelector('.km-card-list').scrollTop,320);assert.equal(d.querySelector('[data-kaw-unlock]'),null,'Equipping does not invent an unlock');assert.deepEqual(economy(),before);
+ data[id]={resonance:3,unlocked:2,selected:1};await M.refresh(true);assert.equal(d.querySelector('[data-kaw-unlock]').dataset.kawUnlock,id);assert.match(d.querySelector('[data-kaw-unlock]').textContent,/Ascension/);
+ const notice=d.querySelector('[data-kaw-unlock]').textContent;await M.refresh(true);assert.equal(d.querySelector('[data-kaw-unlock]').textContent,notice,'Repeated read retains a single existing notice');assert.equal(d.querySelectorAll('[data-kaw-unlock]').length,1);
+ w.KizunaExperience.setPreference('reduce',true);assert.equal(d.querySelector('.km-stage').dataset.kawMotion,'false');assert.equal(d.querySelector('[data-kaw-unlock]').dataset.kawAnimate,'false');assert.equal(d.querySelector('.km-composition .kma-animated'),null,'Manual reduced motion removes animated art markup');
+ pending={};const flight=M.refresh(true);await wait();const resolve=pending.resolve;pending=null;user='art-b';data={};d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));resolve({progress:{[id]:{resonance:99,unlocked:3,selected:3}},rules:{thresholds:[1,3,6],revision:1}});await flight;await wait();assert.equal(M.state(id).unlocked,0);assert.equal(d.querySelector('[data-kaw-unlock]'),null,'Another account never inherits the celebration');
+ assert.deepEqual(economy(),before);assert.deepEqual(errors,[]);
+ const css=await transform(await fs.readFile('dist/kizuna-art-awakening.css','utf8'),{loader:'css'});assert.equal(css.warnings.length,0);
+ console.log(JSON.stringify({workshop:'altar, illustrated four-stage choices and real equipment state',preview:'locked forms visible, never granted',scroll:'selector retained across preview and equip',celebration:'only real same-owner level increase; initial sync and equip silent',reducedMotion:'manual and CSS supported',isolation:'stale response ignored, notice cleared',economy:'complete snapshot unchanged with deterministic clock',css:'parsed',errors:0}));
+}finally{w.close()}

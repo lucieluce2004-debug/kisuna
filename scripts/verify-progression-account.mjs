@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {harness,session,until} from './verify-account.mjs';
+const calls=[],h=harness({session:session('member'),progressionRpc:async(name,payload)=>{calls.push({name,payload});return {data:{verified:true},error:null}}});await h.settled();
+const before=structuredClone(h.current),writes=h.calls.stateWrites.length;
+await h.account.mythicRequest('select',{id:'cseed-0013',level:1});await h.account.anomalyRequest('claim',{event:'event-id',challenge:'open-three'});
+assert.deepEqual(calls.map(x=>x.name),['kizuna_mythic','kizuna_anomalies']);assert.deepEqual(h.current,before);assert.equal(h.calls.stateWrites.length,writes,'Cosmetic APIs never persist an economic snapshot');
+h.options.progressionRpc=async()=>({data:null,error:{message:'ADMIN_REQUIRED'}});await assert.rejects(h.account.anomalyRequest('save',{}),/administrateurs/);
+let release;h.options.progressionRpc=()=>new Promise(r=>release=r);const flight=h.account.mythicRequest('get'),rejected=assert.rejects(flight,/compte connecté a changé/);await until(()=>!!release);h.signin(session('admin'));await until(()=>h.account.getSnapshot().user?.id==='admin');release({data:{progress:{secret:true}},error:null});await rejected;
+await h.account.signOut();await assert.rejects(h.account.anomalyRequest('get'),/Connecte-toi/);
+console.log(JSON.stringify({progressionRPC:'separate services, no economic writes, server errors, logout gate, stale response rejection'}));

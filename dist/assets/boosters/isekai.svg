@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna Isekai — passage entre les mondes</title>
+  <desc id="desc">Un portail torii blanc et cyan se détache dans un anneau dimensionnel magenta, traversé par une orbite et une étoile.</desc>
+  <path d="m128 14 79 32 35 82-35 82-79 32-79-32-35-82 35-82Z" stroke="#4ce7fa" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M70 180c-16-23-25-56-16-83 10-34 36-55 72-55 43 0 76 35 81 76 5 36-14 67-38 82" stroke="#f15acb" stroke-width="6" stroke-linecap="round"/>
+  <path d="M60 145c-5-30 11-63 35-77m42-9c28 5 50 31 52 60" stroke="#f15acb" stroke-opacity=".4" stroke-width="3" stroke-linecap="round"/>
+  <path d="m79 166 9-51h13l-7 69M162 184l-7-69h13l9 51" fill="#11111b" stroke="#4ce7fa" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M66 85c38 13 86 13 124 0l-5 18c-34 10-80 10-114 0Z" fill="#f5f5ff" stroke="#11111b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M76 121h104" stroke="#f5f5ff" stroke-width="7" stroke-linecap="square"/>
+  <path d="M128 108v24" stroke="#4ce7fa" stroke-width="5"/>
+  <path d="m128 145 12 16-12 17-12-17Z" fill="#4ce7fa"/>
+  <ellipse cx="128" cy="193" rx="48" ry="13" fill="#11111b" stroke="#f15acb" stroke-width="5"/>
+  <path d="M112 193h32" stroke="#4ce7fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M37 172c14 16 63 14 111-1 47-16 81-39 75-55-3-8-15-12-34-12" stroke="#4ce7fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="m210 100 5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" fill="#f5f5ff" stroke="#11111b" stroke-width="3" stroke-linejoin="round"/>
+  <path d="m55 185 4 9 9 4-9 4-4 9-4-9-9-4 9-4Z" fill="#4ce7fa"/>
+</svg>

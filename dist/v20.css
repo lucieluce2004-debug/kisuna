@@ -1,0 +1,374 @@
+/* V20 — readable character artwork, satin rarity frames and a responsive Konoha feature. */
+body:not([data-tab="market"]) #marketPage { display: none !important; }
+
+.hero-area {
+  padding-top: 24px !important;
+  padding-bottom: 26px !important;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.06fr 1fr;
+  align-items: center;
+  min-height: 390px !important;
+  border: 1px solid #665336 !important;
+  border-radius: 20px !important;
+  background: radial-gradient(ellipse at 81% 38%, #bc8a3520, transparent 49%), linear-gradient(120deg, #1c1a17, #15151a 58%, #101215) !important;
+  box-shadow: 0 22px 60px #0005, inset 0 1px #fff7cc0a;
+}
+
+.hero::before {
+  background: linear-gradient(90deg, #17161380, transparent 78%), repeating-linear-gradient(132deg, transparent 0 80px, #e3c47e07 81px 82px) !important;
+}
+
+.hero::after { opacity: .22; }
+
+.hero .hero-content {
+  min-width: 0;
+  width: auto;
+  max-width: 100% !important;
+  padding: 48px 10px 48px 42px !important;
+}
+
+.hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  color: #eac579;
+  letter-spacing: .17em;
+  line-height: 1.6;
+}
+
+.hero .eyebrow::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: #eac579;
+}
+
+.hero h1 {
+  max-width: 500px !important;
+  margin: 17px 0 16px;
+  font-size: clamp(38px, 4.6vw, 62px) !important;
+  font-weight: 950;
+  line-height: 1.01;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  color: #fbf6e9;
+}
+
+.hero p {
+  max-width: 390px !important;
+  margin: 0;
+  font-size: 12px !important;
+  line-height: 1.8;
+  color: #bdb9b2;
+}
+
+.hero .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.hero .primary-btn,
+.hero .secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.hero .primary-btn {
+  background: linear-gradient(110deg, #f1d78d, #d9ae55);
+  color: #231b0d;
+  border: 1px solid #edcf88;
+  box-shadow: 0 4px 20px #ca9a3220, inset 0 1px #fff7d940;
+}
+
+.hero .secondary-btn {
+  color: #e5ded1;
+  background: #ffffff04;
+  border: 1px solid #ffffff28;
+}
+
+.hero .primary-btn:hover { filter: brightness(1.08); }
+.hero .secondary-btn:hover { border-color: #d9ae55; background: #d9ae550b; }
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: #a69a82;
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.hero-note::before {
+  content: none;
+  color: #d9ae55;
+  font-size: 11px;
+}
+
+.hero #heroStack {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: 330px !important;
+  padding: 24px 22px 24px 6px;
+  box-sizing: border-box;
+  opacity: 1;
+  gap: 0;
+  overflow: visible;
+}
+
+#heroStack .hero-card {
+  --frame-ink: var(--rarity, #e9c57e);
+  flex: 0 0 31.5%;
+  width: 31.5%;
+  max-width: 174px;
+  height: auto !important;
+  aspect-ratio: .66;
+  border: 1px solid color-mix(in srgb, var(--frame-ink) 75%, #fff5d8);
+  border-radius: 10px;
+  background: #161619;
+  box-shadow: 0 18px 30px #0008, 0 0 0 3px #101014, 0 0 0 4px color-mix(in srgb, var(--frame-ink) 24%, #29252b);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#heroStack .hero-card:nth-child(1) { transform: translate(-5px, 11px) rotate(-7deg); z-index: 1; }
+#heroStack .hero-card:nth-child(2) { transform: translateY(-13px) rotate(1deg); z-index: 2; }
+#heroStack .hero-card:nth-child(3) { transform: translate(6px, 12px) rotate(7deg); z-index: 1; }
+
+#heroStack .hero-card:hover,
+#heroStack .hero-card:focus-visible {
+  transform: translateY(-18px) rotate(0);
+  z-index: 4;
+  box-shadow: 0 24px 38px #000b, 0 0 0 3px #101014, 0 0 0 4px var(--frame-ink), 0 0 26px color-mix(in srgb, var(--frame-ink) 25%, transparent);
+}
+
+#heroStack .hero-card img {
+  object-position: center 18%;
+  filter: saturate(.97) contrast(1.035);
+}
+
+#heroStack .hero-card::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 4px;
+  border: 1px solid #ffeaca28;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+#heroStack .hero-card::after {
+  background: linear-gradient(180deg, #05050718 0%, transparent 35%, #08090bc7 73%, #08090b 100%), linear-gradient(125deg, #fff9d515, transparent 40%);
+}
+
+#heroStack .hero-card .hero-card-rarity {
+  top: 10px;
+  left: 9px;
+  max-width: calc(100% - 18px);
+  padding: 4px 6px !important;
+  border-radius: 3px;
+  border-color: color-mix(in srgb, var(--frame-ink) 65%, transparent);
+  background: #0b0b0fe8;
+  color: color-mix(in srgb, var(--frame-ink) 83%, white);
+  font-size: 7px !important;
+  letter-spacing: .06em;
+}
+
+#heroStack .hero-card .hero-card-name {
+  bottom: 30px !important;
+  left: 12px;
+  right: 10px;
+  font-size: clamp(10px, 1.05vw, 14px) !important;
+  color: #fff8e9;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+
+#heroStack .hero-card .hero-card-series {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  right: 10px;
+  bottom: 15px;
+  color: #d5bf96;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Satin metal stays around the illustration; it does not wash out the face. */
+.tcard,
+.tback {
+  border-color: var(--rarity, var(--c));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--rarity, var(--c)) 24%, #22212a), #111116 44%, color-mix(in srgb, var(--rarity, var(--c)) 12%, #111116));
+  box-shadow: 0 8px 24px #0007, inset 0 0 0 1px #fff6df26 !important;
+}
+
+.tcard { animation: none !important; }
+
+.tcard::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  z-index: 5;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--rarity, var(--c)) 28%, transparent);
+  border-radius: 7px;
+}
+
+.tcard .th {
+  position: relative;
+  color: #f5efdf;
+  background: linear-gradient(115deg, color-mix(in srgb, var(--rarity, var(--c)) 15%, #242128), #16161d 70%);
+  border-bottom: 1px solid color-mix(in srgb, var(--rarity, var(--c)) 30%, transparent);
+}
+
+.tcard .bd {
+  border-radius: 5px;
+  background: linear-gradient(135deg, #fff7d8, var(--rarity, var(--c)) 68%, color-mix(in srgb, var(--rarity, var(--c)) 70%, black));
+  color: #1b1620;
+  box-shadow: inset 0 0 0 1px #fff5;
+}
+
+.tcard .ti {
+  margin: 4px 5px 0;
+  border: 1px solid color-mix(in srgb, var(--rarity, var(--c)) 28%, #ffffff15);
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+.tcard .ti img { filter: saturate(.98) contrast(1.025); }
+
+.tcard .ti i {
+  z-index: 2;
+  bottom: 7px;
+  left: 7px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  background: #0c0c12aa;
+  color: #fff4d9;
+}
+
+.tcard .ts {
+  background: #15151b;
+  color: #c5bdac;
+  border-top: 1px solid #ffffff0b;
+}
+
+.tcard .tp {
+  color: #ede5d5;
+  background: linear-gradient(90deg, #15151b, color-mix(in srgb, var(--rarity, var(--c)) 12%, #15151b));
+  border-top: 1px solid color-mix(in srgb, var(--rarity, var(--c)) 22%, transparent);
+}
+
+.tcard[data-r="M"]::before,
+.tcard[data-r="L"]::before {
+  border-color: color-mix(in srgb, var(--rarity) 57%, #fff8df30);
+  background: linear-gradient(var(--rarity), var(--rarity)) left top / 16px 2px no-repeat,
+    linear-gradient(var(--rarity), var(--rarity)) left top / 2px 16px no-repeat,
+    linear-gradient(var(--rarity), var(--rarity)) right bottom / 16px 2px no-repeat,
+    linear-gradient(var(--rarity), var(--rarity)) right bottom / 2px 16px no-repeat;
+}
+
+.tcard[data-r="M"]::after { opacity: .36; }
+.tcard[data-r="E"] .pt::before { opacity: .12; }
+.tcard[data-r="L"] .pt::before { opacity: .16; }
+.tcard[data-r="M"] .pt::before { opacity: .18; animation: none !important; }
+.tcard:hover .pt::before { opacity: .42; }
+.tcard:hover .pt::after { opacity: .25; }
+
+.tback .bg div {
+  border-color: color-mix(in srgb, var(--rarity, var(--c)) 22%, #ffffff10);
+  background: #ffffff04;
+}
+
+.tback .bt { color: #e4d9c2; }
+.tback .ser { color: #c5bcab; }
+
+.hero-card:focus-visible,
+.col-cell:focus-visible,
+.v8-catalog-tile:focus-visible,
+.hero .primary-btn:focus-visible,
+.hero .secondary-btn:focus-visible {
+  outline: 2px solid #f1d78d;
+  outline-offset: 5px;
+}
+
+@media (max-width: 1000px) and (min-width: 781px) {
+  .hero { min-height: 360px !important; }
+  .hero .hero-content { padding: 34px 5px 34px 28px !important; }
+  .hero h1 { font-size: 44px !important; }
+  .hero #heroStack { height: 300px !important; padding-right: 15px; }
+  .hero .hero-buttons { gap: 8px; }
+  .hero .primary-btn, .hero .secondary-btn { padding: 10px 12px; font-size: 10px; }
+  #heroStack .hero-card .hero-card-name { left: 9px; font-size: 10px !important; }
+  #heroStack .hero-card .hero-card-series { left: 9px; font-size: 7px; }
+}
+
+@media (max-width: 780px) {
+  .hero-area { padding-top: 14px !important; }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0 !important;
+    border-radius: 15px !important;
+  }
+  .hero .hero-content { width: 100%; padding: 30px 25px 4px !important; box-sizing: border-box; }
+  .hero h1 { max-width: 500px !important; font-size: clamp(34px, 7.5vw, 48px) !important; margin: 14px 0; }
+  .hero p { max-width: 460px !important; font-size: 12px !important; line-height: 1.75; }
+  .hero .hero-buttons { margin-top: 21px; }
+  .hero .hero-note { margin-top: 18px; }
+  .hero #heroStack {
+    position: relative !important;
+    inset: auto !important;
+    width: min(500px, 100%) !important;
+    height: 300px !important;
+    margin: 0 auto;
+    padding: 30px 25px 24px;
+  }
+  #heroStack .hero-card { flex-basis: 30%; width: 30%; max-width: 140px; }
+  #heroStack .hero-card .hero-card-name { font-size: 12px !important; }
+  .hero::before { background: radial-gradient(ellipse at 60% 83%, #c9943920, transparent 50%) !important; }
+}
+
+@media (max-width: 430px) {
+  .hero .hero-content { padding: 26px 20px 0 !important; }
+  .hero .eyebrow { font-size: 8px; letter-spacing: .13em; }
+  .hero h1 { font-size: 38px !important; max-width: 305px !important; }
+  .hero p { font-size: 11px !important; }
+  .hero .hero-buttons { gap: 8px; }
+  .hero .primary-btn, .hero .secondary-btn { padding: 10px 12px; font-size: 10px; min-height: 42px; }
+  .hero #heroStack { height: 253px !important; padding: 29px 13px 22px; }
+  #heroStack .hero-card { flex-basis: 30%; width: 30%; }
+  #heroStack .hero-card .hero-card-name { left: 8px; right: 6px; bottom: 28px !important; font-size: 9px !important; }
+  #heroStack .hero-card .hero-card-series { left: 8px; right: 6px; bottom: 14px; font-size: 7px; }
+  #heroStack .hero-card .hero-card-rarity { top: 8px; left: 7px; padding: 3px 4px !important; font-size: 6px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #heroStack .hero-card,
+  .tcard,
+  .tcard .pt::before,
+  .tcard .pt::after { animation: none !important; transition: none !important; }
+  #heroStack .hero-card:hover,
+  #heroStack .hero-card:focus-visible { transform: none; }
+}

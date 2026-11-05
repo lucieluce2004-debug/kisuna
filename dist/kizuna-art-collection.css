@@ -1,0 +1,162 @@
+/* Kizuna art direction · the collection is a library, the album is an object.
+   Scoped to the new shell; no rarity rules or inventory behavior live here. */
+body.kz-art #collection{--collection-accent:#65ead7;--collection-muted:#a3bcb8}
+body.kz-art #collection .cx-hero{position:relative;isolation:isolate;overflow:hidden;padding:30px 0 34px!important;border:0!important;border-bottom:1px solid #65ead72c!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;gap:34px!important}
+body.kz-art #collection .cx-hero:before{content:"COLLECTION";position:absolute;right:0;bottom:-17px;z-index:-1;font:700 clamp(64px,9vw,140px)/1 Rajdhani,sans-serif;letter-spacing:-.045em;color:#65ead708;pointer-events:none}
+body.kz-art #collection .section-kicker{color:var(--collection-accent)!important;font-size:11px;letter-spacing:.19em}
+body.kz-art #collection .col-title{font:700 clamp(38px,5vw,64px)/.95 Rajdhani,sans-serif!important;letter-spacing:-.035em;text-transform:uppercase;margin:10px 0 25px!important;color:#fff5dc!important}
+body.kz-art #collection .cx-pills{display:flex;flex-wrap:wrap;gap:25px;margin-bottom:24px}
+body.kz-art #collection .cx-pill{background:transparent!important;border:0!important;border-left:1px solid #65ead744!important;border-radius:0!important;padding:0 0 0 14px!important;min-width:90px}
+body.kz-art #collection .cx-pill b{font:700 29px/1.1 Rajdhani,sans-serif!important;color:#fff5dc!important}
+body.kz-art #collection .cx-pill b s{font:500 16px/1 Rajdhani,sans-serif!important;color:#b3c9c2!important}
+body.kz-art #collection .cx-pill small{display:block;font-size:10px;letter-spacing:.02em;color:#a3bcb8!important;margin-top:5px}
+body.kz-art #collection .cx-ring{flex-shrink:0;width:118px;height:118px;border:9px solid #183c39!important;background:conic-gradient(#65ead7 calc(var(--p,0)*1%),#142b2b 0)!important;box-shadow:0 0 0 1px #65ead73b,0 0 0 10px #65ead705!important}
+body.kz-art #collection .cx-ring:before{background:#09191c!important}
+body.kz-art #collection .cx-ring span{font:700 26px Rajdhani,sans-serif;color:#cffdf2!important}
+body.kz-art #collection .col-uni{font-size:11px;min-width:220px;color:#b8cfc7!important}
+body.kz-art #collection .col-uni .col-bar{background:#173332!important}
+body.kz-art #collection .col-uni .col-bar i{background:#65ead7!important}
+body.kz-art #collection .col-actions .soft-btn{font-size:12px;min-height:44px}
+body.kz-art #collection .cx-bar{position:relative;margin:26px 0 22px!important;padding:20px 0!important;border:0!important;border-bottom:1px solid #65ead726!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.kz-art #collection .col-top{gap:20px}
+body.kz-art #collection .col-input{border:1px solid #45625f!important;background:#101f28!important;border-radius:9px!important;color:#fff5dc!important;min-height:48px!important;padding:13px 16px!important}
+body.kz-art #collection .col-input::placeholder{color:#a0b5b7;opacity:1}
+body.kz-art #collection .col-seg{border-color:#4a6562;background:#09151c!important;border-radius:9px!important;padding:4px}
+body.kz-art #collection .col-seg button{font:700 16px Rajdhani,sans-serif!important;letter-spacing:.02em;color:#a8c0bd!important;min-width:95px}
+body.kz-art #collection .col-seg button.on{background:#65ead7!important;color:#071c1d!important;box-shadow:0 3px 14px #65ead720!important}
+body.kz-art #collection .col-filters{gap:12px;margin-top:18px!important}
+body.kz-art #collection .col-filters label{font-size:10px;letter-spacing:.04em;color:#b6c9c6}
+body.kz-art #collection .col-filters select{border-color:#49605c!important;border-radius:7px!important;background:#10232a!important;color:#edf5df!important;font-size:12px}
+body.kz-art #collection #colFiltersReset{border-color:#49605c!important;background:transparent!important;color:#d6eee3!important}
+body.kz-art #collection .col-chip{border:1px solid #3c5756!important;background:#0e2128!important;border-radius:6px!important;color:#cde3df!important;min-height:40px}
+body.kz-art #collection .col-chip em{color:#b2c8c5!important}
+body.kz-art #collection .col-chip.on{border-color:#65ead7!important;background:#1e4441!important;color:#effff5!important}
+body.kz-art #collection .col-chip.on em{color:#d4fff0!important}
+body.kz-art #collection .col-count{color:#a7bfba!important;font-size:11px!important;letter-spacing:.03em;margin-top:4px}
+
+/* Illustrated covers: layered portraits, fabric spine, folio and completion seal. */
+body.kz-art #collection .col-albums{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:32px 26px!important;padding:8px 5px 28px}
+body.kz-art #collection button.col-album.ka-album-cover{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;aspect-ratio:.72;min-height:335px;padding:0 0 0 19px!important;border:1px solid #667264!important;border-left-color:#93ada0!important;border-radius:4px 12px 12px 4px!important;background:#132c31!important;box-shadow:5px 4px 0 -2px #c4c8b799,8px 7px 0 -4px #415651,10px 15px 24px #0007!important;transform-origin:left center;transition:transform .22s ease,box-shadow .22s ease;text-align:left}
+body.kz-art #collection button.col-album.ka-album-cover:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;box-shadow:inset 21px 0 9px -13px #000b,inset -1px 0 0 #ffffff25;background:linear-gradient(108deg,transparent 0 27%,#fafff80b 28%,transparent 48%)}
+body.kz-art #collection .ka-album-spine{position:absolute;left:0;top:0;bottom:0;z-index:4;display:flex;align-items:center;justify-content:center;width:19px;writing-mode:vertical-rl;transform:rotate(180deg);font:700 9px/1 Rajdhani,sans-serif;letter-spacing:.18em;color:#d5e5ce;background:linear-gradient(90deg,#274740,#122a28 55%,#39534b);border-left:1px solid #a8c4af55;box-shadow:3px 0 7px #0008}
+body.kz-art #collection .ka-album-art{position:absolute;inset:0 0 0 19px;z-index:-1;overflow:hidden;background:linear-gradient(135deg,hsl(var(--album-hue) 40% 22%),#0a1724)}
+body.kz-art #collection .ka-album-art:after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(0deg,#06151d 0%,#06151df5 22%,#071923df 43%,#07192330 67%,transparent 82%),linear-gradient(90deg,#08252666,transparent 70%)}
+body.kz-art #collection .ka-cover-character{position:absolute!important;width:90%!important;height:94%!important;max-width:none!important;object-fit:cover!important;object-position:50% 24%;border:0!important;border-radius:0!important;filter:saturate(.8) contrast(1.08)!important;opacity:1!important;transition:transform .4s ease}
+body.kz-art #collection .ka-cover-character-0{right:0;top:0;z-index:2;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}
+body.kz-art #collection .ka-cover-character-1{left:-18%;top:3%;z-index:1;width:65%!important;opacity:.74!important;filter:saturate(.35) contrast(1.1)!important;transform:scale(1.1)}
+body.kz-art #collection .ka-cover-character-2{right:-25%;top:18%;z-index:1;opacity:.55!important;filter:saturate(.5)!important}
+body.kz-art #collection .ka-album-blank{display:grid;place-items:center}
+body.kz-art #collection .ka-album-blank>span{font-size:96px;color:#65ead742;transform:rotate(-10deg)}
+body.kz-art #collection .ka-album-edition{position:absolute;left:33px;top:17px;z-index:3;display:flex;align-items:center;gap:7px;font:700 10px Rajdhani,sans-serif;letter-spacing:.18em;color:#fff5dc!important;padding:6px 8px;background:#07171fbd;border:1px solid #e7e2c733;border-radius:3px;backdrop-filter:blur(5px)}
+body.kz-art #collection .ka-album-edition b{font-size:16px;letter-spacing:.02em}
+body.kz-art #collection .ka-album-copy{position:relative;z-index:3;display:flex;flex-direction:column;width:100%;padding:23px 19px 18px;box-sizing:border-box}
+body.kz-art #collection .kz-album-heading{gap:8px;margin:0 0 11px;align-items:flex-end}
+body.kz-art #collection .kz-album-heading h3{font:700 clamp(25px,2.25vw,34px)/.98 Rajdhani,sans-serif!important;letter-spacing:-.025em;color:#fff5dc!important;text-wrap:balance;overflow-wrap:anywhere;text-shadow:0 2px 13px #0009;margin:0!important}
+body.kz-art #collection .kz-album-percent{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;padding:0!important;border-radius:50%!important;border:1px solid #8ed0bd70!important;background:radial-gradient(closest-side,#0c2425 84%,transparent 86%),conic-gradient(#65ead7 calc(var(--album-progress)*1%),#44635d66 0)!important;box-shadow:0 0 0 3px #06151d88;font:700 14px/1 Rajdhani,sans-serif;color:#c9fff0!important}
+body.kz-art #collection .col-album small{font:500 11px Manrope,sans-serif!important;color:#b4d1c9!important}
+body.kz-art #collection .col-album .col-bar{height:2px!important;margin:12px 0 0!important;background:#829f8d40!important;border-radius:0!important}
+body.kz-art #collection .col-album .col-bar i{background:#65ead7!important;box-shadow:0 0 8px #65ead766}
+body.kz-art #collection .col-album-open{display:flex!important;justify-content:space-between;align-items:center;margin-top:14px!important;color:#d5efe1!important;font:600 11px Manrope,sans-serif!important}
+body.kz-art #collection .col-album-open>span{display:grid;place-items:center;width:25px;height:25px;border:1px solid #65ead74d;border-radius:50%;font-size:16px;color:#65ead7}
+body.kz-art #collection .col-album.is-complete{border-color:#ffcf63!important}
+body.kz-art #collection .col-album.is-complete .col-album-open{color:#ffcf63!important}
+body.kz-art #collection .kzal-empty{font-size:11px;line-height:1.55;color:#b8d2c8;margin:10px 0 0}
+
+/* Open album: eight real slots, a central binding and numbered leaves. */
+body.kz-art #collection #colAlbumDetail{position:relative;display:flex;gap:24px;align-items:center;padding:22px 0!important;margin-top:12px;border:0!important;border-bottom:1px solid #65ead729!important;border-radius:0!important;background:transparent!important}
+body.kz-art #collection #colAlbumDetail[hidden]{display:none!important}
+body.kz-art #collection #colAlbumBack{min-height:46px;border:1px solid #65ead75e!important;background:#15332f!important;color:#c6f5e7!important;font-size:11px;flex-shrink:0}
+body.kz-art #collection #colAlbumTitle{font:700 clamp(30px,4vw,48px)/1 Rajdhani,sans-serif!important;letter-spacing:-.02em;color:#fff5dc;margin:0 0 8px!important}
+body.kz-art #collection #colAlbumProgress{font-size:12px;color:#acc8be!important;margin:0}
+body.kz-art #collection .kg-binder-controls{margin:18px 0;gap:12px}
+body.kz-art #collection .kg-binder-controls button{min-height:44px;border-color:#4c6861!important;border-radius:5px!important;background:#132c2c!important;color:#bddbd0!important;font-size:12px}
+body.kz-art #collection .kg-binder-controls button[aria-pressed=true]{background:#d5edda!important;color:#112b25!important;border-color:#e9f5dc!important;box-shadow:0 3px 0 #769b88}
+body.kz-art #collection .kg-binder-controls button:disabled{opacity:.38;cursor:default}
+body.kz-art #collection .kg-binder-controls span{color:#bad0c4;font-size:11px;min-width:94px}
+body.kz-art #collection #colGrid.kg-book{position:relative;isolation:isolate;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:27px 23px!important;padding:32px 29px 23px!important;margin:0!important;border:1px solid #80918588!important;border-radius:6px 15px 6px 6px!important;background:linear-gradient(90deg,#182f2f 0%,#223a35 47%,#0a1d20 49.7%,#0a1a1e 50.3%,#263f37 53%,#192f2c 100%)!important;box-shadow:0 3px 0 #0b1c1b,0 5px 0 #9caf9b,0 8px 0 #29453a,0 12px 0 #061718,0 24px 40px #0005!important;align-items:start;min-height:260px}
+body.kz-art #collection #colGrid.kg-book:before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0 auto 0 50%;width:17px;transform:translateX(-50%);border-inline:1px solid #94ba9f22;background:repeating-linear-gradient(0deg,transparent 0 75px,#c7cfc85c 76px,#1c3833 79px,transparent 81px 140px),linear-gradient(90deg,#0a1b1d,#2e4840 44%,#102620 51%,#0a1b1d);box-shadow:0 0 16px #0005}
+body.kz-art #collection #colGrid.kg-book .col-item-unit{border:1px solid #d0e4c52b;border-top-color:#eef7dd42;border-radius:3px;padding:10px 9px 12px;background:linear-gradient(126deg,#b7d8be0c,#b7d8be02 33%,#b7d8be09 34%,transparent 55%);box-shadow:inset 0 0 0 3px #061d1b40,0 1px 6px #0002}
+body.kz-art #collection .ka-book-folio{display:flex;justify-content:space-between;align-items:center;padding:26px 31px 6px;color:#9bb7a9;font:600 12px Rajdhani,sans-serif;letter-spacing:.14em}
+body.kz-art #collection .ka-book-folio>span:nth-child(2){font-size:9px;letter-spacing:.25em}
+body.kz-art #collection .ka-book-folio[hidden]{display:none!important}
+body.kz-art #collection .kg-binder-bottom{margin:16px 0 28px;justify-content:center}
+
+/* Searchable cards retain independent actions and readable rarity / escrow states. */
+body.kz-art #collection .col-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:32px 21px!important}
+body.kz-art #collection .col-item-unit{gap:8px!important;min-width:0}
+body.kz-art #collection .ka-card-register{display:flex;align-items:center;justify-content:space-between;gap:6px;color:#9db8b5;font:600 10px/1.4 Rajdhani,sans-serif;letter-spacing:.04em;min-height:18px}
+body.kz-art #collection .ka-card-register>span:last-child{color:var(--slot-rarity);font-weight:700;font-size:11px;letter-spacing:0;text-align:right}
+body.kz-art #collection .col-cell{border-radius:9px!important;transition:transform .2s ease;box-shadow:0 6px 13px #0004!important}
+body.kz-art #collection .col-cell .tcard{border-radius:8px!important;box-shadow:inset 0 0 0 1px var(--slot-rarity),0 5px 13px #0004!important;border-color:var(--slot-rarity)!important;background:#091820!important;animation:none!important}
+body.kz-art #collection .col-cell .tcard[data-r="M"]{box-shadow:inset 0 0 0 1px #ffd58d,0 0 0 1px #cf64664d,0 7px 20px #0006!important}
+body.kz-art #collection .col-cell.miss .tcard{filter:none!important;border-color:#546662!important;background:#101f25!important}
+body.kz-art #collection .col-cell.miss .tcard .ti>img:not(.kma-frame){filter:grayscale(1) brightness(.2)!important;opacity:.75}
+body.kz-art #collection .col-cell.miss .km-card-art{filter:grayscale(1) brightness(.2)!important}
+body.kz-art #collection .kma-animated .kma-particles i,body.kz-art #collection .kma-animated .kma-aura{animation:none!important}
+body.kz-art #collection .col-cell.miss .th,body.kz-art #collection .col-cell.miss .ts,body.kz-art #collection .col-cell.miss .tp{opacity:.68}
+body.kz-art #collection .col-cell.miss .missing-lock{display:flex;flex-direction:column;gap:8px;align-items:center;top:38%;left:4%;right:4%;background:transparent!important;border:0!important;color:#d7e5d4!important;letter-spacing:.16em;font:700 9px Manrope,sans-serif!important;text-shadow:0 2px 5px #000}
+body.kz-art #collection .missing-lock i{display:grid;place-items:center;width:43px;height:43px;border:1px solid #c1d5b369;transform:rotate(45deg);font:normal 26px Rajdhani,sans-serif;background:#0c1c258c;box-shadow:0 0 0 5px #c1d5b30a;color:#c6d9bc}
+body.kz-art #collection .col-cell:has(.fcard.flipped) .missing-lock{display:none!important}
+body.kz-art #collection .col-cell .cx{top:7px;right:7px;z-index:4;background:#d9edcc!important;color:#10231b!important;border:1px solid #f4ffe5!important;border-radius:4px!important;font:700 15px Rajdhani,sans-serif}
+body.kz-art #collection .tback{background:linear-gradient(145deg,#25423b,#10252a)!important;color:#deedde!important;border-color:var(--slot-rarity)!important}
+body.kz-art #collection .kz-col-badge{color:#bdd3cc;background:#18332d!important;border-color:#426156!important;border-radius:3px!important;font-size:9px}
+body.kz-art #collection .kz-col-badge.is-owned{color:#b8f4d4!important;background:#16372e!important;border-color:#438c6b66!important}
+body.kz-art #collection .kz-col-badge.is-reserved{color:#ffdb91!important;background:#3a3122!important;border-color:#9c854277!important}
+body.kz-art #collection .kz-col-badge.is-missing{color:#afc5c0!important;background:#16282c!important;border-color:#3c5555!important}
+body.kz-art #collection .kz-col-badge.is-wanted{color:#c7bdff!important;background:#29293c!important;border-color:#756baf77!important}
+body.kz-art #collection .kz-col-actions{gap:5px!important}
+body.kz-art #collection .kz-col-actions button{min-height:40px!important;border-radius:4px!important;border-color:#46655d!important;background:#122a2b!important;color:#d2e6d8!important;font-size:10px;box-shadow:none!important}
+body.kz-art #collection .kz-col-actions button:hover,body.kz-art #collection .kz-col-actions button[aria-pressed=true]{border-color:#65ead7!important;background:#24524a!important;color:#fff5dc!important}
+body.kz-art #collection .kz-col-actions .col-market-sell-btn{color:#ffda94!important;border-color:#776a465e!important;background:#292b24!important}
+body.kz-art #collection .col-empty{background:#10252a99!important;border-color:#50695b!important;border-radius:6px!important;color:#abc6b9!important}
+body.kz-art #collection .col-empty b{color:#eff2d8!important;font-family:Rajdhani,sans-serif}
+
+/* Immersive inspection: one large card, factual dossier and deliberate 3D flip. */
+body.kz-art #detailBackdrop.kz-card-viewer{z-index:260!important;padding:24px;background:#030812ed!important;backdrop-filter:blur(12px);align-items:center}
+body.kz-art #detailBackdrop.kz-card-viewer>.modal{width:min(1080px,100%)!important;max-width:1080px!important;max-height:calc(100dvh - 48px)!important;padding:30px 35px!important;border:1px solid #73837488!important;border-radius:8px 26px 8px 8px!important;background:radial-gradient(ellipse at 25% 54%,#25434280,transparent 60%),linear-gradient(120deg,#101f2b,#0b1422)!important;box-shadow:0 35px 150px #000b!important;overflow:auto}
+body.kz-art #detailBackdrop .kz-viewer-head{padding-bottom:22px;border-bottom:1px solid #d1dbbe20;margin-bottom:0;gap:25px;align-items:flex-start}
+body.kz-art #detailBackdrop .kz-viewer-head small{font:700 11px Rajdhani,sans-serif;letter-spacing:.16em;color:var(--viewer-glow)}
+body.kz-art #detailBackdrop .kz-viewer-head h2{font:700 clamp(30px,4vw,49px)/1.04 Rajdhani,sans-serif;margin:9px 0 7px;letter-spacing:-.025em;color:#fff5dc}
+body.kz-art #detailBackdrop .kz-viewer-head p{color:#afc9c6;font-size:12px}
+body.kz-art #detailBackdrop.kz-card-viewer .kr-detail-close{width:44px;height:44px;flex-basis:44px;border:1px solid #7f978977!important;border-radius:50%!important;background:#152b31!important;color:#f3f7dd!important;font-size:25px}
+body.kz-art #detailBackdrop .ka-viewer-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(265px,1fr);gap:38px;align-items:center}
+body.kz-art #detailBackdrop .kz-viewer-stage{position:relative;isolation:isolate;min-width:0;min-height:540px;display:flex;justify-content:center;align-items:center;padding:34px 20px 24px;perspective:1200px}
+body.kz-art #detailBackdrop .ka-viewer-halo{position:absolute;z-index:-1;width:78%;aspect-ratio:1;border:1px solid #c5dfbd24;border-radius:50%;background:radial-gradient(circle,#edf5bb08 0 50%,transparent 51%);box-shadow:0 0 0 30px #b8d9d404,0 0 0 31px #d6d7ae08;transform:rotate(-18deg)}
+body.kz-art #detailBackdrop .ka-viewer-halo:before,body.kz-art #detailBackdrop .ka-viewer-halo:after{content:"✦";position:absolute;top:8%;right:8%;font-size:20px;color:var(--viewer-glow);text-shadow:0 0 18px var(--viewer-glow)}
+body.kz-art #detailBackdrop .ka-viewer-halo:after{top:auto;bottom:8%;right:auto;left:8%;font-size:11px}
+body.kz-art #detailBackdrop .ka-viewer-seal{position:absolute;bottom:9px;left:0;z-index:2;font:700 8px/1.5 Rajdhani,sans-serif;letter-spacing:.21em;color:#acc6bf88;writing-mode:vertical-rl;transform:rotate(180deg)}
+body.kz-art #detailBackdrop.kz-card-viewer .bigcard{width:min(325px,90%)!important;max-width:none!important;margin:0!important;filter:drop-shadow(0 19px 19px #0008);transition:width .24s ease!important;cursor:pointer}
+body.kz-art #detailBackdrop.kz-card-viewer .bigcard.kz-zoomed{width:min(425px,100%)!important}
+body.kz-art #detailBackdrop.kz-card-viewer .fcard .fin{transition:transform .62s cubic-bezier(.2,.65,.2,1)!important;transform-style:preserve-3d!important}
+body.kz-art #detailBackdrop.kz-card-viewer .fcard .ff,body.kz-art #detailBackdrop.kz-card-viewer .fcard .fb{backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important}
+body.kz-art #detailBackdrop.kz-card-viewer .tcard{border-radius:12px!important;animation:none!important}
+body.kz-art #detailBackdrop .ka-viewer-dossier{min-width:0;padding:25px 0}
+body.kz-art #detailBackdrop .ka-viewer-kicker{font:700 10px Rajdhani,sans-serif;letter-spacing:.22em;color:#a0b8ad}
+body.kz-art #detailBackdrop .ka-viewer-number{margin:12px 0 16px;color:#9fb4ac;font:500 16px Rajdhani,sans-serif}
+body.kz-art #detailBackdrop .ka-viewer-number strong{font:700 52px/1 Rajdhani,sans-serif;color:#fff5dc;letter-spacing:-.03em}
+body.kz-art #detailBackdrop .ka-viewer-number>span{font-size:18px;color:#9bb8ac}
+body.kz-art #detailBackdrop .ka-viewer-owned{display:inline-flex;align-items:center;min-height:32px;padding:7px 11px;margin:0 0 12px;border:1px solid #65ead743;border-radius:4px;background:#65ead70b;color:#bff7db;font-size:11px;line-height:1.4}
+body.kz-art #detailBackdrop .ka-viewer-facts{margin:8px 0 20px}
+body.kz-art #detailBackdrop .ka-viewer-facts>div{display:grid;grid-template-columns:105px 1fr;gap:13px;padding:13px 0;border-bottom:1px solid #cbd7ad19;align-items:baseline}
+body.kz-art #detailBackdrop .ka-viewer-facts dt{font-size:10px;line-height:1.5;color:#a7bdb3}
+body.kz-art #detailBackdrop .ka-viewer-facts dd{margin:0;font-size:12px;line-height:1.55;color:#e8e9d2;overflow-wrap:anywhere}
+body.kz-art #detailBackdrop .ka-viewer-facts .ka-viewer-rarity{color:var(--viewer-glow);font-weight:700}
+body.kz-art #detailBackdrop .ka-viewer-help{font-size:11px;line-height:1.8;color:#a7bdb3;margin:16px 0 23px}
+body.kz-art #detailBackdrop .kz-viewer-controls{gap:9px;justify-content:flex-start}
+body.kz-art #detailBackdrop .kz-viewer-controls button{min-height:46px!important;padding:10px 12px!important;border:1px solid #6b857766!important;border-radius:5px!important;background:#1a3434!important;color:#e6f4db!important;font-size:11px;flex:1 1 auto}
+body.kz-art #detailBackdrop .kz-viewer-controls button[aria-pressed=true]{border-color:#65ead7!important;background:#285347!important;color:#fff9e5!important}
+body.kz-art #detailBackdrop .kz-viewer-controls [data-km-open]{flex-basis:100%;border-color:var(--viewer-glow)!important;color:#fff0cf!important;background:#3a2b32!important}
+body.kz-art #detailBackdrop .kz-viewer-caption{text-align:left;font-size:10px;color:#9cb7ab;margin-top:12px}
+body.kz-art #collection button:focus-visible,body.kz-art #collection [data-colcard]:focus-visible,body.kz-art #detailBackdrop.kz-card-viewer button:focus-visible{outline:2px solid #fff5dc!important;outline-offset:4px!important}
+@media(hover:hover) and (pointer:fine){
+ body.kz-art #collection button.col-album.ka-album-cover:hover{transform:translateY(-7px) rotate(-1deg)!important;box-shadow:5px 4px 0 -2px #d7e0c799,8px 7px 0 -4px #526e5b,10px 21px 35px #0008!important;border-color:#b1c8ae!important}
+ body.kz-art #collection .ka-album-cover:hover .ka-cover-character-0{transform:scale(1.045)}
+ body.kz-art #collection .col-cell.owned:hover{transform:translateY(-4px)!important}
+}
+@media(min-width:1450px){body.kz-art #collection .col-grid:not(.kg-book){grid-template-columns:repeat(6,minmax(0,1fr))!important}}
+@media(max-width:1250px){body.kz-art #collection .col-albums{grid-template-columns:repeat(3,minmax(0,1fr))!important}body.kz-art #collection .col-uni{display:none}body.kz-art #collection .col-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:900px){body.kz-art #collection .col-albums{gap:27px 20px!important}body.kz-art #collection button.col-album.ka-album-cover{min-height:300px}body.kz-art #collection .ka-album-copy{padding:18px 14px 15px}body.kz-art #collection .kz-album-heading h3{font-size:27px!important}body.kz-art #collection #colGrid.kg-book{padding:24px 18px 18px!important;gap:22px 15px!important}body.kz-art #collection #colGrid.kg-book .col-item-unit{padding:8px 6px}body.kz-art #detailBackdrop .ka-viewer-layout{gap:22px;grid-template-columns:minmax(0,1fr) minmax(230px,.9fr)}body.kz-art #detailBackdrop .kz-viewer-stage{min-height:440px;padding-inline:5px}body.kz-art #detailBackdrop.kz-card-viewer>.modal{padding:25px!important}body.kz-art #detailBackdrop .ka-viewer-facts>div{grid-template-columns:80px 1fr}}
+@media(max-width:700px){body.kz-art #collection .cx-hero{padding-top:24px!important;gap:20px!important}body.kz-art #collection .cx-ring{width:90px;height:90px}body.kz-art #collection .cx-ring span{font-size:22px}body.kz-art #collection .cx-pills{gap:18px}body.kz-art #collection .cx-pill{min-width:75px}body.kz-art #collection .col-top{flex-direction:column;align-items:stretch}body.kz-art #collection .col-seg{align-self:stretch}body.kz-art #collection .col-seg button{flex:1}body.kz-art #collection .col-albums{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px 17px!important}body.kz-art #collection button.col-album.ka-album-cover{min-height:320px}body.kz-art #collection .col-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:27px 14px!important}body.kz-art #collection #colGrid.kg-book{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:22px 22px!important;padding:20px 17px!important}body.kz-art #collection #colAlbumDetail{align-items:flex-start;gap:16px;flex-direction:column}body.kz-art #collection #colAlbumBack{min-height:42px}body.kz-art #collection .kg-binder-controls{gap:13px}body.kz-art #detailBackdrop .ka-viewer-layout{grid-template-columns:1fr;gap:0}body.kz-art #detailBackdrop .kz-viewer-stage{min-height:0;padding:27px 18px 25px}body.kz-art #detailBackdrop.kz-card-viewer .bigcard{width:min(280px,85%)!important}body.kz-art #detailBackdrop.kz-card-viewer .bigcard.kz-zoomed{width:min(400px,100%)!important}body.kz-art #detailBackdrop .ka-viewer-dossier{padding:16px 0 5px;border-top:1px solid #c5dcbd25}body.kz-art #detailBackdrop .ka-viewer-number{margin:8px 0 12px}body.kz-art #detailBackdrop .ka-viewer-number strong{font-size:38px}body.kz-art #detailBackdrop .ka-viewer-facts>div{grid-template-columns:120px 1fr;padding:10px 0}body.kz-art #detailBackdrop .ka-viewer-help{margin:14px 0}body.kz-art #detailBackdrop .ka-viewer-halo{width:65%;max-width:350px}}
+@media(max-width:460px){body.kz-art #collection .cx-hero{display:block!important}body.kz-art #collection .cx-ring{display:none}body.kz-art #collection .cx-pills{gap:17px 20px;display:grid;grid-template-columns:1fr 1fr}body.kz-art #collection .col-title{font-size:44px!important}body.kz-art #collection .col-actions{display:flex;flex-wrap:wrap;gap:8px}body.kz-art #collection .col-actions .soft-btn{flex:1;padding:10px 9px!important;font-size:10px}body.kz-art #collection .col-albums{gap:23px 14px!important;padding-inline:1px}body.kz-art #collection button.col-album.ka-album-cover{min-height:280px;aspect-ratio:.59;padding-left:14px!important}body.kz-art #collection .ka-album-spine{width:14px;font-size:8px}body.kz-art #collection .ka-album-art{left:14px}body.kz-art #collection .ka-album-edition{left:23px;top:12px;font-size:8px;letter-spacing:.1em;padding:4px 5px}body.kz-art #collection .ka-album-edition b{font-size:13px}body.kz-art #collection .ka-album-copy{padding:15px 11px 13px}body.kz-art #collection .kz-album-heading{flex-direction:column;align-items:flex-start;gap:9px}body.kz-art #collection .kz-album-heading h3{font-size:26px!important}body.kz-art #collection .kz-album-percent{position:absolute;top:-36px;right:10px;width:34px;height:34px;font-size:11px;flex-basis:34px}body.kz-art #collection .col-album small{font-size:9px!important}body.kz-art #collection .col-album-open{font-size:9px!important;margin-top:10px!important;gap:3px}body.kz-art #collection .col-album-open>span{width:22px;height:22px;font-size:14px;flex-shrink:0}body.kz-art #collection .col-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:26px 13px!important}body.kz-art #collection #colGrid.kg-book{gap:20px 15px!important;padding:14px 9px!important}body.kz-art #collection #colGrid.kg-book:before{width:10px}body.kz-art #collection #colGrid.kg-book .col-item-unit{padding:7px 5px}body.kz-art #collection .ka-card-register{font-size:8px;gap:3px}body.kz-art #collection .ka-card-register>span:last-child{font-size:9px}body.kz-art #collection .kz-col-actions button{font-size:10px;min-height:42px!important;padding-inline:3px!important}body.kz-art #collection .kz-col-status{min-height:25px!important}body.kz-art #collection .kz-col-badge{font-size:8px}body.kz-art #collection .kg-binder-controls{justify-content:center}body.kz-art #collection .kg-binder-controls>div{flex:1;justify-content:center}body.kz-art #collection .kg-binder-controls>div:first-child button{flex:1}body.kz-art #collection .kg-binder-controls button{padding:9px 10px;font-size:11px}body.kz-art #detailBackdrop.kz-card-viewer{padding:10px!important}body.kz-art #detailBackdrop.kz-card-viewer>.modal{padding:20px 17px!important;max-height:calc(100dvh - 20px)!important;border-radius:7px 20px 7px 7px!important}body.kz-art #detailBackdrop .kz-viewer-head{gap:12px;padding-bottom:17px}body.kz-art #detailBackdrop .kz-viewer-head h2{font-size:31px}body.kz-art #detailBackdrop .kz-viewer-head small{font-size:9px}body.kz-art #detailBackdrop .ka-viewer-facts>div{grid-template-columns:94px 1fr}}
+@media(prefers-reduced-motion:reduce){body.kz-art #collection .col-album,body.kz-art #collection .ka-cover-character,body.kz-art #collection .col-cell,body.kz-art #collection .kg-book-turn,body.kz-art #detailBackdrop .bigcard,body.kz-art #detailBackdrop .fin{transition:none!important;animation:none!important}body.kz-art #collection button.col-album.ka-album-cover:hover,body.kz-art #collection .col-cell:hover,body.kz-art #collection .ka-album-cover:hover .ka-cover-character-0{transform:none!important}}
+html[data-kz-motion="reduced"] body.kz-art #collection .col-album,html[data-kz-motion="reduced"] body.kz-art #collection .ka-cover-character,html[data-kz-motion="reduced"] body.kz-art #collection .col-cell,html[data-kz-motion="reduced"] body.kz-art #detailBackdrop .bigcard,html[data-kz-motion="reduced"] body.kz-art #detailBackdrop .fin{transition:none!important;animation:none!important}

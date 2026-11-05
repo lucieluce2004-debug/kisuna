@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna — Mecha</title>
+  <desc id="desc">Un casque de robot angulaire aux yeux cyan et au réacteur magenta, dans un blason octogonal.</desc>
+  <defs>
+    <linearGradient id="armor" x1="52" y1="62" x2="206" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#f5f5ff"/><stop offset="1" stop-color="#7b8baf"/></linearGradient>
+    <linearGradient id="visor" x1="68" y1="116" x2="192" y2="142" gradientUnits="userSpaceOnUse"><stop stop-color="#4ce7fa"/><stop offset="1" stop-color="#f15acb"/></linearGradient>
+  </defs>
+  <path d="M128 14 207 46 242 128 207 210 128 242 49 210 14 128 49 46Z" fill="none" stroke="#4ce7fa" stroke-width="2" opacity=".38"/>
+  <path d="m128 29 69 28 29 71-29 70-69 29-69-29-29-70 29-71Z" fill="#11111b" fill-opacity=".82"/>
+  <path d="m56 102-10-48 37 34M200 102l10-48-37 34" fill="#11111b" stroke="#f15acb" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m84 76 44-24 44 24 28 35-9 67-37 32h-52l-37-32-9-67Z" fill="url(#armor)" stroke="#f5f5ff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m128 56 18 28-18 24-18-24Z" fill="#f15acb" stroke="#11111b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m69 106 43 3 16 13 16-13 43-3-9 40-50 20-50-20Z" fill="#11111b" stroke="#11111b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m79 119 30 3 12 10-37 1Zm98 0-30 3-12 10 37 1Z" fill="url(#visor)"/>
+  <path d="m128 139 14 23-14 11-14-11Z" fill="#4ce7fa"/>
+  <path d="m83 157 15 29 30 14 30-14 15-29M103 173h50M109 185h38" fill="none" stroke="#11111b" stroke-width="5" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="m58 153 12 7M198 153l-12 7M128 34v8" fill="none" stroke="#4ce7fa" stroke-width="5" stroke-linecap="square"/>
+  <path d="m118 220 10 6 10-6" fill="none" stroke="#f15acb" stroke-width="4"/>
+</svg>

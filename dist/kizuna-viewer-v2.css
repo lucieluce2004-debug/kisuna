@@ -1,0 +1,17 @@
+body.theme-kizuna #detailBackdrop.kz-card-viewer{z-index:260!important;background:#080911df!important;padding:20px;overflow:auto}
+body.theme-kizuna #detailBackdrop.kz-card-viewer>.modal{width:min(560px,100%);max-width:560px;max-height:calc(100dvh - 40px);overflow:auto;padding:24px;border:1px solid #57556e!important;border-radius:18px!important;background:#171929!important;box-shadow:0 24px 80px #0008!important}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .modal-head,body.theme-kizuna #detailBackdrop.kz-card-viewer>.modal>#detailClose{display:none!important}
+body.theme-kizuna #detailBackdrop.kz-card-viewer #detailContent{display:block;padding:0;overflow:visible}
+.kz-viewer-head{display:flex;gap:18px;justify-content:space-between;align-items:flex-start;margin-bottom:18px}.kz-viewer-head small{color:var(--viewer-glow,#d9b86f);font-size:12px}.kz-viewer-head h2{margin:4px 0;font-size:27px;line-height:1.2}.kz-viewer-head p{margin:0;color:#b7b4c9;font-size:13px}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .kr-detail-close{position:static;flex:0 0 44px;width:44px;height:44px;background:#23243a;border:1px solid #57556e;color:#f5f2fa}
+.kz-viewer-stage{display:flex;justify-content:center;padding:5px 0 15px}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .bigcard{width:min(310px,100%);max-width:none;max-height:none;margin:0;transition:width .18s ease;flex:none;transform:none!important}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .bigcard.kz-zoomed{width:min(440px,100%)}
+.kz-viewer-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.kz-viewer-controls button{min-height:44px;flex:1}.kz-viewer-caption{font-size:12px;color:#b7b4c9;text-align:center;margin:14px 0 0}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .fcard{transform:none!important}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .fcard .fin{transform:rotateY(0deg)!important}
+body.theme-kizuna #detailBackdrop.kz-card-viewer .fcard.flipped .fin{transform:rotateY(180deg)!important}
+body.theme-kizuna #kyaraProfileOverlay .kz-profile-enlarge{margin-top:18px;color:#f5f2fa;border-color:#78679d;min-height:44px}
+.kz-price-empty{border:1px dashed #57556e;border-radius:10px;padding:22px;color:#b7b4c9;line-height:1.7}
+@media(max-width:600px){body.theme-kizuna #detailBackdrop.kz-card-viewer{padding:12px}body.theme-kizuna #detailBackdrop.kz-card-viewer>.modal{padding:16px;max-height:calc(100dvh - 24px)}.kz-viewer-head h2{font-size:23px}.kz-viewer-stage{padding-bottom:12px}body.theme-kizuna #detailBackdrop.kz-card-viewer .bigcard{width:min(265px,100%)}body.theme-kizuna #detailBackdrop.kz-card-viewer .bigcard.kz-zoomed{width:100%}}
+@media(prefers-reduced-motion:reduce){body.theme-kizuna #detailBackdrop.kz-card-viewer .bigcard{transition:none}}

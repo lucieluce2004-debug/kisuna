@@ -1,0 +1,22 @@
+/* Market polish without economic changes or fictitious shared activity. */
+body.theme-kizuna #marketPage{padding-top:30px;background:radial-gradient(ellipse at 80% 0,#785ce010,transparent 45%)}
+body.theme-kizuna #marketPage .km-head{padding:25px;border:1px solid #554563;background:radial-gradient(ellipse at 0 0,#785ce026,transparent 70%),#171929;border-radius:16px}
+body.theme-kizuna #marketPage .km-workspace{background:#171929;border:1px solid #514563;border-radius:16px;padding:22px}
+body.theme-kizuna #marketPage .km-stat{background:#1b1c30;border-color:#4f455f;padding:18px}
+body.theme-kizuna #marketPage .km-stat small{font-size:11px;color:#c1b6d0}
+body.theme-kizuna #marketPage .km-tabs button{font-size:12px;padding:12px 15px}
+body.theme-kizuna #marketPage .km-local-notice{background:#1d1d2a;border-color:#584e69}
+body.theme-kizuna #marketPage .km-local-notice p{font-size:11px;color:#c4bbd2}
+body.theme-kizuna #marketPage .km-shell{border-color:#4f455e;border-radius:18px;background:#171929;overflow:hidden}
+body.theme-kizuna #marketPage .km-header{background:linear-gradient(110deg,#242037,#171929);padding:30px;border-color:#4e435b}
+body.theme-kizuna #marketPage .km-title{font-size:clamp(28px,4vw,42px);letter-spacing:-.04em}
+body.theme-kizuna #marketPage .km-action,body.theme-kizuna #marketPage button{min-height:40px}
+body.theme-kizuna #marketPage input,body.theme-kizuna #marketPage select{min-height:44px;border-color:#655775;background:#111321;color:#f5f2fa}
+body.theme-kizuna #marketPage .km-card,body.theme-kizuna #marketPage .km-listing{border:1px solid #50445e;background:#171929;border-radius:13px;overflow:hidden;transition:border-color .18s,transform .18s}
+body.theme-kizuna #marketPage .km-card:hover,body.theme-kizuna #marketPage .km-listing:hover{border-color:#c2a872;transform:translateY(-2px)}
+body.theme-kizuna #marketPage .km-empty{border:1px dashed #5c506b;border-radius:14px;padding:40px 25px;color:#c8bed6}
+body.theme-kizuna #marketPage .km-history-row{border-color:#42394e;background:#1b1a2b}
+body.theme-kizuna #marketPage :focus-visible{outline:3px solid #d9b86f;outline-offset:3px}
+body.theme-kizuna #kyaraAuctionBackdrop .ka-market{border-color:#655473;background:#171929;border-radius:12px}
+@media(max-width:700px){body.theme-kizuna #marketPage .km-header{padding:22px 16px}body.theme-kizuna #marketPage button{min-height:44px}body.theme-kizuna #marketPage .km-grid{gap:12px}body.theme-kizuna #marketPage .km-toolbar{gap:10px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){body.theme-kizuna #marketPage *{transition:none!important;animation:none!important}}

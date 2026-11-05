@@ -1,0 +1,1177 @@
+{
+  "Denji|Chainsaw Man": {
+    "image": "assets/portraits/anilist-130102.png",
+    "sourceId": "130102",
+    "sourceUrl": "https://anilist.co/character/130102"
+  },
+  "Power|Chainsaw Man": {
+    "image": "assets/portraits/anilist-137079.png",
+    "sourceId": "137079",
+    "sourceUrl": "https://anilist.co/character/137079"
+  },
+  "Makima|Chainsaw Man": {
+    "image": "assets/portraits/anilist-137080.png",
+    "sourceId": "137080",
+    "sourceUrl": "https://anilist.co/character/137080"
+  },
+  "Aki Hayakawa|Chainsaw Man": {
+    "image": "assets/portraits/anilist-137081.png",
+    "sourceId": "137081",
+    "sourceUrl": "https://anilist.co/character/137081"
+  },
+  "Kobeni Higashiyama|Chainsaw Man": {
+    "image": "assets/portraits/anilist-144594.png",
+    "sourceId": "144594",
+    "sourceUrl": "https://anilist.co/character/144594"
+  },
+  "Himeno|Chainsaw Man": {
+    "image": "assets/portraits/anilist-144596.png",
+    "sourceId": "144596",
+    "sourceUrl": "https://anilist.co/character/144596"
+  },
+  "Kishibe|Chainsaw Man": {
+    "image": "assets/portraits/anilist-144593.png",
+    "sourceId": "144593",
+    "sourceUrl": "https://anilist.co/character/144593"
+  },
+  "Naruto Uzumaki|Naruto": {
+    "image": "assets/portraits/anilist-17.png",
+    "sourceId": "17",
+    "sourceUrl": "https://anilist.co/character/17"
+  },
+  "Sasuke Uchiha|Naruto": {
+    "image": "assets/portraits/anilist-13.png",
+    "sourceId": "13",
+    "sourceUrl": "https://anilist.co/character/13"
+  },
+  "Sakura Haruno|Naruto": {
+    "image": "assets/portraits/anilist-145.png",
+    "sourceId": "145",
+    "sourceUrl": "https://anilist.co/character/145"
+  },
+  "Kakashi Hatake|Naruto": {
+    "image": "assets/portraits/anilist-85.png",
+    "sourceId": "85",
+    "sourceUrl": "https://anilist.co/character/85"
+  },
+  "Itachi Uchiha|Naruto": {
+    "image": "assets/portraits/anilist-14.png",
+    "sourceId": "14",
+    "sourceUrl": "https://anilist.co/character/14"
+  },
+  "Madara Uchiha|Naruto": {
+    "image": "assets/portraits/anilist-53901.png",
+    "sourceId": "53901",
+    "sourceUrl": "https://anilist.co/character/53901"
+  },
+  "Hinata Hyuga|Naruto": {
+    "image": "assets/portraits/anilist-1555.png",
+    "sourceId": "1555",
+    "sourceUrl": "https://anilist.co/character/1555"
+  },
+  "Gaara|Naruto": {
+    "image": "assets/portraits/anilist-1662.png",
+    "sourceId": "1662",
+    "sourceUrl": "https://anilist.co/character/1662"
+  },
+  "Shikamaru Nara|Naruto": {
+    "image": "assets/portraits/anilist-2007.jpg",
+    "sourceId": "2007",
+    "sourceUrl": "https://anilist.co/character/2007"
+  },
+  "Minato Namikaze|Naruto": {
+    "image": "assets/portraits/anilist-2535.png",
+    "sourceId": "2535",
+    "sourceUrl": "https://anilist.co/character/2535"
+  },
+  "Obito Uchiha|Naruto": {
+    "image": "assets/portraits/anilist-3149.png",
+    "sourceId": "3149",
+    "sourceUrl": "https://anilist.co/character/3149"
+  },
+  "Pain|Naruto": {
+    "image": "assets/portraits/anilist-3180.png",
+    "sourceId": "3180",
+    "sourceUrl": "https://anilist.co/character/3180"
+  },
+  "Rock Lee|Naruto": {
+    "image": "assets/portraits/anilist-306.png",
+    "sourceId": "306",
+    "sourceUrl": "https://anilist.co/character/306"
+  },
+  "Tsunade|Naruto": {
+    "image": "assets/portraits/anilist-2767.png",
+    "sourceId": "2767",
+    "sourceUrl": "https://anilist.co/character/2767"
+  },
+  "Jiraiya|Naruto": {
+    "image": "assets/portraits/anilist-2423.png",
+    "sourceId": "2423",
+    "sourceUrl": "https://anilist.co/character/2423"
+  },
+  "Monkey D. Luffy|One Piece": {
+    "image": "assets/portraits/anilist-40.png",
+    "sourceId": "40",
+    "sourceUrl": "https://anilist.co/character/40"
+  },
+  "Roronoa Zoro|One Piece": {
+    "image": "assets/portraits/anilist-62.png",
+    "sourceId": "62",
+    "sourceUrl": "https://anilist.co/character/62"
+  },
+  "Nami|One Piece": {
+    "image": "assets/portraits/anilist-723.png",
+    "sourceId": "723",
+    "sourceUrl": "https://anilist.co/character/723"
+  },
+  "Sanji|One Piece": {
+    "image": "assets/portraits/anilist-305.png",
+    "sourceId": "305",
+    "sourceUrl": "https://anilist.co/character/305"
+  },
+  "Nico Robin|One Piece": {
+    "image": "assets/portraits/anilist-61.png",
+    "sourceId": "61",
+    "sourceUrl": "https://anilist.co/character/61"
+  },
+  "Portgas D. Ace|One Piece": {
+    "image": "assets/portraits/anilist-2072.jpg",
+    "sourceId": "2072",
+    "sourceUrl": "https://anilist.co/character/2072"
+  },
+  "Trafalgar Law|One Piece": {
+    "image": "assets/portraits/anilist-13767.jpg",
+    "sourceId": "13767",
+    "sourceUrl": "https://anilist.co/character/13767"
+  },
+  "Shanks|One Piece": {
+    "image": "assets/portraits/anilist-727.png",
+    "sourceId": "727",
+    "sourceUrl": "https://anilist.co/character/727"
+  },
+  "Boa Hancock|One Piece": {
+    "image": "assets/portraits/anilist-16342.png",
+    "sourceId": "16342",
+    "sourceUrl": "https://anilist.co/character/16342"
+  },
+  "Tony Tony Chopper|One Piece": {
+    "image": "assets/portraits/anilist-309.jpg",
+    "sourceId": "309",
+    "sourceUrl": "https://anilist.co/character/309"
+  },
+  "Usopp|One Piece": {
+    "image": "assets/portraits/anilist-724.jpg",
+    "sourceId": "724",
+    "sourceUrl": "https://anilist.co/character/724"
+  },
+  "Yamato|One Piece": {
+    "image": "assets/portraits/anilist-176840.png",
+    "sourceId": "176840",
+    "sourceUrl": "https://anilist.co/character/176840"
+  },
+  "Vinsmoke Sanji|One Piece": {
+    "image": "assets/portraits/anilist-305.png",
+    "sourceId": "305",
+    "sourceUrl": "https://anilist.co/character/305"
+  },
+  "Tanjiro Kamado|Demon Slayer": {
+    "image": "assets/portraits/anilist-126071.png",
+    "sourceId": "126071",
+    "sourceUrl": "https://anilist.co/character/126071"
+  },
+  "Nezuko Kamado|Demon Slayer": {
+    "image": "assets/portraits/anilist-127518.png",
+    "sourceId": "127518",
+    "sourceUrl": "https://anilist.co/character/127518"
+  },
+  "Zenitsu Agatsuma|Demon Slayer": {
+    "image": "assets/portraits/anilist-129131.png",
+    "sourceId": "129131",
+    "sourceUrl": "https://anilist.co/character/129131"
+  },
+  "Inosuke Hashibira|Demon Slayer": {
+    "image": "assets/portraits/anilist-129130.jpg",
+    "sourceId": "129130",
+    "sourceUrl": "https://anilist.co/character/129130"
+  },
+  "Giyu Tomioka|Demon Slayer": {
+    "image": "assets/portraits/anilist-130050.png",
+    "sourceId": "130050",
+    "sourceUrl": "https://anilist.co/character/130050"
+  },
+  "Shinobu Kocho|Demon Slayer": {
+    "image": "assets/portraits/anilist-136070.png",
+    "sourceId": "136070",
+    "sourceUrl": "https://anilist.co/character/136070"
+  },
+  "Kyojuro Rengoku|Demon Slayer": {
+    "image": "assets/portraits/anilist-129133.png",
+    "sourceId": "129133",
+    "sourceUrl": "https://anilist.co/character/129133"
+  },
+  "Mitsuri Kanroji|Demon Slayer": {
+    "image": "assets/portraits/anilist-136072.png",
+    "sourceId": "136072",
+    "sourceUrl": "https://anilist.co/character/136072"
+  },
+  "Muichiro Tokito|Demon Slayer": {
+    "image": "assets/portraits/anilist-136069.png",
+    "sourceId": "136069",
+    "sourceUrl": "https://anilist.co/character/136069"
+  },
+  "Muzan Kibutsuji|Demon Slayer": {
+    "image": "assets/portraits/anilist-129132.jpg",
+    "sourceId": "129132",
+    "sourceUrl": "https://anilist.co/character/129132"
+  },
+  "Kanao Tsuyuri|Demon Slayer": {
+    "image": "assets/portraits/anilist-139038.png",
+    "sourceId": "139038",
+    "sourceUrl": "https://anilist.co/character/139038"
+  },
+  "Yuji Itadori|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-127212.png",
+    "sourceId": "127212",
+    "sourceUrl": "https://anilist.co/character/127212"
+  },
+  "Megumi Fushiguro|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-126635.png",
+    "sourceId": "126635",
+    "sourceUrl": "https://anilist.co/character/126635"
+  },
+  "Nobara Kugisaki|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-133700.png",
+    "sourceId": "133700",
+    "sourceUrl": "https://anilist.co/character/133700"
+  },
+  "Satoru Gojo|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-127691.png",
+    "sourceId": "127691",
+    "sourceUrl": "https://anilist.co/character/127691"
+  },
+  "Ryomen Sukuna|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-133701.png",
+    "sourceId": "133701",
+    "sourceUrl": "https://anilist.co/character/133701"
+  },
+  "Kento Nanami|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-133704.png",
+    "sourceId": "133704",
+    "sourceUrl": "https://anilist.co/character/133704"
+  },
+  "Suguru Geto|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-133699.png",
+    "sourceId": "133699",
+    "sourceUrl": "https://anilist.co/character/133699"
+  },
+  "Maki Zenin|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-134167.png",
+    "sourceId": "134167",
+    "sourceUrl": "https://anilist.co/character/134167"
+  },
+  "Choso|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-157116.png",
+    "sourceId": "157116",
+    "sourceUrl": "https://anilist.co/character/157116"
+  },
+  "Mahito|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-133702.png",
+    "sourceId": "133702",
+    "sourceUrl": "https://anilist.co/character/133702"
+  },
+  "Eren Yeager|Attack on Titan": {
+    "image": "assets/portraits/anilist-40882.jpg",
+    "sourceId": "40882",
+    "sourceUrl": "https://anilist.co/character/40882"
+  },
+  "Mikasa Ackerman|Attack on Titan": {
+    "image": "assets/portraits/anilist-40881.png",
+    "sourceId": "40881",
+    "sourceUrl": "https://anilist.co/character/40881"
+  },
+  "Armin Arlert|Attack on Titan": {
+    "image": "assets/portraits/anilist-46494.png",
+    "sourceId": "46494",
+    "sourceUrl": "https://anilist.co/character/46494"
+  },
+  "Levi Ackerman|Attack on Titan": {
+    "image": "assets/portraits/anilist-45627.png",
+    "sourceId": "45627",
+    "sourceUrl": "https://anilist.co/character/45627"
+  },
+  "Erwin Smith|Attack on Titan": {
+    "image": "assets/portraits/anilist-46496.png",
+    "sourceId": "46496",
+    "sourceUrl": "https://anilist.co/character/46496"
+  },
+  "Hange Zoe|Attack on Titan": {
+    "image": "assets/portraits/anilist-71121.png",
+    "sourceId": "71121",
+    "sourceUrl": "https://anilist.co/character/71121"
+  },
+  "Reiner Braun|Attack on Titan": {
+    "image": "assets/portraits/anilist-46484.png",
+    "sourceId": "46484",
+    "sourceUrl": "https://anilist.co/character/46484"
+  },
+  "Annie Leonhart|Attack on Titan": {
+    "image": "assets/portraits/anilist-46490.jpg",
+    "sourceId": "46490",
+    "sourceUrl": "https://anilist.co/character/46490"
+  },
+  "Sasha Blouse|Attack on Titan": {
+    "image": "assets/portraits/anilist-45887.jpg",
+    "sourceId": "45887",
+    "sourceUrl": "https://anilist.co/character/45887"
+  },
+  "Jean Kirstein|Attack on Titan": {
+    "image": "assets/portraits/anilist-46498.png",
+    "sourceId": "46498",
+    "sourceUrl": "https://anilist.co/character/46498"
+  },
+  "Historia Reiss|Attack on Titan": {
+    "image": "assets/portraits/anilist-62481.png",
+    "sourceId": "62481",
+    "sourceUrl": "https://anilist.co/character/62481"
+  },
+  "Izuku Midoriya|My Hero Academia": {
+    "image": "assets/portraits/anilist-89028.png",
+    "sourceId": "89028",
+    "sourceUrl": "https://anilist.co/character/89028"
+  },
+  "Katsuki Bakugo|My Hero Academia": {
+    "image": "assets/portraits/anilist-88892.png",
+    "sourceId": "88892",
+    "sourceUrl": "https://anilist.co/character/88892"
+  },
+  "Shoto Todoroki|My Hero Academia": {
+    "image": "assets/portraits/anilist-89220.png",
+    "sourceId": "89220",
+    "sourceUrl": "https://anilist.co/character/89220"
+  },
+  "Ochaco Uraraka|My Hero Academia": {
+    "image": "assets/portraits/anilist-89221.png",
+    "sourceId": "89221",
+    "sourceUrl": "https://anilist.co/character/89221"
+  },
+  "All Might|My Hero Academia": {
+    "image": "assets/portraits/anilist-89224.jpg",
+    "sourceId": "89224",
+    "sourceUrl": "https://anilist.co/character/89224"
+  },
+  "Shota Aizawa|My Hero Academia": {
+    "image": "assets/portraits/anilist-89225.png",
+    "sourceId": "89225",
+    "sourceUrl": "https://anilist.co/character/89225"
+  },
+  "Tomura Shigaraki|My Hero Academia": {
+    "image": "assets/portraits/anilist-89226.jpg",
+    "sourceId": "89226",
+    "sourceUrl": "https://anilist.co/character/89226"
+  },
+  "Eijiro Kirishima|My Hero Academia": {
+    "image": "assets/portraits/anilist-89243.jpg",
+    "sourceId": "89243",
+    "sourceUrl": "https://anilist.co/character/89243"
+  },
+  "Momo Yaoyorozu|My Hero Academia": {
+    "image": "assets/portraits/anilist-89241.png",
+    "sourceId": "89241",
+    "sourceUrl": "https://anilist.co/character/89241"
+  },
+  "Son Goku|Dragon Ball": {
+    "image": "assets/portraits/anilist-246.png",
+    "sourceId": "246",
+    "sourceUrl": "https://anilist.co/character/246"
+  },
+  "Vegeta|Dragon Ball": {
+    "image": "assets/portraits/anilist-913.png",
+    "sourceId": "913",
+    "sourceUrl": "https://anilist.co/character/913"
+  },
+  "Son Gohan|Dragon Ball": {
+    "image": "assets/portraits/anilist-2093.png",
+    "sourceId": "2093",
+    "sourceUrl": "https://anilist.co/character/2093"
+  },
+  "Piccolo|Dragon Ball": {
+    "image": "assets/portraits/anilist-914.jpg",
+    "sourceId": "914",
+    "sourceUrl": "https://anilist.co/character/914"
+  },
+  "Trunks|Dragon Ball": {
+    "image": "assets/portraits/anilist-2707.png",
+    "sourceId": "2707",
+    "sourceUrl": "https://anilist.co/character/2707"
+  },
+  "Frieza|Dragon Ball": {
+    "image": "assets/portraits/anilist-3694.png",
+    "sourceId": "3694",
+    "sourceUrl": "https://anilist.co/character/3694"
+  },
+  "Bulma|Dragon Ball": {
+    "image": "assets/portraits/anilist-678.jpg",
+    "sourceId": "678",
+    "sourceUrl": "https://anilist.co/character/678"
+  },
+  "Android 18|Dragon Ball": {
+    "image": "assets/portraits/anilist-4318.png",
+    "sourceId": "4318",
+    "sourceUrl": "https://anilist.co/character/4318"
+  },
+  "Ichigo Kurosaki|Bleach": {
+    "image": "assets/portraits/anilist-5.png",
+    "sourceId": "5",
+    "sourceUrl": "https://anilist.co/character/5"
+  },
+  "Rukia Kuchiki|Bleach": {
+    "image": "assets/portraits/anilist-6.png",
+    "sourceId": "6",
+    "sourceUrl": "https://anilist.co/character/6"
+  },
+  "Byakuya Kuchiki|Bleach": {
+    "image": "assets/portraits/anilist-907.png",
+    "sourceId": "907",
+    "sourceUrl": "https://anilist.co/character/907"
+  },
+  "Kenpachi Zaraki|Bleach": {
+    "image": "assets/portraits/anilist-909.jpg",
+    "sourceId": "909",
+    "sourceUrl": "https://anilist.co/character/909"
+  },
+  "Toshiro Hitsugaya|Bleach": {
+    "image": "assets/portraits/anilist-245.jpg",
+    "sourceId": "245",
+    "sourceUrl": "https://anilist.co/character/245"
+  },
+  "Orihime Inoue|Bleach": {
+    "image": "assets/portraits/anilist-7.jpg",
+    "sourceId": "7",
+    "sourceUrl": "https://anilist.co/character/7"
+  },
+  "Sosuke Aizen|Bleach": {
+    "image": "assets/portraits/anilist-1086.png",
+    "sourceId": "1086",
+    "sourceUrl": "https://anilist.co/character/1086"
+  },
+  "Yoruichi Shihouin|Bleach": {
+    "image": "assets/portraits/anilist-908.png",
+    "sourceId": "908",
+    "sourceUrl": "https://anilist.co/character/908"
+  },
+  "Kisuke Urahara|Bleach": {
+    "image": "assets/portraits/anilist-210.png",
+    "sourceId": "210",
+    "sourceUrl": "https://anilist.co/character/210"
+  },
+  "Renji Abarai|Bleach": {
+    "image": "assets/portraits/anilist-906.png",
+    "sourceId": "906",
+    "sourceUrl": "https://anilist.co/character/906"
+  },
+  "Gon Freecss|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-30.jpg",
+    "sourceId": "30",
+    "sourceUrl": "https://anilist.co/character/30"
+  },
+  "Killua Zoldyck|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-27.jpg",
+    "sourceId": "27",
+    "sourceUrl": "https://anilist.co/character/27"
+  },
+  "Kurapika|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-28.png",
+    "sourceId": "28",
+    "sourceUrl": "https://anilist.co/character/28"
+  },
+  "Leorio Paradinight|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-29.jpg",
+    "sourceId": "29",
+    "sourceUrl": "https://anilist.co/character/29"
+  },
+  "Hisoka Morow|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-31.png",
+    "sourceId": "31",
+    "sourceUrl": "https://anilist.co/character/31"
+  },
+  "Chrollo Lucilfer|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-58.jpg",
+    "sourceId": "58",
+    "sourceUrl": "https://anilist.co/character/58"
+  },
+  "Meruem|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-23277.png",
+    "sourceId": "23277",
+    "sourceUrl": "https://anilist.co/character/23277"
+  },
+  "Biscuit Krueger|Hunter x Hunter": {
+    "image": "assets/portraits/anilist-13898.png",
+    "sourceId": "13898",
+    "sourceUrl": "https://anilist.co/character/13898"
+  },
+  "Saitama|One Punch Man": {
+    "image": "assets/portraits/anilist-73935.jpg",
+    "sourceId": "73935",
+    "sourceUrl": "https://anilist.co/character/73935"
+  },
+  "Genos|One Punch Man": {
+    "image": "assets/portraits/anilist-73979.jpg",
+    "sourceId": "73979",
+    "sourceUrl": "https://anilist.co/character/73979"
+  },
+  "Tatsumaki|One Punch Man": {
+    "image": "assets/portraits/anilist-81929.png",
+    "sourceId": "81929",
+    "sourceUrl": "https://anilist.co/character/81929"
+  },
+  "Fubuki|One Punch Man": {
+    "image": "assets/portraits/anilist-81931.png",
+    "sourceId": "81931",
+    "sourceUrl": "https://anilist.co/character/81931"
+  },
+  "Bang|One Punch Man": {
+    "image": "assets/portraits/anilist-81141.png",
+    "sourceId": "81141",
+    "sourceUrl": "https://anilist.co/character/81141"
+  },
+  "Light Yagami|Death Note": {
+    "image": "assets/portraits/anilist-80.png",
+    "sourceId": "80",
+    "sourceUrl": "https://anilist.co/character/80"
+  },
+  "L Lawliet|Death Note": {
+    "image": "assets/portraits/anilist-71.png",
+    "sourceId": "71",
+    "sourceUrl": "https://anilist.co/character/71"
+  },
+  "Misa Amane|Death Note": {
+    "image": "assets/portraits/anilist-835.png",
+    "sourceId": "835",
+    "sourceUrl": "https://anilist.co/character/835"
+  },
+  "Ryuk|Death Note": {
+    "image": "assets/portraits/anilist-75.jpg",
+    "sourceId": "75",
+    "sourceUrl": "https://anilist.co/character/75"
+  },
+  "Near|Death Note": {
+    "image": "assets/portraits/anilist-464.jpg",
+    "sourceId": "464",
+    "sourceUrl": "https://anilist.co/character/464"
+  },
+  "Loid Forger|Spy x Family": {
+    "image": "assets/portraits/anilist-138101.png",
+    "sourceId": "138101",
+    "sourceUrl": "https://anilist.co/character/138101"
+  },
+  "Yor Forger|Spy x Family": {
+    "image": "assets/portraits/anilist-138102.png",
+    "sourceId": "138102",
+    "sourceUrl": "https://anilist.co/character/138102"
+  },
+  "Anya Forger|Spy x Family": {
+    "image": "assets/portraits/anilist-138100.png",
+    "sourceId": "138100",
+    "sourceUrl": "https://anilist.co/character/138100"
+  },
+  "Damian Desmond|Spy x Family": {
+    "image": "assets/portraits/anilist-150424.png",
+    "sourceId": "150424",
+    "sourceUrl": "https://anilist.co/character/150424"
+  },
+  "Yoichi Isagi|Blue Lock": {
+    "image": "assets/portraits/anilist-140856.png",
+    "sourceId": "140856",
+    "sourceUrl": "https://anilist.co/character/140856"
+  },
+  "Meguru Bachira|Blue Lock": {
+    "image": "assets/portraits/anilist-162213.png",
+    "sourceId": "162213",
+    "sourceUrl": "https://anilist.co/character/162213"
+  },
+  "Rin Itoshi|Blue Lock": {
+    "image": "assets/portraits/anilist-169395.png",
+    "sourceId": "169395",
+    "sourceUrl": "https://anilist.co/character/169395"
+  },
+  "Seishiro Nagi|Blue Lock": {
+    "image": "assets/portraits/anilist-162969.png",
+    "sourceId": "162969",
+    "sourceUrl": "https://anilist.co/character/162969"
+  },
+  "Hyoma Chigiri|Blue Lock": {
+    "image": "assets/portraits/anilist-167444.png",
+    "sourceId": "167444",
+    "sourceUrl": "https://anilist.co/character/167444"
+  },
+  "Shoei Barou|Blue Lock": {
+    "image": "assets/portraits/anilist-169401.png",
+    "sourceId": "169401",
+    "sourceUrl": "https://anilist.co/character/169401"
+  },
+  "Reo Mikage|Blue Lock": {
+    "image": "assets/portraits/anilist-169394.png",
+    "sourceId": "169394",
+    "sourceUrl": "https://anilist.co/character/169394"
+  },
+  "Sae Itoshi|Blue Lock": {
+    "image": "assets/portraits/anilist-169397.jpg",
+    "sourceId": "169397",
+    "sourceUrl": "https://anilist.co/character/169397"
+  },
+  "Shoyo Hinata|Haikyu!!": {
+    "image": "assets/portraits/anilist-64769.png",
+    "sourceId": "64769",
+    "sourceUrl": "https://anilist.co/character/64769"
+  },
+  "Tobio Kageyama|Haikyu!!": {
+    "image": "assets/portraits/anilist-64771.png",
+    "sourceId": "64771",
+    "sourceUrl": "https://anilist.co/character/64771"
+  },
+  "Yu Nishinoya|Haikyu!!": {
+    "image": "assets/portraits/anilist-67327.jpg",
+    "sourceId": "67327",
+    "sourceUrl": "https://anilist.co/character/67327"
+  },
+  "Toru Oikawa|Haikyu!!": {
+    "image": "assets/portraits/anilist-71611.png",
+    "sourceId": "71611",
+    "sourceUrl": "https://anilist.co/character/71611"
+  },
+  "Tetsuro Kuroo|Haikyu!!": {
+    "image": "assets/portraits/anilist-71269.jpg",
+    "sourceId": "71269",
+    "sourceUrl": "https://anilist.co/character/71269"
+  },
+  "Kenma Kozume|Haikyu!!": {
+    "image": "assets/portraits/anilist-71267.jpg",
+    "sourceId": "71267",
+    "sourceUrl": "https://anilist.co/character/71267"
+  },
+  "Kei Tsukishima|Haikyu!!": {
+    "image": "assets/portraits/anilist-67329.png",
+    "sourceId": "67329",
+    "sourceUrl": "https://anilist.co/character/67329"
+  },
+  "Asta|Black Clover": {
+    "image": "assets/portraits/anilist-123285.png",
+    "sourceId": "123285",
+    "sourceUrl": "https://anilist.co/character/123285"
+  },
+  "Yuno|Black Clover": {
+    "image": "assets/portraits/anilist-123284.png",
+    "sourceId": "123284",
+    "sourceUrl": "https://anilist.co/character/123284"
+  },
+  "Noelle Silva|Black Clover": {
+    "image": "assets/portraits/anilist-123283.png",
+    "sourceId": "123283",
+    "sourceUrl": "https://anilist.co/character/123283"
+  },
+  "Yami Sukehiro|Black Clover": {
+    "image": "assets/portraits/anilist-124440.png",
+    "sourceId": "124440",
+    "sourceUrl": "https://anilist.co/character/124440"
+  },
+  "Mereoleona Vermillion|Black Clover": {
+    "image": "assets/portraits/anilist-124522.png",
+    "sourceId": "124522",
+    "sourceUrl": "https://anilist.co/character/124522"
+  },
+  "Luck Voltia|Black Clover": {
+    "image": "assets/portraits/anilist-124449.jpg",
+    "sourceId": "124449",
+    "sourceUrl": "https://anilist.co/character/124449"
+  },
+  "Natsu Dragneel|Fairy Tail": {
+    "image": "assets/portraits/anilist-5187.png",
+    "sourceId": "5187",
+    "sourceUrl": "https://anilist.co/character/5187"
+  },
+  "Lucy Heartfilia|Fairy Tail": {
+    "image": "assets/portraits/anilist-5186.png",
+    "sourceId": "5186",
+    "sourceUrl": "https://anilist.co/character/5186"
+  },
+  "Erza Scarlet|Fairy Tail": {
+    "image": "assets/portraits/anilist-5189.jpg",
+    "sourceId": "5189",
+    "sourceUrl": "https://anilist.co/character/5189"
+  },
+  "Gray Fullbuster|Fairy Tail": {
+    "image": "assets/portraits/anilist-4839.png",
+    "sourceId": "4839",
+    "sourceUrl": "https://anilist.co/character/4839"
+  },
+  "Wendy Marvell|Fairy Tail": {
+    "image": "assets/portraits/anilist-28886.jpg",
+    "sourceId": "28886",
+    "sourceUrl": "https://anilist.co/character/28886"
+  },
+  "Zeref Dragneel|Fairy Tail": {
+    "image": "assets/portraits/anilist-37720.jpg",
+    "sourceId": "37720",
+    "sourceUrl": "https://anilist.co/character/37720"
+  },
+  "Subaru Natsuki|Re:Zero": {
+    "image": "assets/portraits/anilist-88573.png",
+    "sourceId": "88573",
+    "sourceUrl": "https://anilist.co/character/88573"
+  },
+  "Emilia|Re:Zero": {
+    "image": "assets/portraits/anilist-88572.jpg",
+    "sourceId": "88572",
+    "sourceUrl": "https://anilist.co/character/88572"
+  },
+  "Rem|Re:Zero": {
+    "image": "assets/portraits/anilist-88575.png",
+    "sourceId": "88575",
+    "sourceUrl": "https://anilist.co/character/88575"
+  },
+  "Ram|Re:Zero": {
+    "image": "assets/portraits/anilist-88576.png",
+    "sourceId": "88576",
+    "sourceUrl": "https://anilist.co/character/88576"
+  },
+  "Beatrice|Re:Zero": {
+    "image": "assets/portraits/anilist-90181.png",
+    "sourceId": "90181",
+    "sourceUrl": "https://anilist.co/character/90181"
+  },
+  "Sung Jinwoo|Solo Leveling": {
+    "image": "assets/portraits/anilist-129928.png",
+    "sourceId": "129928",
+    "sourceUrl": "https://anilist.co/character/129928"
+  },
+  "Cha Hae-In|Solo Leveling": {
+    "image": "assets/portraits/anilist-138789.png",
+    "sourceId": "138789",
+    "sourceUrl": "https://anilist.co/character/138789"
+  },
+  "Igris|Solo Leveling": {
+    "image": "assets/portraits/anilist-145722.png",
+    "sourceId": "145722",
+    "sourceUrl": "https://anilist.co/character/145722"
+  },
+  "Go Gunhee|Solo Leveling": {
+    "image": "assets/portraits/anilist-138792.png",
+    "sourceId": "138792",
+    "sourceUrl": "https://anilist.co/character/138792"
+  },
+  "Frieren|Frieren: Beyond Journey's End": {
+    "image": "assets/portraits/anilist-176754.png",
+    "sourceId": "176754",
+    "sourceUrl": "https://anilist.co/character/176754"
+  },
+  "Fern|Frieren: Beyond Journey's End": {
+    "image": "assets/portraits/anilist-183965.png",
+    "sourceId": "183965",
+    "sourceUrl": "https://anilist.co/character/183965"
+  },
+  "Stark|Frieren: Beyond Journey's End": {
+    "image": "assets/portraits/anilist-184313.jpg",
+    "sourceId": "184313",
+    "sourceUrl": "https://anilist.co/character/184313"
+  },
+  "Himmel|Frieren: Beyond Journey's End": {
+    "image": "assets/portraits/anilist-184311.png",
+    "sourceId": "184311",
+    "sourceUrl": "https://anilist.co/character/184311"
+  },
+  "Übel|Frieren: Beyond Journey's End": {
+    "image": "assets/portraits/anilist-246057.png",
+    "sourceId": "246057",
+    "sourceUrl": "https://anilist.co/character/246057"
+  },
+  "Momo Ayase|Dandadan": {
+    "image": "assets/portraits/anilist-222594.png",
+    "sourceId": "222594",
+    "sourceUrl": "https://anilist.co/character/222594"
+  },
+  "Okarun|Dandadan": {
+    "image": "assets/portraits/anilist-222593.png",
+    "sourceId": "222593",
+    "sourceUrl": "https://anilist.co/character/222593"
+  },
+  "Aira Shiratori|Dandadan": {
+    "image": "assets/portraits/anilist-245466.png",
+    "sourceId": "245466",
+    "sourceUrl": "https://anilist.co/character/245466"
+  },
+  "Jiji|Dandadan": {
+    "image": "assets/portraits/anilist-258506.png",
+    "sourceId": "258506",
+    "sourceUrl": "https://anilist.co/character/258506"
+  },
+  "Seiko Ayase|Dandadan": {
+    "image": "assets/portraits/anilist-234824.png",
+    "sourceId": "234824",
+    "sourceUrl": "https://anilist.co/character/234824"
+  },
+  "Ken Kaneki|Tokyo Ghoul": {
+    "image": "assets/portraits/anilist-87275.png",
+    "sourceId": "87275",
+    "sourceUrl": "https://anilist.co/character/87275"
+  },
+  "Touka Kirishima|Tokyo Ghoul": {
+    "image": "assets/portraits/anilist-87277.png",
+    "sourceId": "87277",
+    "sourceUrl": "https://anilist.co/character/87277"
+  },
+  "Juuzou Suzuya|Tokyo Ghoul": {
+    "image": "assets/portraits/anilist-88412.png",
+    "sourceId": "88412",
+    "sourceUrl": "https://anilist.co/character/88412"
+  },
+  "Rize Kamishiro|Tokyo Ghoul": {
+    "image": "assets/portraits/anilist-88413.png",
+    "sourceId": "88413",
+    "sourceUrl": "https://anilist.co/character/88413"
+  },
+  "Kishou Arima|Tokyo Ghoul": {
+    "image": "assets/portraits/anilist-88946.jpg",
+    "sourceId": "88946",
+    "sourceUrl": "https://anilist.co/character/88946"
+  },
+  "Kirito|Sword Art Online": {
+    "image": "assets/portraits/anilist-36765.png",
+    "sourceId": "36765",
+    "sourceUrl": "https://anilist.co/character/36765"
+  },
+  "Asuna Yuuki|Sword Art Online": {
+    "image": "assets/portraits/anilist-36828.png",
+    "sourceId": "36828",
+    "sourceUrl": "https://anilist.co/character/36828"
+  },
+  "Edward Elric|Fullmetal Alchemist": {
+    "image": "assets/portraits/anilist-11.jpg",
+    "sourceId": "11",
+    "sourceUrl": "https://anilist.co/character/11"
+  },
+  "Alphonse Elric|Fullmetal Alchemist": {
+    "image": "assets/portraits/anilist-12.jpg",
+    "sourceId": "12",
+    "sourceUrl": "https://anilist.co/character/12"
+  },
+  "Roy Mustang|Fullmetal Alchemist": {
+    "image": "assets/portraits/anilist-68.png",
+    "sourceId": "68",
+    "sourceUrl": "https://anilist.co/character/68"
+  },
+  "Riza Hawkeye|Fullmetal Alchemist": {
+    "image": "assets/portraits/anilist-70.png",
+    "sourceId": "70",
+    "sourceUrl": "https://anilist.co/character/70"
+  },
+  "Winry Rockbell|Fullmetal Alchemist": {
+    "image": "assets/portraits/anilist-63.jpg",
+    "sourceId": "63",
+    "sourceUrl": "https://anilist.co/character/63"
+  },
+  "Rimuru Tempest|That Time I Got Reincarnated as a Slime": {
+    "image": "assets/portraits/anilist-123962.png",
+    "sourceId": "123962",
+    "sourceUrl": "https://anilist.co/character/123962"
+  },
+  "Shuna|That Time I Got Reincarnated as a Slime": {
+    "image": "assets/portraits/anilist-128040.png",
+    "sourceId": "128040",
+    "sourceUrl": "https://anilist.co/character/128040"
+  },
+  "Milim Nava|That Time I Got Reincarnated as a Slime": {
+    "image": "assets/portraits/anilist-128036.png",
+    "sourceId": "128036",
+    "sourceUrl": "https://anilist.co/character/128036"
+  },
+  "Raphael|That Time I Got Reincarnated as a Slime": {
+    "image": "assets/portraits/anilist-129347.jpg",
+    "sourceId": "129347",
+    "sourceUrl": "https://anilist.co/character/129347"
+  },
+  "Ainz Ooal Gown|Overlord": {
+    "image": "assets/portraits/anilist-89103.png",
+    "sourceId": "89103",
+    "sourceUrl": "https://anilist.co/character/89103"
+  },
+  "Albedo|Overlord": {
+    "image": "assets/portraits/anilist-89122.png",
+    "sourceId": "89122",
+    "sourceUrl": "https://anilist.co/character/89122"
+  },
+  "Shalltear Bloodfallen|Overlord": {
+    "image": "assets/portraits/anilist-89121.png",
+    "sourceId": "89121",
+    "sourceUrl": "https://anilist.co/character/89121"
+  },
+  "Kazuma Satou|Konosuba": {
+    "image": "assets/portraits/anilist-89364.png",
+    "sourceId": "89364",
+    "sourceUrl": "https://anilist.co/character/89364"
+  },
+  "Aqua|Konosuba": {
+    "image": "assets/portraits/anilist-89362.png",
+    "sourceId": "89362",
+    "sourceUrl": "https://anilist.co/character/89362"
+  },
+  "Megumin|Konosuba": {
+    "image": "assets/portraits/anilist-89361.png",
+    "sourceId": "89361",
+    "sourceUrl": "https://anilist.co/character/89361"
+  },
+  "Darkness|Konosuba": {
+    "image": "assets/portraits/anilist-89363.png",
+    "sourceId": "89363",
+    "sourceUrl": "https://anilist.co/character/89363"
+  },
+  "Violet Evergarden|Violet Evergarden": {
+    "image": "assets/portraits/anilist-90169.png",
+    "sourceId": "90169",
+    "sourceUrl": "https://anilist.co/character/90169"
+  },
+  "Spike Spiegel|Cowboy Bebop": {
+    "image": "assets/portraits/anilist-1.png",
+    "sourceId": "1",
+    "sourceUrl": "https://anilist.co/character/1"
+  },
+  "Faye Valentine|Cowboy Bebop": {
+    "image": "assets/portraits/anilist-2.png",
+    "sourceId": "2",
+    "sourceUrl": "https://anilist.co/character/2"
+  },
+  "Motoko Kusanagi|Ghost in the Shell": {
+    "image": "assets/portraits/anilist-1795.jpg",
+    "sourceId": "1795",
+    "sourceUrl": "https://anilist.co/character/1795"
+  },
+  "Guts|Berserk": {
+    "image": "assets/portraits/anilist-422.png",
+    "sourceId": "422",
+    "sourceUrl": "https://anilist.co/character/422"
+  },
+  "Griffith|Berserk": {
+    "image": "assets/portraits/anilist-424.png",
+    "sourceId": "424",
+    "sourceUrl": "https://anilist.co/character/424"
+  },
+  "Casca|Berserk": {
+    "image": "assets/portraits/anilist-423.png",
+    "sourceId": "423",
+    "sourceUrl": "https://anilist.co/character/423"
+  },
+  "Askeladd|Vinland Saga": {
+    "image": "assets/portraits/anilist-13020.png",
+    "sourceId": "13020",
+    "sourceUrl": "https://anilist.co/character/13020"
+  },
+  "Canute|Vinland Saga": {
+    "image": "assets/portraits/anilist-17438.png",
+    "sourceId": "17438",
+    "sourceUrl": "https://anilist.co/character/17438"
+  },
+  "Shin|Kingdom": {
+    "image": "assets/portraits/anilist-64573.jpg",
+    "sourceId": "64573",
+    "sourceUrl": "https://anilist.co/character/64573"
+  },
+  "Senku Ishigami|Dr. Stone": {
+    "image": "assets/portraits/anilist-124142.png",
+    "sourceId": "124142",
+    "sourceUrl": "https://anilist.co/character/124142"
+  },
+  "Kohaku|Dr. Stone": {
+    "image": "assets/portraits/anilist-124143.png",
+    "sourceId": "124143",
+    "sourceUrl": "https://anilist.co/character/124143"
+  },
+  "Gen Asagiri|Dr. Stone": {
+    "image": "assets/portraits/anilist-127445.png",
+    "sourceId": "127445",
+    "sourceUrl": "https://anilist.co/character/127445"
+  },
+  "Kaguya Shinomiya|Kaguya-sama: Love Is War": {
+    "image": "assets/portraits/anilist-120649.png",
+    "sourceId": "120649",
+    "sourceUrl": "https://anilist.co/character/120649"
+  },
+  "Miyuki Shirogane|Kaguya-sama: Love Is War": {
+    "image": "assets/portraits/anilist-121101.png",
+    "sourceId": "121101",
+    "sourceUrl": "https://anilist.co/character/121101"
+  },
+  "Chika Fujiwara|Kaguya-sama: Love Is War": {
+    "image": "assets/portraits/anilist-121103.png",
+    "sourceId": "121103",
+    "sourceUrl": "https://anilist.co/character/121103"
+  },
+  "Marin Kitagawa|My Dress-Up Darling": {
+    "image": "assets/portraits/anilist-133676.png",
+    "sourceId": "133676",
+    "sourceUrl": "https://anilist.co/character/133676"
+  },
+  "Wakana Gojo|My Dress-Up Darling": {
+    "image": "assets/portraits/anilist-133678.png",
+    "sourceId": "133678",
+    "sourceUrl": "https://anilist.co/character/133678"
+  },
+  "Hitori Gotoh|Bocchi the Rock!": {
+    "image": "assets/portraits/anilist-257562.png",
+    "sourceId": "257562",
+    "sourceUrl": "https://anilist.co/character/257562"
+  },
+  "Ryo Yamada|Bocchi the Rock!": {
+    "image": "assets/portraits/anilist-264529.png",
+    "sourceId": "264529",
+    "sourceUrl": "https://anilist.co/character/264529"
+  },
+  "Maki Oze|Fire Force": {
+    "image": "assets/portraits/anilist-130713.png",
+    "sourceId": "130713",
+    "sourceUrl": "https://anilist.co/character/130713"
+  },
+  "Shinra Kusakabe|Fire Force": {
+    "image": "assets/portraits/anilist-120462.png",
+    "sourceId": "120462",
+    "sourceUrl": "https://anilist.co/character/120462"
+  },
+  "Arthur Boyle|Fire Force": {
+    "image": "assets/portraits/anilist-130715.png",
+    "sourceId": "130715",
+    "sourceUrl": "https://anilist.co/character/130715"
+  },
+  "Benimaru Shinmon|Fire Force": {
+    "image": "assets/portraits/anilist-130848.jpg",
+    "sourceId": "130848",
+    "sourceUrl": "https://anilist.co/character/130848"
+  },
+  "Tengen Uzui|Demon Slayer": {
+    "image": "assets/portraits/anilist-136071.png",
+    "sourceId": "136071",
+    "sourceUrl": "https://anilist.co/character/136071"
+  },
+  "Kyo Sohma|Fruits Basket": {
+    "image": "assets/portraits/anilist-209.png",
+    "sourceId": "209",
+    "sourceUrl": "https://anilist.co/character/209"
+  },
+  "Tohru Honda|Fruits Basket": {
+    "image": "assets/portraits/anilist-207.png",
+    "sourceId": "207",
+    "sourceUrl": "https://anilist.co/character/207"
+  },
+  "Yuki Sohma|Fruits Basket": {
+    "image": "assets/portraits/anilist-208.png",
+    "sourceId": "208",
+    "sourceUrl": "https://anilist.co/character/208"
+  },
+  "Reze|Chainsaw Man": {
+    "image": "assets/portraits/anilist-148740.png",
+    "sourceId": "148740",
+    "sourceUrl": "https://anilist.co/character/148740"
+  },
+  "Quanxi|Chainsaw Man": {
+    "image": "assets/portraits/anilist-162123.jpg",
+    "sourceId": "162123",
+    "sourceUrl": "https://anilist.co/character/162123"
+  },
+  "Asa Mitaka|Chainsaw Man": {
+    "image": "assets/portraits/anilist-282389.jpg",
+    "sourceId": "282389",
+    "sourceUrl": "https://anilist.co/character/282389"
+  },
+  "Yoru|Chainsaw Man": {
+    "image": "assets/portraits/anilist-282872.jpg",
+    "sourceId": "282872",
+    "sourceUrl": "https://anilist.co/character/282872"
+  },
+  "Nayuta|Chainsaw Man": {
+    "image": "assets/portraits/anilist-199767.png",
+    "sourceId": "199767",
+    "sourceUrl": "https://anilist.co/character/199767"
+  },
+  "Nefertari Vivi|One Piece": {
+    "image": "assets/portraits/anilist-726.png",
+    "sourceId": "726",
+    "sourceUrl": "https://anilist.co/character/726"
+  },
+  "Akaza|Demon Slayer": {
+    "image": "assets/portraits/anilist-141694.png",
+    "sourceId": "141694",
+    "sourceUrl": "https://anilist.co/character/141694"
+  },
+  "Yuta Okkotsu|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-129571.jpg",
+    "sourceId": "129571",
+    "sourceUrl": "https://anilist.co/character/129571"
+  },
+  "Toji Fushiguro|Jujutsu Kaisen": {
+    "image": "assets/portraits/anilist-162722.jpg",
+    "sourceId": "162722",
+    "sourceUrl": "https://anilist.co/character/162722"
+  },
+  "Dabi|My Hero Academia": {
+    "image": "assets/portraits/anilist-126378.png",
+    "sourceId": "126378",
+    "sourceUrl": "https://anilist.co/character/126378"
+  },
+  "Hawks|My Hero Academia": {
+    "image": "assets/portraits/anilist-128299.png",
+    "sourceId": "128299",
+    "sourceUrl": "https://anilist.co/character/128299"
+  },
+  "Endeavor|My Hero Academia": {
+    "image": "assets/portraits/anilist-126158.png",
+    "sourceId": "126158",
+    "sourceUrl": "https://anilist.co/character/126158"
+  },
+  "Broly|Dragon Ball": {
+    "image": "assets/portraits/anilist-4945.png",
+    "sourceId": "4945",
+    "sourceUrl": "https://anilist.co/character/4945"
+  },
+  "Garou|One Punch Man": {
+    "image": "assets/portraits/anilist-89277.png",
+    "sourceId": "89277",
+    "sourceUrl": "https://anilist.co/character/89277"
+  },
+  "Bond Forger|Spy x Family": {
+    "image": "assets/portraits/anilist-169679.jpg",
+    "sourceId": "169679",
+    "sourceUrl": "https://anilist.co/character/169679"
+  },
+  "Kotaro Bokuto|Haikyu!!": {
+    "image": "assets/portraits/anilist-88937.png",
+    "sourceId": "88937",
+    "sourceUrl": "https://anilist.co/character/88937"
+  },
+  "Echidna|Re:Zero": {
+    "image": "assets/portraits/anilist-129330.png",
+    "sourceId": "129330",
+    "sourceUrl": "https://anilist.co/character/129330"
+  },
+  "Beru|Solo Leveling": {
+    "image": "assets/portraits/anilist-159849.png",
+    "sourceId": "159849",
+    "sourceUrl": "https://anilist.co/character/159849"
+  },
+  "Sinon|Sword Art Online": {
+    "image": "assets/portraits/anilist-55147.png",
+    "sourceId": "55147",
+    "sourceUrl": "https://anilist.co/character/55147"
+  },
+  "Alice Zuberg|Sword Art Online": {
+    "image": "assets/portraits/anilist-75450.jpg",
+    "sourceId": "75450",
+    "sourceUrl": "https://anilist.co/character/75450"
+  },
+  "Eugeo|Sword Art Online": {
+    "image": "assets/portraits/anilist-70899.jpg",
+    "sourceId": "70899",
+    "sourceUrl": "https://anilist.co/character/70899"
+  },
+  "Thorfinn|Vinland Saga": {
+    "image": "assets/portraits/anilist-172744.png",
+    "sourceId": "172744",
+    "sourceUrl": "https://anilist.co/character/172744"
+  }
+}

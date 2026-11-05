@@ -1,0 +1,23 @@
+/* The connected market uses the same collector counter as the guest view. */
+body.kz-art #keExchange{color:var(--art-paper)}
+body.kz-art #keExchange .ke-header{padding:32px;border:1px solid #d49d7766;border-radius:4px 36px 4px 4px;background:radial-gradient(ellipse at left,#8e64333d,transparent 65%),#122938}
+body.kz-art #keExchange .ke-header h1{font:700 clamp(32px,4vw,58px)/1.05 Rajdhani,sans-serif;color:var(--art-paper)}
+body.kz-art #keExchange :is(.ke-eyebrow,.ke-copy>strong){color:var(--art-gold)}
+body.kz-art #keExchange :is(.ke-copy p,.ke-header p,.ke-notice p,.ke-copy small){color:var(--art-muted);line-height:1.7}
+body.kz-art #keExchange :is(.ke-notice,.ke-empty){background:#122b38;border:1px solid #8aa9a55c;border-radius:4px 20px 4px 4px}
+body.kz-art #keExchange .ke-filters{padding:22px 0;border-block:1px solid var(--art-line)}
+body.kz-art #keExchange :is(input,select){background:#0c1928;color:var(--art-paper);border-color:#69858b;border-radius:4px 12px 4px 4px;min-height:44px}
+body.kz-art #keExchange button,body.kz-art .ke-dialog button{background:var(--art-gold);color:#10212b;border:1px solid var(--art-gold);border-radius:4px 12px 4px 4px;min-height:44px}
+body.kz-art #keExchange .ke-secondary,body.kz-art .ke-dialog .ke-secondary{color:var(--art-paper);border-color:#69858b;background:#193744!important}
+body.kz-art #keExchange .ke-listing{padding:7px;border:1px solid #8aa9a55c;background:linear-gradient(#213b4b,#12242e);border-radius:4px 20px 4px 4px;min-width:0;contain:layout style}
+body.kz-art #keExchange .ke-art{background:#0b1b28!important;border-radius:3px 13px 3px 3px!important;height:290px!important}
+body.kz-art #keExchange .ke-copy{padding:18px 10px}
+body.kz-art #keExchange .ke-copy h2{font:700 27px/1.1 Rajdhani,sans-serif}
+body.kz-art #keExchange .ke-copy>span{color:var(--art-teal);font-size:12px}
+body.kz-art #keExchange .ke-empty{padding:48px 20px;line-height:1.8}
+body.kz-art .kn-dialog :is(p,small,.kn-item p){color:var(--art-muted);font-size:13px;line-height:1.7}
+body.kz-art .kn-dialog .kn-item{background:#122a38;border-color:#8aa9a55c;border-radius:4px 14px 4px 4px}
+body.kz-art .kn-dialog button{min-height:44px;background:#193744;color:var(--art-paper);border:1px solid #69858b}
+body.kz-art .ke-dialog :is(fieldset,li){border-color:#69858b;color:var(--art-muted)}
+body.kz-art :is(.ke-dialog,.kn-dialog) :is(input,select,button):focus-visible{outline:3px solid var(--art-teal)!important;outline-offset:3px}
+@media(max-width:760px){body.kz-art #keExchange .ke-header{padding:24px 18px}body.kz-art #keExchange .ke-filters{grid-template-columns:minmax(0,1fr)}body.kz-art #keExchange .ke-filters label{min-width:0}body.kz-art #keExchange .ke-grid{grid-template-columns:minmax(0,1fr)}}

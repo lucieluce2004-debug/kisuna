@@ -1,0 +1,125 @@
+/* A deliberately separate on-demand discovery panel above the local wiki. */
+body.theme-kizuna #kizunaAniListCatalogue[hidden],
+body.theme-kizuna #kizunaAniListCatalogue:not([data-admin="verified"]) { display: none !important; }
+body.theme-kizuna #kizunaAniListCatalogue[inert] { pointer-events: none; }
+body.theme-kizuna .kac-protected-notice { padding: 13px 16px; border: 1px solid #845365; border-radius: 5px; color: #ffbfcc; background: #412d40; font-size: 11px; line-height: 1.6; }
+body.theme-kizuna #kizunaAniListCatalogue {
+  --kac-line: #425b7a;
+  margin: 0 0 42px;
+  padding: 25px;
+  border: 1px solid var(--kac-line);
+  border-top: 2px solid #7ce8fb;
+  border-radius: 9px;
+  background: radial-gradient(ellipse at 95% 0%,#f68bdd12,transparent 48%),#1b2a40;
+  box-shadow: 0 14px 38px #08142629;
+}
+body.theme-kizuna .kac-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+body.theme-kizuna .kac-kicker { color: #8cecff; font-size: 9px; letter-spacing: .15em; font-weight: 700; }
+body.theme-kizuna .kac-heading h3 { color: #f6f9ff; font: 700 clamp(28px,3vw,39px)/1.1 var(--display,'Rajdhani',sans-serif); margin: 8px 0 9px; }
+body.theme-kizuna .kac-heading p { max-width: 660px; margin: 0; color: #bdcde3; font-size: 12px; line-height: 1.7; }
+body.theme-kizuna .kac-credit { flex-shrink: 0; padding-top: 4px; color: #9cecff; font-size: 10px; }
+body.theme-kizuna .kac-credit:hover { color: #f8bcf0; }
+body.theme-kizuna .kac-search { margin-top: 17px; }
+body.theme-kizuna .kac-search label { display: block; color: #dce8f8; font-size: 10px; font-weight: 700; margin-bottom: 8px; }
+body.theme-kizuna .kac-search-row { display: flex; gap: 9px; align-items: stretch; }
+body.theme-kizuna #kizunaAniListCatalogue input {
+  flex: 1; min-width: 0; min-height: 44px; border: 1px solid #5c7595; border-radius: 5px; padding: 11px 13px;
+  background: #263952 !important; color: #f5f9ff; font: 12px var(--font,'Manrope',sans-serif);
+}
+body.theme-kizuna #kizunaAniListCatalogue input::placeholder { color: #b1c2db; opacity: 1; }
+body.theme-kizuna #kizunaAniListCatalogue button {
+  min-height: 42px; border: 1px solid #5b7594; border-radius: 5px; padding: 10px 15px;
+  background: #2c425f; color: #eaf3ff; font: 700 11px var(--font,'Manrope',sans-serif); cursor: pointer;
+  transition: border-color .15s,background .15s,transform .15s;
+}
+body.theme-kizuna #kizunaAniListCatalogue .kac-search-row button[type=submit] { background: #7ce8fb; border-color: #a9f1ff; color: #10273a; white-space: nowrap; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-search-row button[type=submit] span { margin-left: 14px; }
+body.theme-kizuna #kizunaAniListCatalogue button:hover:not(:disabled) { border-color: #8cecff; background: #385575; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-search-row button[type=submit]:hover:not(:disabled) { background: #a2f0ff; }
+body.theme-kizuna #kizunaAniListCatalogue button:disabled { opacity: .58; cursor: default; transform: none; }
+body.theme-kizuna .kac-status { min-height: 20px; color: #b7cae2; font-size: 11px; line-height: 1.7; margin: 15px 0; overflow-wrap: anywhere; }
+body.theme-kizuna .kac-status[data-kind=error] { color: #ffb8c4; }
+body.theme-kizuna .kac-status[data-kind=success] { color: #9aefdb; }
+body.theme-kizuna .kac-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 14px; }
+body.theme-kizuna .kac-card { min-width: 0; border: 1px solid #405978; border-radius: 7px; background: #223650; overflow: hidden; }
+body.theme-kizuna .kac-art { display: block; position: relative; aspect-ratio: 3/4; overflow: hidden; background: linear-gradient(140deg,#38516d,#253650); }
+body.theme-kizuna .kac-art img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .2s; }
+body.theme-kizuna .kac-art:hover img { transform: scale(1.035); }
+body.theme-kizuna .kac-source { position: absolute; bottom: 7px; right: 7px; padding: 4px 6px; border: 1px solid #d4e8ff44; border-radius: 3px; background: #142236e8; color: #e5f3ff; font-size: 8px; }
+body.theme-kizuna .kac-no-art { display: grid; place-items: center; height: 100%; color: #93c8dd; font-size: 38px; }
+body.theme-kizuna .kac-card-copy { padding: 10px; }
+body.theme-kizuna .kac-card h4 { margin: 0; min-height: 2.7em; color: #f3f8ff; font: 700 12px/1.35 var(--font,'Manrope',sans-serif); overflow-wrap: anywhere; }
+body.theme-kizuna .kac-card p { margin: 6px 0 10px; color: #bdcde3; font-size: 9px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-import { width: 100%; min-height: 36px; padding: 8px 5px; color: #a4edfc; border-color: #69c7db77; background: #213d54; font-size: 9px; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-import:disabled { color: #b8dddb; border-color: #4c7a7e; background: #294347; opacity: .85; }
+body.theme-kizuna .kac-empty { grid-column: 1/-1; display: flex; flex-direction: column; align-items: center; gap: 11px; padding: 30px 24px; text-align: center; border: 1px dashed #57718f; border-radius: 6px; background: #22365066; }
+body.theme-kizuna .kac-empty > span { color: #ec9cdb; font-size: 25px; }
+body.theme-kizuna .kac-empty strong { color: #e9f3ff; font-size: 13px; }
+body.theme-kizuna .kac-empty p { max-width: 540px; margin: 0; color: #b9cde4; font-size: 11px; line-height: 1.75; }
+body.theme-kizuna .kac-pagination { display: flex; align-items: center; justify-content: center; gap: 17px; margin-top: 20px; }
+body.theme-kizuna .kac-page { color: #bfcee3; font-size: 10px; text-align: center; }
+body.theme-kizuna .kac-note { margin: 17px 0 0; padding-top: 15px; border-top: 1px solid #405674; color: #b8cbe2; font-size: 10px; line-height: 1.7; }
+body.theme-kizuna .kac-modes { display:inline-flex;gap:4px;margin-top:23px;padding:4px;border:1px solid #526c8a;border-radius:8px;background:#13263c; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-modes button { min-height:34px;padding:7px 15px;border-color:transparent;border-radius:5px;background:transparent;color:#a9c1da;font-size:10px; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-modes button.is-active { border-color:#8ae6f14d;background:#86dce61c;color:#aef4fc; }
+body.theme-kizuna #kizunaAniListCatalogue button:focus-visible,body.theme-kizuna #kizunaAniListCatalogue a:focus-visible { outline:2px solid #a4f0f7;outline-offset:3px; }
+body.theme-kizuna .kac-grid.kac-anime-grid { grid-template-columns:repeat(4,minmax(0,1fr));gap:14px; }
+body.theme-kizuna .kac-anime-card { min-width:0;overflow:hidden;border:1px solid #486380;border-radius:8px;background:#21374f; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-anime-open { display:flex;flex-direction:column;align-items:stretch;width:100%;height:100%;padding:0;min-height:0;border:0;border-radius:0;background:transparent;color:inherit;text-align:left; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-anime-open:hover:not(:disabled) { background:#2c4761;transform:none; }
+body.theme-kizuna .kac-anime-art { display:block;position:relative;aspect-ratio:3/3.8;background:linear-gradient(140deg,#405e78,#203249);overflow:hidden; }
+body.theme-kizuna .kac-anime-art img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s; }
+body.theme-kizuna .kac-anime-open:hover img { transform:scale(1.035); }
+body.theme-kizuna .kac-anime-format { position:absolute;bottom:8px;left:8px;padding:4px 6px;font-size:8px;border:1px solid #d5efff55;border-radius:4px;color:#eaf7ff;background:#13243bdb; }
+body.theme-kizuna .kac-anime-copy { display:flex;flex:1;flex-direction:column;gap:7px;padding:13px;min-width:0; }
+body.theme-kizuna .kac-anime-copy>strong { font-size:12px;line-height:1.45;color:#f0f8ff;overflow-wrap:anywhere; }
+body.theme-kizuna .kac-anime-alternate { color:#96b3ce;font-size:9px;line-height:1.55;overflow-wrap:anywhere; }
+body.theme-kizuna .kac-anime-meta { color:#b5cce2;font-size:8px;line-height:1.75; }
+body.theme-kizuna .kac-anime-cta { display:flex;align-items:center;justify-content:space-between;gap:7px;margin-top:auto;padding-top:9px;color:#9fecf5;font-size:9px;line-height:1.5; }
+body.theme-kizuna .kac-anime-cta>span { font-size:14px; }
+body.theme-kizuna .kac-anime-breadcrumb { display:flex;align-items:center;flex-wrap:wrap;gap:15px;padding:17px 18px;margin-bottom:19px;border:1px solid #6184a1;border-radius:8px;background:linear-gradient(120deg,#2b4962,#263950); }
+body.theme-kizuna .kac-anime-breadcrumb[hidden] { display:none!important; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-back-anime { padding:5px 0;min-height:0;border:0;background:none;color:#a4eaf4;font-size:9px;white-space:nowrap; }
+body.theme-kizuna #kizunaAniListCatalogue .kac-back-anime:hover { color:#d3f9ff;background:none; }
+body.theme-kizuna .kac-anime-breadcrumb>div:not(.kac-anime-actions) { flex:1;min-width:150px; }
+body.theme-kizuna .kac-anime-breadcrumb .kac-kicker { font-size:6px;letter-spacing:1.5px;color:#90bdd7; }
+body.theme-kizuna .kac-anime-breadcrumb h4 { font-size:16px;line-height:1.4;font-weight:750;margin:5px 0;color:#eef8ff;overflow-wrap:anywhere; }
+body.theme-kizuna .kac-anime-breadcrumb p { margin:0;color:#a9c3db;font-size:9px;line-height:1.7; }
+body.theme-kizuna .kac-anime-breadcrumb>a { color:#a4eaf4;font-size:8px;white-space:nowrap; }
+body.theme-kizuna .kac-anime-actions:empty { display:none; }
+body.theme-kizuna .kac-anime-actions { display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;flex-basis:100%;border-top:1px solid #91b3cf33;padding-top:14px; }
+body.theme-kizuna .kac-anime-actions label { display:flex;flex-direction:column;gap:7px;flex:1;min-width:180px;max-width:420px;color:#bed7ec;font-size:9px;font-weight:750; }
+body.theme-kizuna .kac-album-select { width:100%;min-height:37px;border:1px solid #7797b4;border-radius:5px;background:#183149;color:#ebf7ff;padding:8px 10px;font:11px var(--font,'Manrope',sans-serif); }
+body.theme-kizuna #kizunaAniListCatalogue .kac-create-album { min-height:37px;padding:8px 11px;border-color:#d2aae566;background:#604a7444;color:#e9d3fb;font-size:9px; }
+body.theme-kizuna .kac-anime-actions>p { flex-basis:100%;font-size:8px!important;line-height:1.7;margin:0;color:#9bb8d3; }
+@media(max-width:1000px) { body.theme-kizuna .kac-grid.kac-anime-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:1180px) { body.theme-kizuna .kac-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media(max-width:700px) {
+  body.theme-kizuna #kizunaAniListCatalogue { padding: 20px; }
+  body.theme-kizuna .kac-heading { flex-direction: column; gap: 10px; }
+  body.theme-kizuna .kac-credit { padding-top: 0; }
+  body.theme-kizuna .kac-search-row { flex-wrap: wrap; }
+  body.theme-kizuna #kizunaAniListCatalogue input { flex-basis: 100%; }
+  body.theme-kizuna .kac-search-row > button { flex: 1; }
+  body.theme-kizuna .kac-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+  body.theme-kizuna .kac-grid.kac-anime-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:11px; }
+  body.theme-kizuna .kac-anime-breadcrumb { gap:12px;padding:14px; }
+  body.theme-kizuna .kac-anime-breadcrumb>.kac-back-anime { flex-basis:100%;text-align:left; }
+}
+@media(max-width:480px) {
+  body.theme-kizuna #kizunaAniListCatalogue { padding: 17px 13px; margin-bottom: 32px; }
+  body.theme-kizuna .kac-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  body.theme-kizuna .kac-card-copy { padding: 9px; }
+  body.theme-kizuna .kac-pagination { flex-wrap: wrap; gap: 10px; }
+  body.theme-kizuna .kac-page { order: -1; flex-basis: 100%; }
+  body.theme-kizuna #kizunaAniListCatalogue .kac-pagination button { flex: 1; padding-inline: 9px; }
+  body.theme-kizuna .kac-empty { padding: 24px 15px; }
+  body.theme-kizuna .kac-anime-copy { padding:10px;gap:5px; }
+  body.theme-kizuna .kac-anime-copy>strong { font-size:10px; }
+  body.theme-kizuna .kac-anime-alternate,body.theme-kizuna .kac-anime-cta { font-size:8px; }
+  body.theme-kizuna .kac-anime-meta { font-size:7px; }
+  body.theme-kizuna .kac-anime-breadcrumb h4 { font-size:14px; }
+  body.theme-kizuna .kac-anime-actions { gap:10px; }body.theme-kizuna .kac-anime-actions label { max-width:none; }
+  body.theme-kizuna #kizunaAniListCatalogue .kac-create-album { width:100%; }
+}
+@media(prefers-reduced-motion:reduce) { body.theme-kizuna #kizunaAniListCatalogue * { transition: none !important; } }

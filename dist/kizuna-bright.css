@@ -1,0 +1,211 @@
+/* Kizuna — clearer slate surfaces, cyan light and the original neon identity. */
+:root {
+  --bg: #111b2b;
+  --panel: #1b2a40;
+  --panel-2: #22334c;
+  --line: #354963;
+  --text: #f5f8ff;
+  --muted: #acbdd4;
+  --cyan: #72e9ff;
+  --gold: #72e9ff;
+  --violet: #f68bdd;
+  --neon-pink: #f68bdd;
+}
+html { background: #111b2b !important; color-scheme: dark; }
+body.theme-kizuna {
+  --market-surface: #1b2a40;
+  --market-surface-2: #22334c;
+  --market-border: #354963;
+  --market-accent: #72e9ff;
+  --market-gold: #f68bdd;
+  background: radial-gradient(ellipse at 88% 8%,#b966c517,transparent 33%),radial-gradient(ellipse at 5% 28%,#47c6e81a,transparent 38%),#111b2b !important;
+  color: #f5f8ff;
+}
+body.theme-kizuna .topline {
+  background: #172338f2 !important;
+  border-color: #3c516b !important;
+  box-shadow: 0 8px 30px #06102020;
+}
+body.theme-kizuna .nav a { color: #bdcce0 !important; }
+body.theme-kizuna .nav a.active {
+  color: #8cefff !important;
+  background: #72e9ff12;
+}
+body.theme-kizuna .nav a:hover { color: #fff !important; background: #ffffff0b; }
+body.theme-kizuna .top-actions :is(.status-pill,.avatar) {
+  color: #d4e2f3;
+  border-color: #4c607c;
+  background: #243650;
+}
+body.theme-kizuna .avatar { color: #8deeff; }
+body.theme-kizuna .brand.brand-logo img { filter: drop-shadow(0 0 12px #7ceaff26); }
+body.theme-kizuna :is(.section,.hero-area) { border-color: #30425d !important; }
+body.theme-kizuna[data-tab] :is(#collection,#encyclopedia,#ranking,#marketPage) {
+  background: radial-gradient(ellipse at 92% 0%,#bb6fc414,transparent 42%),#111b2b !important;
+  color: #f5f8ff;
+}
+body.theme-kizuna :is(.hero h1,.home-section-head h2,.home-section-head.compact h2,.section-heading h2,.step h3) { color: #f5f8ff; }
+body.theme-kizuna .hero h1 > span { color: #83ecff; text-shadow: 0 0 48px #70e6ff16; }
+body.theme-kizuna .hero p { color: #bbcbe0; }
+body.theme-kizuna .hero::before {
+  background: radial-gradient(ellipse at 72% 43%,#e17dc12b,transparent 57%),radial-gradient(ellipse at 38% 68%,#52d9ed2b,transparent 48%) !important;
+}
+body.theme-kizuna #heroStack::before { color: #a2b5d110; }
+body.theme-kizuna #heroStack::after { color: #b2c2d9; }
+body.theme-kizuna .hero-note { color: #adbed7; }
+body.theme-kizuna #heroStack .hero-card { box-shadow: 0 18px 42px #060d2299,0 0 24px #f68bdd18; }
+body.theme-kizuna #heroStack .hero-card:nth-child(2) { box-shadow: 0 22px 46px #060d2299,0 0 35px #72e9ff26; }
+body.theme-kizuna :is(.primary-btn,.open-btn) {
+  background: linear-gradient(105deg,#8eebff,#58d8ef);
+  color: #10273a;
+  border-color: #b2f4ff;
+  box-shadow: 0 5px 22px #56d8ee1b;
+}
+body.theme-kizuna :is(.secondary-btn,.soft-btn),
+body.theme-kizuna .hero .secondary-btn {
+  background: #263751;
+  color: #e4edf9;
+  border-color: #4b607d;
+}
+body.theme-kizuna :is(.secondary-btn,.soft-btn):hover,
+body.theme-kizuna .hero .secondary-btn:hover { background: #304663; border-color: #8eeafa; }
+body.theme-kizuna .hero .primary-btn { background: #7ce8fb; color: #10273a; border-color: #b2f4ff99; }
+body.theme-kizuna .hero .primary-btn:hover { background: #a5f1ff; box-shadow: 0 0 30px #70eaff29; }
+body.theme-kizuna .event-bar {
+  background: linear-gradient(115deg,#23394f,#24304a) !important;
+  border-color: #4d607c !important;
+  border-left-color: #f68bdd !important;
+  color: #c1d0e4;
+}
+body.theme-kizuna .event-bar strong { color: #f5f8ff; }
+body.theme-kizuna .event-bar .event-meta { color: #b1c1da; }
+body.theme-kizuna .stat-pill { background: #1e2d44 !important; border-color: #3a4c67 !important; color: #b7c8df; }
+body.theme-kizuna .stat-pill b { color: #f5f8ff; }
+body.theme-kizuna .stat-icon { background: #72e9ff12; border-color: #72e9ff36; color: #8aeeff; }
+body.theme-kizuna :is(.home-lower-panel,.market-empty,.home-local-rank,.activity-card) {
+  background: #1b2a40 !important;
+  border-color: #3a4d69 !important;
+}
+body.theme-kizuna :is(.home-kicker,.home-section-note,.home-section-head.compact p,.home-rank-foot,.home-local-rank p,.market-empty p,.step p) { color: #afc0d8; }
+body.theme-kizuna :is(.home-local-rank strong,.market-empty strong) { color: #e9f2ff; }
+body.theme-kizuna .home-section-head.compact a { color: #9eeaff; }
+body.theme-kizuna .market-empty-icon { background: #2a3b57; border-color: #4c6682; color: #9de7f6; }
+body.theme-kizuna .home-pulls-grid .empty-activity { background: #1b2a40; color: #b8c9df; border-color: #48607d; }
+body.theme-kizuna .home-pulls-grid .empty-activity strong { color: #eef6ff; }
+
+/* Booster frames keep their category colors and legible artwork. */
+body.theme-kizuna #boosters #kGrid .kpack { background: #1b2a40 !important; border-color: #3a4f6b !important; }
+body.theme-kizuna #boosters #kGrid .kpack:hover { border-color: #b093dd !important; box-shadow: 0 9px 25px #090e242f !important; }
+body.theme-kizuna #boosters #kGrid .kpack.sel { border-color: #85edff !important; box-shadow: 0 0 0 1px #85edff35,0 10px 24px #0a14292b !important; }
+body.theme-kizuna #boosters #kGrid .kp-face {
+  background: radial-gradient(ellipse at 50% 28%,color-mix(in srgb,var(--pm) 25%,transparent),transparent 72%),linear-gradient(145deg,#2c3b56,#1a2840 70%) !important;
+}
+body.theme-kizuna #boosters #kGrid :is(.kp-brand,.kp-sub,.kp-lab) { color: #c0cfe3; }
+body.theme-kizuna #boosters #kGrid .kp-title { color: #f7fbff; }
+body.theme-kizuna #boosters #kGrid .kp-pill { background: #2b3e59; border-color: #53708c; color: #dceafa; }
+body.theme-kizuna #boosters .kb-panel {
+  background: linear-gradient(145deg,#23354e,#1b2b42) !important;
+  border-color: #4b617e !important;
+  border-top-color: #81edff !important;
+  box-shadow: 0 10px 30px #07122929 !important;
+}
+body.theme-kizuna #boosters .kb-panel:hover { border-color: #4b617e !important; }
+body.theme-kizuna #boosters .kb-st > div { background: #2a3c57 !important; border-color: #4b6280; }
+body.theme-kizuna #boosters :is(.kb-sel p,.kb-st small,.kb-cap,.kb-foot,.kb-odds-note) { color: #b9cbe1; }
+body.theme-kizuna #boosters .kb-row { color: #e6effc; }
+body.theme-kizuna #boosters .kb-row em { color: #edf7ff; }
+body.theme-kizuna #boosters .kb-row .bar { background: #3a4e6b; }
+body.theme-kizuna #boosters :is(.kb-tabs button,.kb-multi button) { background: #263952; color: #cfdef1; border-color: #506582; }
+body.theme-kizuna #boosters .kb-tabs button.on { background: #72e9ff16 !important; color: #9cf2ff !important; border-color: #85edff91; }
+body.theme-kizuna #boosters .kb-open { background: #7ce8fb; color: #10273a; border-color: #b2f4ff99; }
+
+/* Collection, catalogue and ranking share the brighter dashboard surfaces. */
+body.theme-kizuna #collection :is(.cx-hero,.cx-bar,.col-album,.col-empty,.cm-management-inner,.cm-detail-panel,.col-seg,.col-chip),
+body.theme-kizuna #encyclopedia :is(.wiki-card,.v8-catalog-tile,.v8-cat-card),
+body.theme-kizuna #ranking :is(.rank-local-pill,.rank-tabs button,.rank-list,.rank-podium-card) {
+  background: #1b2a40 !important;
+  border-color: #3a4e6b !important;
+}
+body.theme-kizuna #collection :is(.cx-pill small,.col-stats small,.col-count,.col-uni em,.col-chip,.col-seg button) { color: #b8cae1 !important; }
+body.theme-kizuna #collection .cx-ring::before { background: #1b2a40 !important; }
+body.theme-kizuna #collection .col-bar { background: #3d506c !important; }
+body.theme-kizuna #collection .col-cell.miss { background: #1b2a40 !important; border-color: #415672 !important; }
+body.theme-kizuna #collection .missing-lock { background: #263750f0 !important; color: #dfebfb !important; border-color: #6580a0 !important; }
+body.theme-kizuna #ranking :is(.rank-podium-card.main,.rank-row.me) { background: #283953 !important; border-color: #bf8fc9 !important; }
+body.theme-kizuna #ranking :is(.rank-avatar,.rank-mini-avatar) { background: #294259 !important; border-color: #73d8ed99 !important; }
+body.theme-kizuna :is(.v8-wiki-filter,.v8-filter-set,.v8-catalog-modal) { background: #1b2a40 !important; border-color: #456080 !important; }
+body.theme-kizuna :is(.v8-wiki-filter,.v8-filter-set) button { color: #c3d2e7 !important; }
+body.theme-kizuna :is(.v8-catalog-head,.v8-catalog-tools,.v8-rarity-head) { border-color: #3a4e6b !important; }
+body.theme-kizuna .v8-catalog-art { background: #243650 !important; }
+body.theme-kizuna :is(.v8-catalog-close,.v8-load-more) { background: #2c405c !important; border-color: #5b7290 !important; color: #e9f3ff !important; }
+
+/* Market tools and dialogs receive real surface contrast rather than a filter. */
+body.theme-kizuna #marketPage :is(.km-wallet,.km-stat,.km-local-notice,.km-workspace,.km-history,.km-filterbar,.km-empty,.km-sell-card,.km-listing) {
+  background: #1b2a40 !important;
+  border-color: #3b516f !important;
+}
+body.theme-kizuna #marketPage :is(.km-tabs button,.km-filter-reset,.km-rarity-filters button,.km-action) {
+  background: #2a3b56 !important;
+  color: #d5e3f6 !important;
+  border-color: #536b8a !important;
+}
+body.theme-kizuna #marketPage :is(.km-tabs button.active,.km-tabs button[aria-selected=true],.km-rarity-filters button.active,.km-rarity-filters button.on) {
+  background: #72e9ff15 !important;
+  color: #96f0ff !important;
+  border-color: #78dff3 !important;
+}
+body.theme-kizuna #marketPage .km-action.primary { background: #7ce8fb !important; color: #10273a !important; border-color: #b2f4ff99 !important; }
+body.theme-kizuna #marketPage :is(.km-bottom-note,.km-history-row) { border-color: #3c526e !important; color: #b7c9e1; }
+body.theme-kizuna :is(.cm-market-modal,.kyara-auction-modal,.modal) { background: #1b2a40 !important; border-color: #57718e !important; color: #f5f8ff; }
+body.theme-kizuna :is(.cm-modal-actions,.cm-fee-summary,.cm-trade-direction-box,.cm-trade-selected,.ka-summary,.ka-range-toggle,.ka-manage-wanted) { background: #263852 !important; border-color: #4e6684 !important; }
+body.theme-kizuna :is(.cm-mode-choice,.cm-duration-option,.cm-trade-filterbar button,.ka-range-toggle button) { background: #2b3e59 !important; border-color: #556e8c !important; color: #d3e1f5 !important; }
+body.theme-kizuna #collectionMarketModal .cm-trade-result { background: #263852 !important; }
+body.theme-kizuna :is(.ka-pills span,.ka-history,.ka-help,.cm-modal-note) { color: #b6c9e1 !important; }
+body.theme-kizuna :is(.cm-modal-backdrop,.kyara-auction-backdrop,.v8-catalog-backdrop) { background: #0c1729c9 !important; }
+body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage) :is(.col-input,.select-input,select,input[type=search],input[type=number],textarea),
+body.theme-kizuna :is(.v8-catalog-tools input,.cm-modal-input,.ka-bid-row input) {
+  background: #263952 !important;
+  color: #f2f7ff !important;
+  border-color: #58718f !important;
+}
+body.theme-kizuna :is(input,textarea)::placeholder { color: #a7bad3; opacity: 1; }
+body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage) :is(.soft-btn,.col-more,.wiki-load-more,.col-market-sell-btn) { background: #2c405b !important; color: #e1edfc !important; border-color: #59718e !important; }
+body.theme-kizuna :is(.kr-close,.kr-detail-close,.v8-catalog-close,.ka-close,.cp-close,.modal-close) { background: #2d405ce8 !important; border-color: #657e9c !important; color: #f3f8ff !important; }
+
+body.theme-kizuna #detailBackdrop { background: #142137ed !important; }
+body.theme-kizuna #revealBackdrop,
+body.theme-kizuna #revealBackdrop .reveal-modal,
+body.theme-kizuna #kyaraRevealRoot,
+body.theme-kizuna #kyaraRevealRoot[data-phase="finale"] {
+  background: radial-gradient(ellipse at 74% 30%,#d67aba21,transparent 48%),radial-gradient(ellipse at 25% 50%,#5bd5ec24,transparent 45%),#142137 !important;
+}
+body.theme-kizuna #kyaraRevealRoot :is(.kr-pack-hint,.kr-swipe-hint,.kr-finale-note,.kr-pack-name) { color: #b9cce4 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-quantity-options button { background: #293d58 !important; border-color: #58708e !important; color: #e0ecfc !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-foil { background: linear-gradient(140deg,#2b4560,#283d59 34%,#463354 72%,#1c2d45) !important; border-color: #8cecff !important; }
+body.theme-kizuna #kyaraRevealRoot :is(.kr-opening-actions button,.kr-finale-actions>button):not(.kr-open-again) { background: #2a3d58f0 !important; border-color: #577391 !important; color: #e3efff !important; }
+body.theme-kizuna #kyaraProfileOverlay { background: #142137 !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-topbar,.cp-hero) { background: #1b2c45 !important; border-color: #3b526f !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-panel,.cp-side-inner,.cp-note,.cp-mini-stat,.cp-related-card,.cp-tag) { background: #223650 !important; border-color: #4a6280 !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-copy,.cp-native,.cp-note,.cp-meta-list) { color: #bfd0e5 !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-back,.cp-action) { background: #2b405c !important; border-color: #5a7595 !important; color: #e5f0ff !important; }
+body.theme-kizuna .footer { background: #172438 !important; border-color: #3b506b !important; }
+body.theme-kizuna :is(.footer-inner,.footer-links) { color: #b7c9e1; }
+body.theme-kizuna .toast { background: #2a405c; color: #e6faff; border-color: #7ae5fa99; box-shadow: 0 12px 34px #07112666; }
+
+@media (max-width: 900px) {
+  body.theme-kizuna .hero::before { inset: 280px -18px 0; }
+}
+@media (max-width: 600px) {
+  body.theme-kizuna .topline { box-shadow: 0 5px 22px #07112626; }
+  body.theme-kizuna .hero .secondary-btn { background: #263751; }
+  body.theme-kizuna #boosters .kb-panel { box-shadow: 0 8px 24px #07122926 !important; }
+  body.theme-kizuna :is(.v8-catalog-modal,.cm-market-modal,.kyara-auction-modal) { border-color: #5d7694 !important; }
+}
+
+/* Account controls fit alongside the Kizuna navigation. */
+body.theme-kizuna .top-actions .profile-entry{gap:7px;padding:4px 9px 4px 4px;max-width:150px;min-width:0;color:#e7f3ff}
+body.theme-kizuna .profile-entry #usernameLabel{overflow:hidden;text-overflow:ellipsis;max-width:95px}
+body.theme-kizuna .profile-entry .avatar{width:25px;height:25px;font-size:10px;flex-shrink:0}
+body.theme-kizuna .account-entry{padding:8px 12px;font-size:10px;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:1100px){body.theme-kizuna .top-inner{gap:15px}body.theme-kizuna .nav{gap:13px}}
+@media(max-width:760px){body.theme-kizuna .top-actions .profile-entry #usernameLabel{display:none}body.theme-kizuna .top-actions .profile-entry{padding:3px}body.theme-kizuna .account-entry{max-width:125px}}

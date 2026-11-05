@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna Shōnen — lame de l’élan</title>
+  <desc id="desc">Une lame blanche et cyan fend une flamme angulaire magenta et deux éclairs, dans l’écusson néon du club.</desc>
+  <path d="m128 14 79 32 35 82-35 82-79 32-79-32-35-82 35-82Z" stroke="#4ce7fa" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M54 184c-19-35-5-61 22-83l-4 35 29-21-10 36 13 29-11 26Z" fill="#f15acb" fill-opacity=".15" stroke="#f15acb" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M202 184c19-35 5-61-22-83l4 35-29-21 10 36-13 29 11 26Z" fill="#f15acb" fill-opacity=".15" stroke="#f15acb" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m83 48 18 38-18-4 14 37-39-49 22 5Z" fill="#4ce7fa"/>
+  <path d="m173 48-18 38 18-4-14 37 39-49-22 5Z" fill="#4ce7fa"/>
+  <path d="m128 36 23 99-23 28-23-28Z" fill="#f5f5ff" stroke="#4ce7fa" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M128 65v77" stroke="#11111b" stroke-width="5" stroke-linecap="round"/>
+  <path d="m111 149 17 16 17-16 16 11-19 16h-28l-19-16Z" fill="#f15acb" stroke="#11111b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M120 177h16v28l-8 10-8-10Z" fill="#11111b" stroke="#f5f5ff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m121 185 14 7m-14 4 14 7" stroke="#4ce7fa" stroke-width="3"/>
+  <path d="M93 216h18m34 0h18" stroke="#4ce7fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="m128 222 5 5-5 5-5-5Z" fill="#f15acb"/>
+</svg>

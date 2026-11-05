@@ -1,0 +1,18 @@
+/* Route ownership is explicit; decorative styles never decide which page is visible. */
+body:not([data-tab="home"]) #kzHome,body:not([data-tab="home"]) #home-pulls{display:none!important}
+body[data-tab="home"] #boosters,body:not([data-tab="boosts"]) #boosters{display:none!important}
+body:not([data-tab="universes"]) #universes,body:not([data-tab="community"]) #community{display:none!important}
+body[data-tab="boosts"] main>section:not(#boosters),body[data-tab="universes"] main>section:not(#universes),body[data-tab="community"] main>section:not(#community){display:none!important}
+body[data-tab="boosts"] #boosters,body[data-tab="universes"] #universes,body[data-tab="community"] #community{display:block!important;min-height:calc(100vh - 180px);padding-top:40px}
+.kz-skip{position:fixed;left:16px;top:-100px;z-index:999999;padding:12px 18px;background:#f5f2fa;color:#0d0e18;border-radius:8px}.kz-skip:focus{top:12px}
+.kz-notifications svg,.kz-shell-nav svg{width:19px;height:19px;flex-shrink:0}
+.kz-notice-dialog{width:min(480px,calc(100vw - 32px));max-height:80vh;overflow:auto;padding:26px;background:var(--kz-surface,#171929);color:#f5f2fa;border:1px solid #54506d;border-radius:20px}
+.kz-notice-dialog::backdrop{background:#080912c9}.kz-notice-dialog header{display:flex;align-items:center;justify-content:space-between;gap:20px}.kz-notice-dialog h2{font-size:22px;margin:0}.kz-notice-dialog p{line-height:1.7;color:#bcbccf}.kz-notice-dialog button{min-height:44px}.kz-notice-list{padding:0;list-style:none}.kz-notice-list li{padding:16px 0;border-bottom:1px solid #343449}.kz-notice-list strong,.kz-notice-list span{display:block}.kz-notice-list span{margin-top:6px;color:#bcbccf;font-size:13px}
+.kz-universe-search{display:block;max-width:460px;color:#bcbccf;font-size:13px}.kz-universe-search input{display:block;width:100%;margin-top:10px}
+.kz-universe-tile{font:inherit;cursor:pointer;text-align:left}.kz-universe-tile img{object-fit:cover}.kz-universe-name,.kz-universe-count{display:block}.kz-universe-count{color:#bcbccf}
+#kzUniverseCount{color:#bcbccf;font-size:13px;margin:18px 0}#kzHomeError:empty{display:none}
+.kz-featured-rarities{line-height:1.8;font-size:11px;color:#bcbccf}
+.kz-news-intro{color:#bcbccf;margin:-6px 0 24px;font-size:14px}
+.kz-community-intro{max-width:720px;font-size:16px;line-height:1.8;color:#bcbccf}.kz-community-note{margin-top:30px;line-height:1.8;color:#bcbccf;font-size:13px}
+body[data-tab="home"] #home-pulls{padding-bottom:60px}
+@media(max-width:600px){body[data-tab="boosts"] #boosters,body[data-tab="universes"] #universes,body[data-tab="community"] #community{padding-top:26px}.kz-notice-dialog{padding:20px}.kz-community-intro{font-size:14px}}

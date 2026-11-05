@@ -1,0 +1,41 @@
+/* KIZUNA · Collection of stories. Wiki display only. */
+body.theme-kizuna #encyclopedia .kzw-tools{display:grid!important;grid-template-columns:minmax(220px,1fr) auto;gap:18px;margin:28px 0 22px;padding:22px;background:var(--kz-surface,#171929);border:1px solid var(--kz-line,#343449);border-radius:12px;align-items:end}
+#encyclopedia .kzw-search{display:flex;flex-direction:column;gap:8px;min-width:0;color:var(--kz-muted,#a5a5b9);font-size:12px}
+body.theme-kizuna #encyclopedia .kzw-search #wikiSearch{width:100%;max-width:none;min-height:46px;padding:12px 14px;font-size:14px;border:1px solid var(--kz-line-strong,#57556e);border-radius:7px;background:var(--kz-bg,#0d0e18);color:var(--kz-text,#f5f2fa)}
+#encyclopedia .kzw-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;grid-column:1/-1;gap:12px;align-items:end}
+#encyclopedia .kzw-controls label{display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--kz-muted,#a5a5b9);min-width:0}
+#encyclopedia .kzw-controls select{width:100%;min-width:0;min-height:44px;border:1px solid var(--kz-line-strong,#57556e);border-radius:7px;padding:10px 12px;background:var(--kz-bg,#0d0e18);color:var(--kz-text,#f5f2fa);font:inherit;font-size:13px}
+#encyclopedia #kzwReset{white-space:nowrap;font-size:12px}
+body.theme-kizuna #encyclopedia #v8WikiFilter.kzw-ownership{display:flex;align-items:center;gap:7px;flex-wrap:wrap;grid-column:1/-1;margin:0;padding:0;background:transparent;border:0;box-shadow:none}
+body.theme-kizuna #encyclopedia .kzw-ownership button{min-height:42px;padding:9px 16px;border:1px solid var(--kz-line-strong,#57556e);border-radius:99px;background:transparent;color:var(--kz-text,#f5f2fa);font-size:12px;line-height:1.5;cursor:pointer}
+body.theme-kizuna #encyclopedia .kzw-ownership button.active{border-color:var(--kz-gold,#d9b86f);background:#d9b86f13;color:var(--kz-gold,#d9b86f)}
+body.theme-kizuna #encyclopedia .kzw-ownership button:disabled{opacity:.5;cursor:wait}
+#encyclopedia .kzw-help{grid-column:1/-1;line-height:1.7;font-size:11px;color:var(--kz-muted,#a5a5b9);margin:0}
+body.theme-kizuna #encyclopedia .kzw-tools #wikiCount{grid-column:2;grid-row:1;justify-self:end;align-self:end;white-space:normal;max-width:240px;text-align:right;padding:0 0 12px;border:0;background:transparent;color:var(--kz-muted,#a5a5b9);font-size:12px}
+body.theme-kizuna #encyclopedia #wikiGrid.kzw-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px 16px;align-items:stretch}
+body.theme-kizuna #encyclopedia .kzw-card{display:flex;flex-direction:column;width:100%;min-width:0;padding:0;text-align:left;border:1px solid var(--kz-line,#343449);border-radius:12px;background:var(--kz-surface,#171929);color:var(--kz-text,#f5f2fa);font:inherit;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;cursor:pointer}
+#encyclopedia .kzw-card-art{display:block;position:relative;overflow:hidden;width:100%;aspect-ratio:3/4;background:var(--kz-surface-2,#23243a)}
+#encyclopedia .kzw-card-art::after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#0d0e1855);pointer-events:none}
+body.theme-kizuna #encyclopedia .kzw-card-art img{display:block;width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;transition:transform .3s;filter:none!important}
+#encyclopedia .kzw-card-rarity{position:absolute;top:9px;left:8px;max-width:calc(100% - 16px);padding:4px 7px;color:var(--kzw-rarity);background:#0d0e18f0;border:1px solid currentColor;border-radius:4px;font-size:10px;font-weight:800;line-height:1.4;z-index:1}
+#encyclopedia .kzw-card-quantity{position:absolute;bottom:8px;right:8px;padding:3px 8px;background:#0d0e18ed;border:1px solid var(--kz-line-strong,#57556e);border-radius:4px;font-size:12px;z-index:1}
+#encyclopedia .kzw-card-copy{display:flex;flex-direction:column;flex:1;min-width:0;padding:12px 11px}
+#encyclopedia .kzw-card-copy strong{font-size:13px;line-height:1.45;overflow-wrap:anywhere;letter-spacing:0;margin:0 0 5px;font-weight:800}
+#encyclopedia .kzw-card-copy small{color:var(--kz-muted,#a5a5b9);font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+#encyclopedia .kzw-card-state{display:flex;flex-wrap:wrap;gap:5px 9px;font-size:10px;line-height:1.6;margin:12px 0;color:var(--kz-muted,#a5a5b9)}
+#encyclopedia .kzw-card.is-owned .kzw-card-state{color:var(--kz-uncommon,#81d4a7)}
+#encyclopedia .kzw-card-state em{font-style:normal;color:var(--kz-gold,#d9b86f)}
+#encyclopedia .kzw-card-open{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:10px;line-height:1.5;margin-top:auto;padding-top:10px;border-top:1px solid var(--kz-line,#343449);color:var(--kz-violet-light,#bba9ff)}
+body.theme-kizuna #encyclopedia .kzw-card:is(:hover,:focus-visible){border-color:var(--kzw-rarity,var(--kz-gold));transform:translateY(-3px);box-shadow:0 12px 25px #03040b40}
+#encyclopedia .kzw-card:is(:hover,:focus-visible) .kzw-card-art img{transform:scale(1.025)}
+#encyclopedia .kzw-empty{grid-column:1/-1;text-align:center;border:1px dashed var(--kz-line-strong,#57556e);border-radius:12px;padding:46px 20px;background:var(--kz-surface,#171929)}
+#encyclopedia .kzw-empty>span{display:block;font:40px/1.2 serif;color:var(--kz-gold,#d9b86f);margin-bottom:20px}
+#encyclopedia .kzw-empty h3{font-size:22px;margin:0 0 12px}
+#encyclopedia .kzw-empty p{font-size:13px;color:var(--kz-muted,#a5a5b9);line-height:1.7;margin:0 0 20px}
+body.theme-kizuna #encyclopedia .kzw-more{display:flex;margin:30px auto 0;min-height:46px}
+body.theme-kizuna #encyclopedia .kzw-more[hidden]{display:none!important}
+@media(max-width:1150px){body.theme-kizuna #encyclopedia #wikiGrid.kzw-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:950px){body.theme-kizuna #encyclopedia #wikiGrid.kzw-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.kzw-controls{grid-template-columns:repeat(3,minmax(0,1fr))!important}#encyclopedia #kzwReset{grid-column:1/-1;justify-self:start}}
+@media(max-width:650px){body.theme-kizuna #encyclopedia .kzw-tools{grid-template-columns:1fr;gap:15px;padding:16px}.kzw-controls{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}#encyclopedia #kzwReset{grid-column:auto;justify-self:stretch;white-space:normal}body.theme-kizuna #encyclopedia .kzw-tools #wikiCount{grid-column:1;grid-row:auto;justify-self:start;text-align:left;max-width:none;padding:0}body.theme-kizuna #encyclopedia #wikiGrid.kzw-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px 11px}body.theme-kizuna #encyclopedia .kzw-ownership button{padding:9px 12px;font-size:11px}.kzw-card-copy strong{font-size:12px!important}.kzw-card-rarity{font-size:9px!important}}
+@media(max-width:480px){body.theme-kizuna #encyclopedia #wikiGrid.kzw-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}body.theme-kizuna #encyclopedia .kzw-tools{padding:14px}#encyclopedia .kzw-card-copy{padding:11px 10px}#encyclopedia .kzw-help{font-size:10px}#encyclopedia .kzw-empty{padding:32px 17px}#encyclopedia .kzw-empty h3{font-size:20px}}
+@media(prefers-reduced-motion:reduce){#encyclopedia .kzw-card,#encyclopedia .kzw-card-art img{transition:none!important;transform:none!important}}

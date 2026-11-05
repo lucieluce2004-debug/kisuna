@@ -1,0 +1,255 @@
+/* KIZUNA / Tokyo Néon — secondary views and all card interactions. */
+body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage) {
+  color: #f5f5ff;
+  background: radial-gradient(ellipse at 90% 0%,#f15acb09,transparent 40%),#08080e !important;
+}
+body.theme-kizuna :is(.col-title,.rank-title,#marketTitle,#encyclopedia .section-heading h2) {
+  font-family: var(--display,'Rajdhani',sans-serif) !important;
+  font-weight: 700 !important;
+  font-size: clamp(34px,4.6vw,58px) !important;
+  letter-spacing: -.025em !important;
+  line-height: 1.04;
+  text-transform: uppercase;
+  color: #f5f5ff;
+}
+body.theme-kizuna :is(.section-kicker,.cp-section-id,.cp-kicker,.kr-eyebrow,.v8-catalog-head small) {
+  color: #4ce7fa !important;
+  font-family: var(--font,'Manrope',sans-serif);
+  letter-spacing: .15em;
+}
+body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage) :is(.col-input,.select-input,select,input[type=search],input[type=number],textarea),
+body.theme-kizuna :is(.v8-catalog-tools input,.cm-modal-input,.ka-bid-row input) {
+  border: 1px solid #393247 !important;
+  border-radius: 4px !important;
+  background: #11111b !important;
+  color: #f5f5ff !important;
+  font-family: var(--font,'Manrope',sans-serif);
+  box-shadow: none;
+}
+body.theme-kizuna :is(input,select,textarea):focus-visible {
+  outline: 2px solid #4ce7fa !important;
+  outline-offset: 3px;
+  border-color: #4ce7fa !important;
+}
+body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage) :is(.soft-btn,.col-more,.wiki-load-more,.col-market-sell-btn) {
+  border: 1px solid #4a3653 !important;
+  border-radius: 3px !important;
+  background: #181220 !important;
+  color: #e0c9e9 !important;
+  box-shadow: none !important;
+}
+body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage) :is(.soft-btn,.col-more,.wiki-load-more,.col-market-sell-btn):hover {
+  border-color: #f15acb !important;
+  background: #29172d !important;
+  color: #fff !important;
+}
+
+/* Collection and album controls. Collectible rarity colors remain intrinsic. */
+body.theme-kizuna #collection :is(.cx-hero,.cx-bar,.col-album,.col-empty,.cm-management-inner,.cm-detail-panel) {
+  background: #11111b !important;
+  border-color: #302a3e !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+}
+body.theme-kizuna #collection .cx-hero { border-top: 1px solid #4ce7fa40 !important; }
+body.theme-kizuna #collection :is(.cx-pill b,.col-stats b,.col-album h3) {
+  font-family: var(--display,'Rajdhani',sans-serif) !important;
+  font-weight: 600;
+}
+body.theme-kizuna #collection :is(.cx-pill small,.col-stats small,.col-count,.col-uni em) { color: #a4a2b6 !important; }
+body.theme-kizuna #collection .cx-ring {
+  background: conic-gradient(#4ce7fa calc(var(--p,0)*1%),#262032 0) !important;
+  color: #4ce7fa !important;
+}
+body.theme-kizuna #collection .cx-ring::before { background: #11111b !important; }
+body.theme-kizuna #collection .col-bar { background: #272132 !important; }
+body.theme-kizuna #collection .col-bar i { background: linear-gradient(90deg,#4ce7fa,#8191ed) !important; }
+body.theme-kizuna #collection :is(.col-seg,.col-chip) {
+  background: #11111b !important;
+  border-color: #302a3e !important;
+  border-radius: 3px !important;
+}
+body.theme-kizuna #collection :is(.col-seg button,.col-chip) { color: #bcb7cc !important; }
+body.theme-kizuna #collection :is(.col-chip.on,.col-seg button.on) {
+  color: #4ce7fa !important;
+  background: #4ce7fa0e !important;
+  border: 1px solid #4ce7fa75 !important;
+  border-radius: 3px !important;
+}
+body.theme-kizuna #collection .col-chip.on em { color: #bceef4 !important; }
+body.theme-kizuna #collection .col-cell.miss {
+  border-color: #342b41 !important;
+  background: #100d19 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+body.theme-kizuna #collection .col-cell.miss:hover { border-color: #f15acb70 !important; }
+body.theme-kizuna #collection .missing-lock {
+  background: #100e1bf0 !important;
+  border-color: #66506f !important;
+  color: #d8c4e0 !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+}
+body.theme-kizuna #collection .col-cell .cx { background: #4ce7fa !important; color: #061419 !important; border-radius: 3px; }
+body.theme-kizuna :is(.tcard .th span,.tback h3) { font-family: var(--display,'Rajdhani',sans-serif) !important; font-weight: 700; letter-spacing: 0; }
+body.theme-kizuna .tcard .th span { font-size: 1.12em; }
+body.theme-kizuna :is(.tcard,.tback) { border-radius: 6px !important; }
+
+/* Wiki and the progressive catalogue browser. */
+body.theme-kizuna #encyclopedia :is(.wiki-card,.v8-catalog-tile,.v8-cat-card) {
+  border-color: #352d43 !important;
+  border-radius: 4px !important;
+  background: #11111b !important;
+  box-shadow: none !important;
+}
+body.theme-kizuna #encyclopedia :is(.wiki-card,.v8-catalog-tile,.v8-cat-card):hover { border-color: #4ce7fa88 !important; }
+body.theme-kizuna :is(.wiki-card strong,.v8-catalog-name,.v8-rarity-head h3) { font-family: var(--display,'Rajdhani',sans-serif) !important; letter-spacing: 0; }
+body.theme-kizuna :is(.v8-wiki-filter,.v8-filter-set) { border-color: #332b40 !important; background: #11111b !important; border-radius: 3px !important; }
+body.theme-kizuna :is(.v8-wiki-filter,.v8-filter-set) button { background: transparent !important; color: #a4a2b6 !important; border-radius: 2px !important; }
+body.theme-kizuna :is(.v8-wiki-filter,.v8-filter-set) :is(button.active,button.on,button[aria-pressed=true]) { color: #4ce7fa !important; background: #4ce7fa0d !important; border-color: #4ce7fa70 !important; }
+body.theme-kizuna .v8-catalog-backdrop { background: #070710c9 !important; }
+body.theme-kizuna .v8-catalog-modal { background: #11111b !important; border-color: #40324d !important; border-radius: 5px !important; }
+body.theme-kizuna :is(.v8-catalog-head,.v8-catalog-tools,.v8-rarity-head) { border-color: #30283d !important; }
+body.theme-kizuna :is(.v8-catalog-head h2,.v8-catalog-name) { font-family: var(--display,'Rajdhani',sans-serif) !important; }
+body.theme-kizuna :is(.v8-catalog-close,.v8-load-more) { background: #191320 !important; border-color: #4a3653 !important; color: #e7d9ef !important; border-radius: 3px !important; }
+body.theme-kizuna .v8-catalog-art { background: #090810 !important; border-radius: 4px !important; }
+body.theme-kizuna .v8-catalog-tile { border-radius: 4px !important; }
+
+/* Ranking uses the same club dashboard language. */
+body.theme-kizuna #ranking :is(.rank-local-pill,.rank-tabs button,.rank-list,.rank-podium-card) {
+  border-color: #332b40 !important;
+  border-radius: 4px !important;
+  background: #11111b !important;
+  color: #bcb5cb;
+}
+body.theme-kizuna #ranking .rank-tabs button.active { color: #4ce7fa !important; border-color: #4ce7fa70 !important; background: #4ce7fa0b !important; }
+body.theme-kizuna #ranking .rank-tabs button::first-letter { color: inherit !important; }
+body.theme-kizuna #ranking :is(.rank-podium-card.main,.rank-row.me) { background: #161020 !important; border-color: #f15acb66 !important; }
+body.theme-kizuna #ranking :is(.rank-avatar,.rank-mini-avatar) { border-color: #4ce7fa55 !important; color: #4ce7fa !important; background: #111820 !important; box-shadow: none !important; border-radius: 4px; }
+body.theme-kizuna #ranking :is(.rank-score,.rank-row-score) { color: #4ce7fa !important; font-family: var(--display,'Rajdhani',sans-serif) !important; }
+body.theme-kizuna #ranking .rank-progress i { background: linear-gradient(90deg,#4ce7fa,#f15acb) !important; }
+body.theme-kizuna #ranking .rank-user-copy small { color: #f15acb !important; }
+
+/* Market, exchange controls, history and listing workspaces. */
+body.theme-kizuna {
+  --market-accent: #4ce7fa;
+  --market-gold: #f15acb;
+  --market-surface: #11111b;
+  --market-surface-2: #191725;
+  --market-border: #352b42;
+}
+body.theme-kizuna #marketPage :is(.km-wallet,.km-stat,.km-local-notice,.km-workspace,.km-history,.km-filterbar,.km-empty,.km-sell-card) {
+  border-color: #352b42 !important;
+  border-radius: 5px !important;
+  background: #11111b !important;
+  box-shadow: none !important;
+}
+body.theme-kizuna #marketPage :is(.km-wallet,.km-local-notice) { border-left-color: #f15acb !important; }
+body.theme-kizuna #marketPage .km-local-notice strong { color: #4ce7fa !important; }
+body.theme-kizuna #marketPage :is(.km-wallet strong i,.km-price i) { color: #f15acb !important; }
+body.theme-kizuna #marketPage .km-sold-mark { color: #eea4dc !important; background: #261429 !important; border-color: #704167 !important; border-radius: 3px !important; }
+body.theme-kizuna #marketPage .km-history-amount.debit { color: #f15acb !important; }
+body.theme-kizuna #marketPage :is(.km-wallet strong,.km-price,.km-wallet b,.km-history-amount) { color: #4ce7fa !important; font-family: var(--display,'Rajdhani',sans-serif) !important; }
+body.theme-kizuna #marketPage :is(.km-stat-icon,.km-notice-mark) { background: #4ce7fa0b !important; color: #4ce7fa !important; border-color: #4ce7fa30 !important; border-radius: 3px !important; }
+body.theme-kizuna #marketPage :is(.km-tabs button,.km-filter-reset,.km-rarity-filters button) { border-color: #393045 !important; border-radius: 3px !important; background: #17121f !important; color: #bbb1c9 !important; }
+body.theme-kizuna #marketPage :is(.km-tabs button.active,.km-tabs button[aria-selected=true],.km-rarity-filters button.active,.km-rarity-filters button.on) { color: #4ce7fa !important; background: #4ce7fa0c !important; border-color: #4ce7fa75 !important; box-shadow: none !important; }
+body.theme-kizuna #marketPage .km-tabs button span { background: #4ce7fa12 !important; color: #b1e8ef !important; }
+body.theme-kizuna #marketPage .km-action { border-color: #4c3656 !important; border-radius: 3px !important; background: #1c1425 !important; color: #dfcae8 !important; box-shadow: none !important; }
+body.theme-kizuna #marketPage .km-action.primary { background: #4ce7fa !important; border-color: #7eecfa !important; color: #061419 !important; }
+body.theme-kizuna #marketPage .km-action:hover:not(:disabled) { border-color: #f15acb !important; filter: brightness(1.1); }
+body.theme-kizuna #marketPage .km-bottom-note { border-color: #32283d !important; color: #9486a2 !important; }
+body.theme-kizuna #marketPage .km-history-row { border-color: #2e2739 !important; }
+body.theme-kizuna :is(.km-art-name,.km-view-head h2,.km-sell-body h3) { font-family: var(--display,'Rajdhani',sans-serif) !important; }
+body.theme-kizuna .km-exchange-icon { border-color: #4ce7fa65 !important; background: #12212a !important; border-radius: 3px !important; box-shadow: none !important; }
+body.theme-kizuna .km-exchange-icon path { stroke: #4ce7fa !important; }
+body.theme-kizuna .km-exchange-icon svg { filter: none !important; }
+
+/* Sell/trade and auction dialogs share cyan actions and magenta selections. */
+body.theme-kizuna :is(.cm-modal-backdrop,.kyara-auction-backdrop) { background: #070710ce !important; }
+body.theme-kizuna :is(.cm-market-modal,.kyara-auction-modal) { background: #11111b !important; border-color: #48334f !important; border-radius: 6px !important; color: #f5f5ff; }
+body.theme-kizuna :is(.cm-market-modal-head,.ka-head,.ka-market,.cm-modal-actions,.cm-fee-summary,.cm-fee-row.total) { border-color: #30283d !important; }
+body.theme-kizuna :is(.cm-modal-actions,.cm-fee-summary,.cm-trade-direction-box,.cm-trade-selected,.ka-summary,.ka-range-toggle,.ka-manage-wanted) { background: #15111e !important; border-color: #382c43 !important; border-radius: 4px !important; }
+body.theme-kizuna :is(.cm-mode-choice,.cm-duration-option,.cm-trade-filterbar button,.ka-range-toggle button) { background: #15111e !important; border-color: #3d2f48 !important; color: #bcb0cc !important; border-radius: 3px !important; }
+body.theme-kizuna :is(.cm-mode-choice.active,.cm-duration-option.active,.cm-trade-filterbar button.active,.ka-range-toggle button.active) { color: #4ce7fa !important; background: #4ce7fa0d !important; border-color: #4ce7fa70 !important; }
+body.theme-kizuna #collectionMarketModal .cm-trade-result { background: #15111e !important; border-radius: 4px !important; }
+body.theme-kizuna #collectionMarketModal .cm-trade-result.selected { box-shadow: inset 0 0 0 2px #f15acb !important; }
+body.theme-kizuna #collectionMarketModal .cm-trade-selected.has-selection { color: #b9edf3 !important; border-color: #4ce7fa66 !important; }
+body.theme-kizuna #collectionMarketModal .cm-trade-result .cm-selected-check { border-color: #f15acb !important; background: #28152c !important; color: #f15acb !important; }
+body.theme-kizuna :is(.cm-mode-trade,.cm-trade-direction-box>strong span,.cm-trade-tabs button.active) { color: #f15acb !important; }
+body.theme-kizuna .cm-trade-tabs button.active { border-bottom-color: #f15acb !important; }
+body.theme-kizuna :is(#cmOfferPublish,.ka-bid-row button,.ka-buy-now) { background: #4ce7fa !important; color: #061419 !important; border-color: #70eaf9 !important; border-radius: 3px !important; box-shadow: none !important; }
+body.theme-kizuna .ka-cancel-listing { background: #2b1530 !important; border-color: #f15acb88 !important; color: #f7b2e5 !important; border-radius: 3px !important; box-shadow: none !important; }
+body.theme-kizuna :is(.ka-head h2,.cm-market-modal-head h2,.ka-card-info strong,.ka-summary strong) { font-family: var(--display,'Rajdhani',sans-serif) !important; }
+body.theme-kizuna :is(.ka-pills span,.ka-history,.ka-help,.cm-modal-note) { color: #a4a2b6 !important; }
+body.theme-kizuna .ka-status { background: #4ce7fa0b !important; border-color: #4ce7fa50 !important; color: #4ce7fa !important; border-radius: 3px !important; }
+
+/* Card focus, the full-screen pack flow and the recap. */
+body.theme-kizuna #detailBackdrop { background: #08080ee8 !important; }
+body.theme-kizuna #detailBackdrop::before { background: radial-gradient(ellipse at 42% 35%,#4ce7fa0d,transparent 40%),radial-gradient(ellipse at 65% 60%,#f15acb0d,transparent 43%) !important; }
+body.theme-kizuna :is(.kr-close,.kr-detail-close,.v8-catalog-close,.ka-close,.cp-close,.modal-close) { border-color: #4f3d5c !important; border-radius: 4px !important; background: #17121feb !important; color: #eae2f3 !important; box-shadow: none !important; }
+body.theme-kizuna :is(.kr-close,.kr-detail-close,.v8-catalog-close,.ka-close,.cp-close,.modal-close):hover { border-color: #f15acb !important; color: #f15acb !important; }
+body.theme-kizuna #detailBackdrop .detail-hint { color: #a4a2b6 !important; }
+body.theme-kizuna #revealBackdrop,
+body.theme-kizuna #revealBackdrop .reveal-modal,
+body.theme-kizuna #kyaraRevealRoot,
+body.theme-kizuna #kyaraRevealRoot[data-phase="finale"] {
+  --kr-halo: #4ce7fa !important;
+  background: radial-gradient(ellipse at 72% 38%,#f15acb15,transparent 48%),radial-gradient(ellipse at 30% 45%,#4ce7fa0e,transparent 40%),#08080e !important;
+}
+body.theme-kizuna #kyaraRevealRoot :is(.kr-pack-heading h1,.kr-finale-heading h1,.kr-pack-copy h2,.kr-card-caption h2) { font-family: var(--display,'Rajdhani',sans-serif) !important; font-weight: 700; letter-spacing: -.02em !important; }
+body.theme-kizuna #kyaraRevealRoot :is(.kr-pack-hint,.kr-swipe-hint,.kr-finale-note,.kr-pack-name) { color: #a4a2b6 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-quantity-options button { border-radius: 4px !important; background: #14101d !important; border-color: #3c2e47 !important; color: #d7cde3 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-quantity-options button.selected { border-color: #4ce7fa !important; background: #4ce7fa0b !important; box-shadow: 0 0 18px #4ce7fa0d !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-quantity-options button.selected b { color: #4ce7fa !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-foil { background: linear-gradient(140deg,#141823,#172132 34%,#29162f 72%,#0c0b14) !important; border-color: #4ce7fa88 !important; border-radius: 6px !important; box-shadow: inset 0 0 0 3px #ffffff06,0 0 26px #4ce7fa15 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-foil::before { opacity: .23 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-foil::after { border-color: #4ce7fa44 !important; border-radius: 3px !important; box-shadow: none !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-crimp { background: repeating-linear-gradient(90deg,#08080e88 0 2px,#4ce7fa44 2px 4px,#151323 4px 6px) !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-cardcount { background: #100e1de8 !important; border-color: #f15acb55 !important; border-radius: 3px !important; }
+body.theme-kizuna #kyaraRevealRoot :is(.kr-pack-brand,.kr-pack-cardcount,.kr-pack-copy) { color: #f5f5ff !important; text-shadow: none !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-copy h2 { font-size: clamp(25px,3vw,35px); text-transform: uppercase; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-mark { background: #101724 !important; border-color: #4ce7fa88 !important; color: #4ce7fa !important; border-radius: 5px !important; box-shadow: 0 0 20px #4ce7fa24,inset 0 0 15px #4ce7fa0b !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-tear-line { border-color: #f15acb !important; color: #f15acb !important; }
+body.theme-kizuna #kyaraRevealRoot :is(.kr-open-cta,.kr-open-again) { background: #4ce7fa !important; color: #061419 !important; border-color: #80eefb !important; border-radius: 3px !important; box-shadow: 0 0 24px #4ce7fa14 !important; }
+body.theme-kizuna #kyaraRevealRoot :is(.kr-opening-actions button,.kr-finale-actions>button):not(.kr-open-again) { background: #18111fe8 !important; border-color: #4a3454 !important; color: #dfcce9 !important; border-radius: 3px !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-new-count { border-radius: 3px !important; color: #4ce7fa !important; background: #4ce7fa0d !important; border-color: #4ce7fa55 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-new-badge { border-radius: 3px !important; background: #4ce7fa !important; color: #061419 !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-pack-change { color: #c69bbf !important; }
+body.theme-kizuna #kyaraRevealRoot .kr-quantity-title { color: #b798c3 !important; }
+
+/* Character dossier follows the same theme, with rarity accents kept on art. */
+body.theme-kizuna #kyaraProfileOverlay { background: #08080e !important; color: #f5f5ff; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-topbar,.cp-hero) { background: #0d0b15 !important; border-color: #33273e !important; }
+body.theme-kizuna #kyaraProfileOverlay .cp-hero { background: radial-gradient(ellipse at 85% 20%,#f15acb14,transparent 55%),#0d0b15 !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-panel,.cp-side-inner,.cp-note,.cp-mini-stat,.cp-related-card,.cp-tag) { background: #11111b !important; border-color: #352b42 !important; border-radius: 4px !important; box-shadow: none !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-title,.cp-section-title,.cp-card-name,.cp-related-name) { font-family: var(--display,'Rajdhani',sans-serif) !important; letter-spacing: -.02em !important; }
+body.theme-kizuna #kyaraProfileOverlay .cp-title { text-transform: uppercase; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-copy,.cp-native,.cp-note,.cp-meta-list) { color: #b2a9bf !important; }
+body.theme-kizuna #kyaraProfileOverlay :is(.cp-back,.cp-action) { background: #18121f !important; border-color: #53365b !important; color: #ddc5e6 !important; border-radius: 3px !important; }
+body.theme-kizuna #kyaraProfileOverlay .cp-back::before { background: #10242c !important; border-color: #4ce7fa60 !important; color: #4ce7fa !important; box-shadow: none !important; border-radius: 3px !important; }
+body.theme-kizuna #kyaraProfileOverlay .cp-rank-watermark { color: #f15acb12 !important; }
+
+@media(max-width:600px) {
+  body.theme-kizuna :is(.col-title,.rank-title,#marketTitle,#encyclopedia .section-heading h2) { font-size: 36px !important; }
+  body.theme-kizuna #collection .cx-hero { padding: 18px !important; }
+  body.theme-kizuna #collection .col-stats { gap: 18px; }
+  body.theme-kizuna #collection .col-chip { padding: 8px 10px !important; }
+  body.theme-kizuna #marketPage .km-tabs { gap: 5px; }
+  body.theme-kizuna #marketPage .km-tabs button { min-height: 39px; padding: 8px 9px; }
+  body.theme-kizuna #marketPage :is(.km-filterbar,.km-local-notice) { padding: 12px; }
+  body.theme-kizuna .v8-catalog-tools { flex-wrap: wrap; gap: 9px; }
+  body.theme-kizuna .v8-catalog-tools input { flex-basis: 100%; }
+  body.theme-kizuna .v8-catalog-head { padding: 15px; }
+  body.theme-kizuna :is(.cm-market-modal,.kyara-auction-modal) { max-height: 94dvh; }
+  body.theme-kizuna #collectionMarketModal .cm-trade-direction { grid-template-columns: 1fr; }
+  body.theme-kizuna #collectionMarketModal .cm-modal-actions { gap: 8px; }
+  body.theme-kizuna #collectionMarketModal .cm-modal-actions>button { min-height: 42px; }
+  body.theme-kizuna .ka-summary { padding: 10px !important; }
+  body.theme-kizuna #kyaraRevealRoot .kr-open-cta { min-height: 46px; width: min(100%,340px); }
+  body.theme-kizuna #kyaraRevealRoot .kr-finale-actions>button { min-height: 42px !important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.theme-kizuna :is(#collection,#encyclopedia,#ranking,#marketPage,#detailBackdrop,#revealBackdrop,#kyaraProfileOverlay) *,
+  body.theme-kizuna :is(.v8-catalog-backdrop,.cm-modal-backdrop,.kyara-auction-backdrop) * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

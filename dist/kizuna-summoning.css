@@ -1,0 +1,83 @@
+/* Original vector invocation. Effects follow the saved card's actual rarity. */
+body.theme-kizuna #kyaraRevealRoot.ksm-scene{--ksm-energy:var(--kr-halo,#78e4ee);--ksm-arrival:650ms;--ksm-strength:.32;background:radial-gradient(ellipse at 50% 42%,color-mix(in srgb,var(--ksm-energy) 13%,transparent),transparent 62%),#070e1d!important;overflow:hidden}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(#b6e5ed44 .7px,transparent 1px);background-size:43px 43px;opacity:.25;pointer-events:none}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene::after{display:none!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-eyebrow{color:var(--ksm-energy)!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-heading h1{text-shadow:0 0 35px color-mix(in srgb,var(--ksm-energy) 23%,transparent)}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-stage{height:440px;isolation:isolate}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-art{z-index:2;width:210px;height:210px;transform:none!important;animation:ksm-emblem-arrive .55s ease-out both!important;touch-action:manipulation;border-radius:50%;margin-bottom:70px}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-art:hover:not(:disabled){transform:translateY(-5px) scale(1.035)!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-foil{inset:0;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid var(--ksm-energy)!important;border-radius:50%!important;background:radial-gradient(circle,#243a50,#0d1b32 70%)!important;box-shadow:inset 0 0 0 8px #0d1b32,inset 0 0 0 9px color-mix(in srgb,var(--ksm-energy) 40%,transparent),0 0 45px color-mix(in srgb,var(--ksm-energy) 22%,transparent)!important;overflow:hidden}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-foil::after{display:none!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-foil .kg-pack-image{opacity:.17;mask-image:radial-gradient(circle,#000,transparent 75%)}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-brand{display:none!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-mark,body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-mark .booster-logo{width:120px!important;height:120px!important;margin:0!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-copy{padding:0!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-copy strong{display:none}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-copy small{font-size:8px!important;letter-spacing:.18em;color:#d2edf2;margin:0}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-hint{margin-bottom:8px}
+.ksm-ritual-status{min-height:22px;margin:0 0 22px;color:#b0ccd9;font-size:12px;line-height:1.6}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .ksm-skip-intro{display:block;width:100%;min-height:44px;margin:14px 0 0;padding:10px 16px;border:1px solid #66849b;border-radius:10px;background:#152a3f;color:#e5f4ff;font:inherit;font-size:13px}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .ksm-skip-intro[hidden]{display:none!important}
+/* The ground seal, column and motes share a colour, but have separate rhythms. */
+.ksm-portal{position:absolute;inset:0;z-index:0;pointer-events:none;isolation:isolate;perspective:800px;color:var(--ksm-energy);display:block;overflow:visible}
+.ksm-halo{position:absolute;inset:2% -15%;border-radius:50%;background:radial-gradient(ellipse,color-mix(in srgb,var(--ksm-energy) 28%,transparent),transparent 65%);opacity:.45;transform:scale(.85)}
+.ksm-sigil{position:absolute;bottom:0;left:50%;width:min(460px,120%);aspect-ratio:1;transform:translateX(-50%) rotateX(64deg);transform-style:preserve-3d;opacity:.65;filter:drop-shadow(0 0 8px color-mix(in srgb,var(--ksm-energy) 45%,transparent))}
+.ksm-sigil svg{display:block;width:100%;height:100%;overflow:visible}
+.ksm-ring-outer,.ksm-ring-inner{transform-origin:200px 200px}
+.ksm-ring-outer{animation:ksm-orbit 24s linear 3}.ksm-ring-inner{animation:ksm-orbit 18s linear reverse 3}
+.ksm-beam{position:absolute;left:50%;bottom:19%;width:55%;height:95%;opacity:0;transform:translateX(-50%) scaleX(.08);transform-origin:50% 100%;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ksm-energy) 30%,transparent) 26%,#dcfcff80 50%,color-mix(in srgb,var(--ksm-energy) 30%,transparent) 74%,transparent);mask-image:linear-gradient(transparent,#000 40%,#000 85%,transparent)}
+.ksm-wave{position:absolute;left:50%;bottom:13%;width:85%;aspect-ratio:2.8;border:1px solid currentColor;border-radius:50%;transform:translateX(-50%) scale(.4);opacity:0;box-shadow:0 0 15px color-mix(in srgb,var(--ksm-energy) 25%,transparent)}
+.ksm-motes{position:absolute;left:50%;top:45%;width:1px;height:1px}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .ksm-motes i{position:absolute;inset:auto;width:3px;height:12px;border:0;border-radius:3px;background:currentColor;box-shadow:0 0 9px currentColor;opacity:0;transform:rotate(var(--ksm-angle)) translateY(130px);animation:none}
+/* Charge is finite; a slow network never repeats a burst or reveals a fake tier. */
+body.theme-kizuna #kyaraRevealRoot.ksm-scene.ksm-charging .kr-pack-art{animation:ksm-emblem-release 1350ms cubic-bezier(.22,.8,.3,1) both!important}
+.ksm-charging .ksm-sigil{animation:ksm-seal-charge 1350ms ease-in-out both}
+.ksm-charging .ksm-ring-outer{animation:ksm-orbit 1350ms cubic-bezier(.55,.05,.5,1) 1}
+.ksm-charging .ksm-ring-inner{animation:ksm-orbit 1350ms cubic-bezier(.55,.05,.5,1) reverse 1}
+.ksm-charging .ksm-beam{animation:ksm-beam-charge 1350ms ease-in-out both}
+.ksm-charging .ksm-wave{animation:ksm-wave-out 700ms 600ms ease-out both}
+.ksm-charging .ksm-halo{animation:ksm-halo-charge 1350ms ease-in-out both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene.ksm-charging .ksm-motes i{animation:ksm-mote-in 900ms var(--ksm-delay) ease-in both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-summon=resolving] .kr-pack-art{opacity:.35;animation:none!important}
+.ksm-scene[data-summon=resolving] .ksm-beam{opacity:.2;transform:translateX(-50%) scaleX(.7)}
+/* Saved cards materialise above the seal; there is no card-back flip. */
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center{isolation:isolate;min-height:455px}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center .ksm-sigil{bottom:14%;width:min(480px,95%);opacity:.45}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center .ksm-halo{inset:-5% -5% 8%;opacity:var(--ksm-strength)}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center .ksm-beam{bottom:28%;height:85%;animation:ksm-card-beam var(--ksm-arrival) ease-out both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center .ksm-wave{bottom:24%;width:min(450px,85%);animation:ksm-wave-out var(--ksm-arrival) ease-out both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center .ksm-motes{top:37%}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center .ksm-motes i{animation:ksm-mote-out var(--ksm-arrival) var(--ksm-delay) ease-out both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-card-stack{z-index:2;isolation:isolate}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-current-card{animation:ksm-card-arrive var(--ksm-arrival) cubic-bezier(.16,.75,.25,1) both!important;animation-duration:var(--ksm-arrival)!important;box-shadow:0 14px 35px #0008,0 0 24px color-mix(in srgb,var(--ksm-energy) 20%,transparent)!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-card-caption{z-index:2;animation:ksm-caption-in .35s .18s ease-out both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-new-badge{animation:ksm-caption-in .35s .25s ease-out both}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene.kr-card-leaving .kr-current-card{animation:ksm-card-depart 140ms ease-in both!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-rarity=E]{--ksm-arrival:850ms;--ksm-strength:.55}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-rarity=L]{--ksm-arrival:1100ms;--ksm-strength:.8}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-rarity=M]{--ksm-arrival:1350ms;--ksm-strength:1}
+.ksm-prestige-ring{position:absolute;left:50%;top:35%;width:min(390px,80%);aspect-ratio:1;border:1px solid currentColor;border-radius:50%;box-shadow:0 0 0 12px color-mix(in srgb,var(--ksm-energy) 5%,transparent),0 0 0 25px color-mix(in srgb,var(--ksm-energy) 3%,transparent);transform:translate(-50%,-50%);animation:ksm-prestige var(--ksm-arrival) ease-out both;opacity:.6}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-rarity=M] .ksm-prestige-ring{border-width:2px;border-style:double;box-shadow:0 0 0 15px #f6cc6920,0 0 0 30px #ec9bc915,0 0 50px #f7d28e22}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-rarity=M] .kr-current-card{box-shadow:0 0 40px #eea1ce50,0 0 75px #edc57322!important}
+body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-top-meta,body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-opening-bottom{position:relative;z-index:3}
+@keyframes ksm-orbit{to{transform:rotate(360deg)}}
+@keyframes ksm-emblem-arrive{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+@keyframes ksm-emblem-release{0%{opacity:1;translate:0 0;scale:1}42%{opacity:1;translate:0 -12px;scale:.96}78%{opacity:.8;translate:0 -24px;scale:.86}100%{opacity:0;translate:0 -38px;scale:.6}}
+@keyframes ksm-seal-charge{0%{opacity:.5}40%{opacity:.9}80%{opacity:1}100%{opacity:.6}}
+@keyframes ksm-halo-charge{0%{opacity:.25;scale:.8}65%{opacity:.9;scale:1.2}100%{opacity:.4;scale:1.35}}
+@keyframes ksm-beam-charge{0%,15%{opacity:0;transform:translateX(-50%) scaleX(.04)}50%{opacity:.55;transform:translateX(-50%) scaleX(.55)}80%{opacity:.8;transform:translateX(-50%) scaleX(1)}100%{opacity:.1;transform:translateX(-50%) scaleX(1.2)}}
+@keyframes ksm-wave-out{0%{opacity:.7;transform:translateX(-50%) scale(.35)}100%{opacity:0;transform:translateX(-50%) scale(1.25)}}
+@keyframes ksm-mote-in{0%{opacity:0;transform:rotate(var(--ksm-angle)) translateY(170px) scale(.5)}35%{opacity:.75}100%{opacity:0;transform:rotate(var(--ksm-angle)) translateY(12px) scale(.1)}}
+@keyframes ksm-mote-out{0%{opacity:0;transform:rotate(var(--ksm-angle)) translateY(60px) scale(.4)}28%{opacity:.75}100%{opacity:0;transform:rotate(var(--ksm-angle)) translateY(210px) scale(.1)}}
+@keyframes ksm-card-beam{0%{opacity:.65;transform:translateX(-50%) scaleX(.4)}45%{opacity:.35;transform:translateX(-50%) scaleX(1)}100%{opacity:0;transform:translateX(-50%) scaleX(1.15)}}
+@keyframes ksm-card-arrive{0%{opacity:0;translate:0 38px;scale:.75;filter:brightness(1.8)}35%{opacity:1;filter:brightness(1.2)}75%{translate:0 -5px;scale:1.015}100%{opacity:1;translate:0 0;scale:1;filter:brightness(1)}}
+@keyframes ksm-card-depart{to{opacity:0;translate:0 -16px;scale:.97}}
+@keyframes ksm-caption-in{from{opacity:0;translate:0 9px}to{opacity:1;translate:0 0}}
+@keyframes ksm-prestige{0%{opacity:0;scale:.6}45%{opacity:.8}100%{opacity:.5;scale:1}}
+@media(max-width:760px){body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-stage{height:300px;margin:8px 0}body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-art{width:170px;height:170px;margin-bottom:35px}body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-mark,body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-mark .booster-logo{width:95px!important;height:95px!important}.ksm-sigil{width:min(350px,110%);bottom:-12%}body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-open-center{min-height:400px}.ksm-ritual-status{margin-bottom:16px}.ksm-prestige-ring{width:min(320px,90%)}body.theme-kizuna #kyaraRevealRoot.ksm-scene .ksm-motes i:nth-child(even){display:none}body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-controls{padding-top:0}}
+@media(max-height:650px) and (min-width:761px){body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-stage{height:340px}body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-shell{padding-top:35px!important;gap:5px 40px}body.theme-kizuna #kyaraRevealRoot.ksm-scene .kr-pack-heading h1{font-size:36px}}
+/* Both accessibility controls win over all rarity-specific presentation rules. */
+html[data-kz-motion=reduced] body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-phase][data-rarity] *,html[data-kz-motion=reduced] body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-phase][data-rarity] *::before,html[data-kz-motion=reduced] body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-phase][data-rarity] *::after{animation:none!important;transition:none!important}
+html[data-kz-motion=reduced] #kyaraRevealRoot.ksm-scene :is(.ksm-motes,.ksm-beam,.ksm-wave){display:none!important}
+@media(prefers-reduced-motion:reduce){html body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-phase][data-rarity] *,html body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-phase][data-rarity] *::before,html body.theme-kizuna #kyaraRevealRoot.ksm-scene[data-phase][data-rarity] *::after{animation:none!important;transition:none!important}#kyaraRevealRoot.ksm-scene :is(.ksm-motes,.ksm-beam,.ksm-wave){display:none!important}}

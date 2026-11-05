@@ -1,0 +1,33 @@
+begin;
+do $$
+declare a uuid:=gen_random_uuid();b uuid:=gen_random_uuid();suffix text:=substr(replace(gen_random_uuid()::text,'-',''),1,8);r jsonb;t jsonb;req uuid;booster uuid;rev bigint;before jsonb;st jsonb;listing text;
+begin
+ perform pg_advisory_xact_lock(17493,700);
+ insert into auth.users(id,email,is_anonymous) values(a,'mythic-a-'||suffix||'@example.invalid',false),(b,'mythic-b-'||suffix||'@example.invalid',false);
+ insert into public.kizuna_profiles(id,username) values(a,'MythicA_'||suffix),(b,'MythicB_'||suffix);
+ perform set_config('request.jwt.claim.sub',a::text,true);r:=public.kizuna_economy('get');
+ insert into public.kizuna_boosters(name,description,card_ids,published) values('Mythic fixture','Rollback only',array['cseed-0013'],true) returning id into booster;
+ update public.kizuna_player_states set snapshot=jsonb_set(snapshot,'{stock,free}','100') where user_id=a;
+ req:=gen_random_uuid();r:=public.kizuna_economy('open',jsonb_build_object('count',1,'booster','staff:'||booster),req);
+ if jsonb_array_length(r#>'{result,resonance}')<>5 or r#>>'{result,resonance,0,delta}'<>'0' or r#>>'{result,resonance,1,delta}'<>'1' then raise exception 'First copy or same-pack duplicate wrong';end if;
+ t:=public.kizuna_mythic('get');if t#>>'{progress,cseed-0013,resonance}'<>'4' or t#>>'{progress,cseed-0013,unlocked}'<>'2' then raise exception 'Thresholds 1/3 incorrect';end if;
+ t:=public.kizuna_economy('open',jsonb_build_object('count',1,'booster','staff:'||booster),req);
+ if t->'result'<>r->'result' or jsonb_array_length(t#>'{snapshot,owned}')<>5 then raise exception 'Replay differs';end if;
+ t:=public.kizuna_mythic('get');if t#>>'{progress,cseed-0013,resonance}'<>'4' then raise exception 'Replay awarded twice';end if;
+ before:=r->'snapshot';perform public.kizuna_mythic('select','{"id":"cseed-0013","level":2}');t:=public.kizuna_economy('get');if t->'snapshot'<>before then raise exception 'Style changed inventory';end if;
+ begin perform public.kizuna_mythic('select','{"id":"cseed-0013","level":3}');raise exception 'Locked selected';exception when raise_exception then if sqlerrm<>'AWAKENING_LOCKED' then raise;end if;end;
+ begin perform public.kizuna_mythic('select','{"id":"cseed-0015","level":1}');raise exception 'Non Mythic selected';exception when raise_exception then if sqlerrm<>'MYTHIC_ONLY' then raise;end if;end;
+ begin perform public.kizuna_adventure('awaken','{"id":"cseed-0013","level":1,"method":"fragments"}');raise exception 'Legacy bypass';exception when raise_exception then if sqlerrm<>'MYTHIC_RESONANCE_REQUIRED' then raise;end if;end;
+ r:=public.kizuna_economy('open',jsonb_build_object('count',5,'booster','staff:'||booster),gen_random_uuid());t:=public.kizuna_mythic('get');
+ if t#>>'{progress,cseed-0013,resonance}'<>'29' or t#>>'{progress,cseed-0013,unlocked}'<>'3' or jsonb_array_length(r#>'{snapshot,owned}')<>30 then raise exception 'Multi-open or cap wrong';end if;
+ r:=public.kizuna_economy('recycle_all',jsonb_build_object('revision',r->'revision'),gen_random_uuid());t:=public.kizuna_mythic('get');if t#>>'{progress,cseed-0013,resonance}'<>'29' or t#>>'{progress,cseed-0013,unlocked}'<>'3' then raise exception 'Recycle lost resonance';end if;
+ r:=public.kizuna_economy('publish','{"cardId":"cseed-0013","mode":"sale","hours":24,"price":100}',gen_random_uuid());listing:=r#>>'{result,listingId}';
+ r:=public.kizuna_economy('open',jsonb_build_object('count',1,'booster','staff:'||booster),gen_random_uuid());if r#>>'{result,resonance,0,delta}'<>'1' then raise exception 'Escrow not recognized as owned';end if;
+ perform set_config('request.jwt.claim.sub',b::text,true);r:=public.kizuna_economy('get');r:=public.kizuna_economy('buy',jsonb_build_object('id',listing),gen_random_uuid());t:=public.kizuna_mythic('get');if t->'progress'<>'{}'::jsonb then raise exception 'Purchase gave resonance';end if;
+ begin perform public.kizuna_mythic('settings','{"revision":1,"thresholds":[1,2,3]}');raise exception 'Player configured thresholds';exception when insufficient_privilege then null;end;
+ insert into public.kizuna_admins(user_id) values(b);t:=public.kizuna_mythic('get');r:=public.kizuna_mythic('settings',jsonb_build_object('revision',t#>'{rules,revision}','thresholds','[2,4,8]'::jsonb));if r#>'{rules,thresholds}'<>'[2,4,8]'::jsonb then raise exception 'Threshold config failed';end if;
+ perform set_config('request.jwt.claim.sub',a::text,true);r:=public.kizuna_mythic('get');if r#>>'{progress,cseed-0013,unlocked}'<>'3' then raise exception 'Threshold increase revoked level';end if;
+ if has_function_privilege('authenticated','kizuna_private.mythic_record_open(uuid,uuid,jsonb,jsonb,integer)','execute') or has_table_privilege('authenticated','kizuna_private.kizuna_mythic_progress','select,insert,update,delete') or has_function_privilege('anon','public.kizuna_mythic(text,jsonb)','execute') then raise exception 'Unsafe grants';end if;
+ if (select count(*) from kizuna_private.kizuna_mythic_unlocks where user_id=a)<>3 then raise exception 'Duplicate or excessive levels';end if;
+end; $$;
+rollback;

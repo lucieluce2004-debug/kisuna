@@ -1,0 +1,38 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {JSDOM,VirtualConsole} from 'jsdom';
+const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(!/Could not parse CSS/.test(e.message))errors.push(e.message);});
+const dom=new JSDOM(await fs.readFile('dist/index.html','utf8'),{url:'https://kizuna.example/',runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:vc}),w=dom.window,d=w.document;
+const copy=x=>JSON.parse(JSON.stringify(x)),wait=()=>new Promise(r=>setTimeout(r,85)),click=s=>{const n=d.querySelector(s);assert.ok(n,s);n.click();return n;};
+w.scrollTo=()=>{};w.confirm=()=>true;w.fetch=async()=>{throw Error('Unexpected network');};w.matchMedia=()=>({matches:true,addListener(){},removeListener(){}});w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;};
+try{
+ for(const script of d.scripts){const src=script.getAttribute('src');w.eval(src?await fs.readFile(path.join('dist',src),'utf8'):script.textContent);if(src==='kizuna-config.js')w.KIZUNA_CONFIG={};}await wait();
+ const A=w.KizunaAnomalies,G=w.KizunaGame;w.KizunaAdventure.navigate('events');await wait();assert.match(d.querySelector('.kan-empty').textContent,/Aucune Anomalie/);assert.equal(d.getElementById('kanStaffTab'),null);
+ let user='a',admin=true,drafts=[],events=[],rewards=[],selection={},calls=[],rules={thresholds:[1,3,6],revision:1},pending=null;
+ const result=()=>({events:copy(events),rewards:copy(rewards),selection:copy(selection),server_now:Date.now()});
+ w.KizunaAccount.getSnapshot=()=>({user:{id:user},profile:{username:'Test'},loading:false,status:'synced',staffRole:admin?'admin':null,isAdmin:admin});
+ w.KizunaAccount.staffRequest=async action=>action==='list_players'?{players:[],page:1,hasMore:false}:{};
+ w.KizunaAccount.adventureRequest=async()=>({state:w.KizunaAdventureRules.empty(),definitions:w.KizunaAdventureSeed,revision:0,server_now:Date.now()});
+ w.KizunaAccount.mythicRequest=async(action,p)=>{if(action==='settings')rules={thresholds:copy(p.thresholds),revision:rules.revision+1};return {progress:{},rules:copy(rules)}};
+ w.KizunaAccount.anomalyRequest=async(action,p={})=>{calls.push({action,p:copy(p)});if(pending&&action==='get')return new Promise(r=>pending.resolve=r);
+  if(action==='get')return result();
+  if(action==='claim'){const e=events.find(x=>x.id===p.event),c=e.config.challenges.find(x=>x.id===p.challenge);c.claimed=true;rewards=[{key:e.id+':'+c.id,reward:copy(c.reward)}];return result();}
+  if(action==='equip'){selection[p.kind]=p.key;return result();}
+  if(action==='participants')return {participants:[{username:'Participant réel',first_at:new Date().toISOString(),last_at:new Date().toISOString(),rewards:1}],page:0};
+  let saved_id=null;
+  if(action==='save'){let row=drafts.find(x=>x.id===p.id);if(row){row.config=copy(p.config);row.revision++;}else{row={id:'event-'+(drafts.length+1),revision:1,published_revision:0,config:copy(p.config),live:null,participants:0};drafts.push(row);}saved_id=row.id;}
+  if(['publish','toggle','archive'].includes(action)){const row=drafts.find(x=>x.id===p.id);row.revision++;saved_id=row.id;if(action==='publish'){row.published_revision=row.revision;row.live={id:row.id,config:copy(row.config),enabled:true,status:'published'};events=[{...copy(row.live),config:{...copy(row.config),challenges:row.config.challenges.map(c=>({...copy(c),value:0,claimed:false}))}}];}else if(action==='toggle')row.live.enabled=p.enabled;else row.live.status='archived';}
+  return {drafts:copy(drafts),saved_id,server_now:Date.now()};
+ };
+ d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));await wait();click('#kanStaffTab');await wait();assert.equal(d.getElementById('ks-anomalies').hidden,false);assert.equal(d.getElementById('kanPublish').disabled,true);
+ let f=d.getElementById('kanEventForm');f.elements.title.value='Convergence <pilote>';f.querySelector(':scope > .kan-admin-grid [name="description"]').value='Les univers se rencontrent.';f.elements.starts_at.value=new Date(Date.now()-60000).toISOString().slice(0,16);f.elements.ends_at.value=new Date(Date.now()+86400000).toISOString().slice(0,16);f.querySelector('[name="reward_kind"]').value='title';f.dispatchEvent(new w.Event('input',{bubbles:true}));
+ click('[data-kan-admin="preview"]');assert.match(d.getElementById('kanAdminPreview').textContent,/Convergence <pilote>/);assert.equal(d.querySelector('pilote'),null);assert.equal(events.length,0,'Preview cannot publish');assert.ok([...d.querySelectorAll('#kanAdminPreview [data-kan-claim]')].every(n=>n.disabled));
+ f.dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await wait();assert.equal(drafts.length,1);assert.equal(events.length,0);assert.equal(d.getElementById('kanPublish').disabled,false);click('#kanPublish');await wait();assert.equal(events.length,1);
+ let tf=d.getElementById('kanThresholdForm');tf.elements.level0.value='2';tf.elements.level1.value='4';tf.elements.level2.value='8';tf.dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await wait();assert.deepEqual(rules.thresholds,[2,4,8]);assert.match(d.getElementById('kanAdminStatus').textContent,/Seuils enregistrés/);
+ f=d.getElementById('kanEventForm');f.elements.title.value='Brouillon modifié';f.elements.title.dispatchEvent(new w.Event('input',{bubbles:true}));assert.equal(d.getElementById('kanPublish').disabled,true,'Dirty form cannot publish stale data');click('#kanParticipants');await wait();assert.match(d.getElementById('kanParticipantsPanel').textContent,/Participant réel/);assert.equal(calls.filter(x=>x.action==='participants').length,1);
+ const before=JSON.stringify(G.getSnapshot());events[0].config.challenges[0].value=3;await A.refresh(true);w.KizunaAdventure.navigate('events');await wait();assert.equal(d.querySelector('[data-kan-claim]').disabled,false);click('[data-kan-claim]');await wait();assert.equal(d.querySelector('[data-kan-claim]').disabled,true);assert.equal(rewards.length,1);G.showTab('profile');await wait();const select=d.querySelector('[data-kan-equip="title"]');assert.ok(select);select.value=rewards[0].key;select.dispatchEvent(new w.Event('change',{bubbles:true}));await wait();assert.match(d.getElementById('kanProfileTitle').textContent,/Premier lien/);assert.equal(JSON.stringify(G.getSnapshot()),before,'Cosmetics preserve economy');
+ let changes=0;const observer=new w.MutationObserver(()=>changes++);observer.observe(d.getElementById('kanCosmetics'),{childList:true,subtree:true});await new Promise(r=>setTimeout(r,200));observer.disconnect();assert.ok(changes<3,'Profile decoration must settle without mutation loop');
+ pending={};const flight=A.refresh(true);await wait();const resolve=pending.resolve;pending=null;user='b';admin=false;events=[];rewards=[];selection={};d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));resolve({events:[],rewards:[{key:'a:reward',reward:{kind:'title',label:'Secret',style:'eclipse'}}],selection:{title:'a:reward'},server_now:Date.now()});await flight;await wait();assert.equal(d.getElementById('kanStaffTab'),null);assert.equal(A.getSnapshot().rewards.length,0);assert.equal(d.getElementById('kanProfileTitle'),null);assert.deepEqual(errors,[]);
+ console.log(JSON.stringify({public:'honest empty state; no simulated progress',admin:'draft, preview, publish, dirty guard, participants, thresholds',cosmetics:'claim once, equip, unchanged economy',isolation:'previous account and admin role cleared',render:'no title mutation loop, escaped content',errors}));
+}finally{dom.window.close();}

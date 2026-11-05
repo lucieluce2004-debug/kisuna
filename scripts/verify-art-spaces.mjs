@@ -1,0 +1,50 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {JSDOM,VirtualConsole} from 'jsdom';
+const errors=[],vc=new VirtualConsole();
+vc.on('jsdomError',e=>{if(!/CSS stylesheet/.test(e.message))errors.push(e.message);});
+const dom=new JSDOM(await fs.readFile('dist/index.html','utf8'),{url:'https://kizuna.test',runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:vc});
+const w=dom.window,d=w.document,$=id=>d.getElementById(id);
+const fixedNow=Date.now();w.Date.now=()=>fixedNow;
+w.scrollTo=()=>{};w.AbortSignal=AbortSignal;w.fetch=async()=>{throw Error('Local QA: remote requests disabled');};
+w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};
+w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};
+const flush=()=>new Promise(r=>setTimeout(r,100));
+try{
+  for(const script of d.scripts){const src=script.getAttribute('src');w.eval(src?await fs.readFile(path.join('dist',src),'utf8'):script.textContent);if(src==='kizuna-config.js')w.KIZUNA_CONFIG={};}
+  await flush();
+  const game=w.KizunaGame,cards=Array.from(game.getSnapshot().cards);
+  let account={user:{id:'spaces-qa'},profile:{username:'Joueuse QA'},loading:false,status:'synced'};
+  w.KizunaAccount.getSnapshot=()=>account;
+  const first=cards[0];
+  game.applySnapshot({owned:[{id:first.id,at:1700000000000}],pulls:[],username:'Joueuse QA',chakra:123,stock:{free:17,pm:8,pl:6,t:Date.now()}});
+  const protectedState=JSON.stringify(game.getSnapshot());
+  game.showTab('universes');await flush();
+  assert.ok($('kzUniverseFilters'));
+  assert.ok($('kzUniverseResume').textContent.includes(first.series));
+  const filter=key=>d.querySelector('[data-kz-universe-filter="'+key+'"]').click();
+  filter('started');assert.equal(d.querySelectorAll('[data-kz-album]').length,1);
+  assert.match($('kzUniverseGrid').textContent,new RegExp(first.series.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+  filter('complete');assert.equal(d.querySelectorAll('[data-kz-album]').length,0);
+  d.querySelector('[data-kz-universe-reset]').click();assert.equal(d.activeElement,$('kzUniverseSearch'));
+  assert.ok(d.querySelectorAll('[data-kz-album]').length>1);
+  $('kzUniverseSearch').value='no-world-xyz';$('kzUniverseSearch').dispatchEvent(new w.Event('input'));
+  assert.equal(d.querySelectorAll('[data-kz-album]').length,0);
+  d.querySelector('[data-kz-universe-reset]').click();
+  const stable=$('kzUniverseGrid').firstElementChild;w.KizunaShell.refresh();await flush();assert.equal($('kzUniverseGrid').firstElementChild,stable,'No rebuilding unchanged universe tiles');
+  game.showTab('profile');await flush();assert.ok(d.querySelector('.kad-player-scene'));assert.ok(d.querySelector('[data-kp-card]'));
+  account={loading:true,status:'loading'};d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));w.KizunaProfile.refresh();await flush();
+  assert.equal(d.querySelectorAll('[data-kp-card]').length,0,'No previous-account portraits during loading');
+  assert.ok([...d.querySelectorAll('.kp-stat strong')].every(n=>n.textContent==='—'),'No previous-account balances during loading');
+  game.showTab('universes');await flush();assert.equal($('kzUniverseResume').hidden,true);assert.ok(d.querySelector('[data-kz-universe-filter="started"]').disabled);
+  account={loading:false,status:'synced',user:{id:'spaces-qa'},profile:{username:'Joueuse QA'}};
+  for(const route of ['wiki','rank','market','community','profile']){game.showTab(route);await flush();assert.equal(d.body.dataset.tab,route);assert.ok(d.title.endsWith(' · KIZUNA'));}
+  account={loading:false,status:'guest'};d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));
+  w.KizunaAdventure.navigate('sanctuary');await flush();assert.ok(d.querySelector('.ka-sanctuary'));
+  assert.ok(d.querySelector('.kad-gallery-studio'));
+  const img=d.querySelector('.kz-universe-tile img');img.dispatchEvent(new w.Event('error'));assert.ok(img.classList.contains('kze-image-unavailable'));
+  assert.equal(JSON.stringify(game.getSnapshot()),protectedState,'Exploration and presentation never alter the economic snapshot');
+  assert.deepEqual(errors,[]);
+  console.log(JSON.stringify({spaces:7,universeFilters:true,emptyRecovery:true,stableDOM:true,accountLoadingIsolation:true,routeAnnouncements:true,imageFailure:true,economicMutation:false,errors:0}));
+}finally{w.close();}

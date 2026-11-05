@@ -1,0 +1,23 @@
+/* Earned Nexus effects. Ordinary cards and original portraits keep their presentation. */
+.km-resonance-reveal.knx-resonance-exclusive{position:relative;overflow:hidden;border:1px solid #ed91e4;background:linear-gradient(115deg,#442251,#271a44,#533054);box-shadow:0 0 24px #d66bd64a;animation:knx-resonance-appear .7s ease-out both}
+.km-resonance-reveal.knx-resonance-exclusive:after{content:"";position:absolute;inset:-100% -40%;pointer-events:none;background:linear-gradient(100deg,transparent 35%,#ffe5fa59 50%,transparent 65%);transform:translateX(-80%) rotate(15deg);animation:knx-resonance-light 1.1s ease-out both}
+.km-composition[data-knx-prestige=true],.knx-mythic-prestige .km-card-art{outline:2px solid #f1d17e;outline-offset:3px;box-shadow:0 0 30px #f3cb7e44;border-radius:16px}
+.km-composition[data-knx-prestige=true]:after{content:"TRANSCENDANCE · PRESTIGE NEXUS";position:absolute;z-index:5;left:50%;bottom:14px;transform:translateX(-50%);white-space:nowrap;padding:7px 11px;background:#231d32ed;border:1px solid #f1d17e;color:#fff0b8;border-radius:20px;font-size:9px;font-weight:800;letter-spacing:.07em;pointer-events:none}
+@keyframes knx-resonance-appear{from{opacity:.35;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes knx-resonance-light{to{transform:translateX(80%) rotate(15deg)}}
+html[data-kz-motion=reduced] .knx-resonance-exclusive,html[data-kz-motion=reduced] .knx-resonance-exclusive:after{animation:none!important}
+@media(prefers-reduced-motion:reduce){.knx-resonance-exclusive,.knx-resonance-exclusive:after{animation:none!important}}
+
+/* Finite effects run only after a newly confirmed purchase in the open Nexus. */
+.knx-particle-burst{position:absolute;z-index:4;width:0;height:0;pointer-events:none}.knx-particle-burst i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:2px;background:var(--knx-color);box-shadow:0 0 9px var(--knx-color);opacity:0;animation:knx-spark 1.3s var(--knx-delay,0ms) ease-out both}
+.knx-node[data-kn-celebrate="node"]{animation:knx-unlock 1.4s ease-out both}.knx-links path[data-kn-celebrate="branch"]{animation:knx-branch-light 1.6s ease-out both}.knx-heart[data-kn-celebrate="mastery"]>svg{animation:knx-mastery 1.8s ease-out both}.knx-celebration:not([hidden]){animation:knx-message .35s ease-out both}
+body[data-tab="nexus"] .knx-node[data-state="available"] .knx-node-gem{animation:knx-available 3s ease-in-out 2}
+@keyframes knx-spark{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.3)}12%{opacity:.9}100%{opacity:0;transform:translate(var(--knx-dx),var(--knx-dy)) rotate(140deg) scale(.2)}}
+@keyframes knx-unlock{0%{box-shadow:0 0 0 5px #171725,0 0 0 8px var(--knx-color)}45%{box-shadow:0 0 0 5px #171725,0 0 0 26px transparent,0 0 55px var(--knx-color)}100%{box-shadow:0 0 0 5px #171725,0 0 25px color-mix(in srgb,var(--knx-color) 35%,transparent)}}
+@keyframes knx-branch-light{0%{stroke-dasharray:8 12;stroke-dashoffset:70;stroke-opacity:.45}65%{stroke-opacity:1}100%{stroke-dasharray:8 0;stroke-dashoffset:0;stroke-opacity:1}}
+@keyframes knx-mastery{0%{transform:translateY(0) scale(1)}40%{transform:translateY(-6px) scale(1.16);filter:drop-shadow(0 0 30px #fff1bc)}100%{transform:translateY(0) scale(1)}}
+@keyframes knx-message{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes knx-available{0%,100%{opacity:.7}50%{opacity:1;text-shadow:0 0 13px var(--knx-color)}}
+@media(prefers-reduced-motion:reduce){.knx-particle-burst{display:none}.knx-node[data-kn-celebrate],.knx-links path[data-kn-celebrate],.knx-heart[data-kn-celebrate]>svg,.knx-celebration:not([hidden]),body[data-tab="nexus"] .knx-node[data-state="available"] .knx-node-gem{animation:none!important}}
+html[data-kz-motion="reduced"] .knx-particle-burst{display:none}
+html[data-kz-motion="reduced"] .knx-node[data-kn-celebrate],html[data-kz-motion="reduced"] .knx-links path[data-kn-celebrate],html[data-kz-motion="reduced"] .knx-heart[data-kn-celebrate]>svg,html[data-kz-motion="reduced"] .knx-celebration:not([hidden]),html[data-kz-motion="reduced"] body[data-tab="nexus"] .knx-node[data-state="available"] .knx-node-gem{animation:none!important}

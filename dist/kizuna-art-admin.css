@@ -1,0 +1,53 @@
+/* Backstage shares the player's visual language without changing permissions. */
+body.kz-art #staffPage{
+  --ks-line:#69858b;--ks-muted:var(--art-muted);--ks-cyan:var(--art-teal);
+  --kz-muted:var(--art-muted);--kz-line:var(--art-line);--kz-line-strong:#69858b;
+  --kz-surface:#101f30;--kz-surface-2:#18313e;--kz-text:var(--art-paper);--kz-gold:var(--art-gold);
+  font-size:14px;line-height:1.6;overflow-x:clip;
+}
+body.kz-art #staffPage .ks-wrap{width:min(1280px,calc(100% - 48px))!important}
+body.kz-art #staffPage .ks-hero{position:relative;isolation:isolate;padding:32px;border:1px solid #65ead759;border-radius:5px 36px 5px 5px;background:radial-gradient(ellipse at right,#20756155,transparent 65%),#112938;box-shadow:none;overflow:hidden}
+body.kz-art #staffPage .ks-hero:after{content:'絆';position:absolute;right:8%;top:-12px;font:180px/1.2 serif;color:#65ead710;z-index:-1;pointer-events:none}
+body.kz-art #staffPage .ks-hero h1{font:700 clamp(32px,4vw,52px)/1.1 Rajdhani,sans-serif;color:var(--art-paper)}
+body.kz-art #staffPage :is(h2,h3){font-family:Rajdhani,Manrope,sans-serif;color:var(--art-paper);line-height:1.2}
+body.kz-art #staffPage h2{font-size:30px}body.kz-art #staffPage h3{font-size:24px}
+body.kz-art #staffPage :is(p,label,legend,td,th,.ks-table,.ks-player strong,.ks-pool-card strong,.knxa-note,.ksu-note){font-size:13px!important;line-height:1.65}
+body.kz-art #staffPage :is(small,.ks-note,.ks-pool-rarity,.ks-pool-card small,.ks-tier-chip,.ks-pool-footer,.ks-grade-controls label,.knxa-kicker,.ksu-kicker,.ks-kicker){font-size:12px!important;line-height:1.6;color:var(--art-muted)}
+body.kz-art #staffPage :is(.ks-kicker,.ksu-kicker,.knxa-kicker,.kan-eyebrow){color:var(--art-teal);letter-spacing:.13em}
+body.kz-art #staffPage :is(input:not([type=checkbox]):not([type=radio]),select,textarea){font-size:14px!important;min-height:44px!important;box-sizing:border-box;background:#0c1928!important;color:var(--art-paper)!important;border:1px solid #69858b!important;border-radius:4px 12px 4px 4px!important;max-width:100%}
+body.kz-art #staffPage :is(input[type=checkbox],input[type=radio]){min-height:0;width:20px;height:20px;accent-color:var(--art-teal);flex-shrink:0}
+body.kz-art #staffPage :is(button,.ks-button,.ks-text-button,.knxa-link){font-size:13px!important;min-height:44px!important;white-space:normal;line-height:1.4}
+body.kz-art #staffPage .ks-button{background:var(--art-gold)!important;color:#10212b!important;border:1px solid var(--art-gold)!important;border-radius:4px 14px 4px 4px;box-shadow:none}
+body.kz-art #staffPage :is(.ks-secondary,.ks-text-button,.knxa-link){background:#193744!important;color:var(--art-paper)!important;border-color:#69858b!important}
+body.kz-art #staffPage :is(.ks-tabs,.knxa-sections){gap:8px;padding:12px 0;background:transparent;border-block:1px solid var(--art-line);border-radius:0}
+body.kz-art #staffPage :is(.ks-tabs,.knxa-sections) button{background:#132b38!important;color:var(--art-muted)!important;border:1px solid #69858b66;border-radius:4px 12px 4px 4px;padding:10px 16px}
+body.kz-art #staffPage :is(.ks-tabs,.knxa-sections) [aria-pressed=true]{background:var(--art-teal)!important;color:#09212b!important;border-color:var(--art-teal)!important}
+body.kz-art #staffPage :is(.ks-builder,.ks-reward-form,.ks-review-form,.ks-booster-tile,.ks-staff-row,.ksu-variant,.knxa-surface,.ksu-studio fieldset,.kan-preview-box){background:#122a38!important;border:1px solid #829f9a66!important;border-radius:4px 20px 4px 4px;box-shadow:none}
+body.kz-art #staffPage :is(.ksu-toolbar,.knxa-toolbar){background:#10212ff5;border:1px solid #69858b66;top:80px;z-index:3}
+body.kz-art #staffPage :is(.ks-table-scroll,.knxa-stat-table){overflow:auto;max-width:100%;overscroll-behavior-x:contain}
+body.kz-art #staffPage .ks-table :is(td,th){padding:14px 12px}
+body.kz-art #staffPage .ks-pool-card{min-height:76px;background:#142d39;border-color:#69858b66;padding:12px}
+body.kz-art #staffPage .ks-pool-card.is-selected{background:#17463f;border-color:var(--art-teal)}
+body.kz-art #staffPage .ks-pool-card>input{width:1px;height:1px;min-height:0!important}
+body.kz-art #staffPage .ks-pool-card :is(strong,small){white-space:normal;overflow-wrap:anywhere}
+body.kz-art #staffPage :is(.ks-card-pool,.knxa-card-pool){grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+body.kz-art #staffPage :is(.ks-form-grid,.ksu-layout,.ksu-pair,.knxa-pair,.ka-form-grid,.kan-admin-grid)>*{min-width:0}
+body.kz-art #staffPage :is(.ks-status,.ka-staff-status,.kan-admin-status,.knxa-status){font-size:14px!important;color:var(--art-teal)}
+body.kz-art #staffPage :is(.is-error,[role=alert],.knxa-warning,.ks-pool-warning){color:#ffc1c9!important}
+body.kz-art :is(.ke-dialog,.kza-dialog,.kmi-dialog,.knxa-dialog){color:var(--art-paper);--kz-muted:var(--art-muted);--kz-surface:#101f30;--kz-surface-2:#18313e;--kz-text:var(--art-paper);--kz-line-strong:#69858b}
+body.kz-art :is(.ke-dialog,.kza-dialog,.kmi-dialog,.knxa-dialog) :is(input:not([type=checkbox]),select,textarea){min-height:44px;font:inherit;background:#0c1928;color:var(--art-paper);border:1px solid #69858b;max-width:100%;box-sizing:border-box}
+body.kz-art :is(.ke-dialog,.kza-dialog,.kmi-dialog,.knxa-dialog) button{min-height:44px;font-size:14px}
+body.kz-art :is(.ke-dialog,.kza-dialog,.kmi-dialog,.knxa-dialog) :is(p,label,small){font-size:13px;line-height:1.7}
+body.kz-art :is(.ke-dialog,.knxa-dialog){width:min(720px,calc(100vw - 32px));box-sizing:border-box;overflow:auto}
+@media(max-width:760px){
+  body.kz-art #staffPage .ks-wrap{width:calc(100% - 28px)!important}
+  body.kz-art #staffPage .ks-hero{padding:24px 18px;flex-wrap:wrap;gap:18px}
+  body.kz-art #staffPage :is(.ks-panel,.ks-builder,.ks-reward-form,.ks-review-form){padding:20px 14px!important}
+  body.kz-art #staffPage :is(.ks-form-grid,.ksu-layout,.ksu-pair,.knxa-pair,.ka-form-grid,.kan-admin-grid,.knxa-node-layout){grid-template-columns:minmax(0,1fr)!important}
+  body.kz-art #staffPage :is(.ks-panel-head,.ks-reward-bottom,.ks-staff-row,.ks-team-actions,.ks-grade-controls){align-items:stretch;flex-direction:column}
+  body.kz-art #staffPage :is(.ks-tabs,.knxa-sections){display:flex;overflow:auto;max-width:100%;flex-wrap:nowrap;overscroll-behavior-x:contain}
+  body.kz-art #staffPage :is(.ks-tabs,.knxa-sections) button{flex-shrink:0;max-width:220px}
+  body.kz-art #staffPage :is(.ksu-toolbar,.knxa-toolbar){position:static}
+  body.kz-art #staffPage :is(.ks-builder-actions,.knxa-actions){flex-wrap:wrap}
+}
+@media(forced-colors:active){body.kz-art #staffPage :is(.ks-panel,.ks-hero,.ks-pool-card){border:1px solid CanvasText!important}body.kz-art #staffPage [aria-pressed=true]{outline:2px solid Highlight}}

@@ -1,0 +1,5 @@
+/* Actual transactions only; legacy market settlement and 5% fee are unchanged. */
+kaMarketRowsFor=function(cardId){const now=Date.now();return kyaraMarketHistory.filter(row=>String(row.cardId)===String(cardId)&&['buy','auction','buy-now'].includes(row.type)&&Number.isFinite(Number(row.at))&&Number(row.at)>0&&Number(row.at)<=now&&Number.isFinite(Number(row.gross))&&Number(row.gross)>0).map(row=>({at:Number(row.at),value:Number(row.gross),type:row.type})).sort((a,b)=>a.at-b.at);};
+kaHistorySummary=function(cardId){const rows=kaMarketRowsFor(cardId),now=Date.now(),week=rows.filter(row=>row.at>=now-7*86400000),month=rows.filter(row=>row.at>=now-30*86400000);return {rows,weekMedian:week.length?kaMedian(week.map(row=>row.value)):null,monthMedian:month.length?kaMedian(month.map(row=>row.value)):null,sales30:month.length,hasTransactions:month.length>0,estimate:null};};
+const kzActualChart=kaChartSvg;
+kaChartSvg=function(rows,color,height){return rows.length>=2?kzActualChart(rows,color,height):'<p class="kz-price-empty">'+(rows.length?'Une vente enregistrée. Le graphique apparaîtra à partir de deux ventes.':'Aucune vente enregistrée sur cette période.')+'</p>';};

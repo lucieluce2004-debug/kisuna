@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const scope={window:{}};vm.runInNewContext(await fs.readFile('dist/kizuna-config.js','utf8'),scope);
+const c=scope.window.KIZUNA_CONFIG,headers={apikey:c.supabaseKey};
+const read=async(table,query='select=*')=>{const r=await fetch(c.supabaseUrl+'/rest/v1/'+table+'?'+query,{headers});assert.equal(r.status,200,table+' public read');return r.json();};
+const defs=await read('kizuna_adventure_definitions');assert.equal(defs.filter(d=>d.kind==='constellation').length,7);assert.ok(defs.every(d=>d.enabled));assert.equal(defs.some(d=>d.id==='festival-des-liens-draft'),false,'Unpublished event stays private');
+const cards=await read('kizuna_cards','select=id&limit=2000'),ids=new Set(cards.map(c=>c.id));for(const d of defs.filter(d=>d.kind==='constellation'))for(const id of d.requirements.card_ids)assert.ok(ids.has(id),'Canonical source '+id);
+const publicRows=await read('kizuna_sanctuaries');assert.ok(publicRows.every(row=>row.is_public));assert.ok(publicRows.every(row=>!('snapshot'in row)&&!('email'in row)));
+const rpc=await fetch(c.supabaseUrl+'/rest/v1/rpc/kizuna_adventure',{method:'POST',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify({p_action:'get',p_payload:{}})});assert.ok([401,403].includes(rpc.status),'Anonymous progression access denied');
+console.log(JSON.stringify({definitions:defs.length,constellations:7,canonicalMembers:'all exist',publicSanctuaries:publicRows.length,privateRows:'not exposed',anonymousRPC:rpc.status,mutations:0}));

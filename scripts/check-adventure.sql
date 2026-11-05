@@ -1,0 +1,64 @@
+-- Real Postgres checks. All identities, claims and public projections roll back.
+begin;
+do $$
+declare
+ a uuid:=gen_random_uuid(); b uuid:=gen_random_uuid(); admin_id uuid:=gen_random_uuid();
+ suffix text:=substr(replace(gen_random_uuid()::text,'-',''),1,8);
+ original jsonb; result jsonb; again jsonb; payload jsonb; saved_revision bigint; n integer; token text;
+begin
+ insert into auth.users(id,email,is_anonymous) values(a,'qa-adventure-a-'||suffix||'@example.invalid',false),(b,'qa-adventure-b-'||suffix||'@example.invalid',false),(admin_id,'qa-adventure-admin-'||suffix||'@example.invalid',false);
+ insert into public.kizuna_profiles(id,username) values(a,'QAadvA_'||suffix),(b,'QAadvB_'||suffix),(admin_id,'QAadvAdmin_'||suffix);
+ insert into public.kizuna_admins(user_id) values(admin_id);
+ original:=jsonb_build_object('username','QAadvA_'||suffix,'owned','[{"id":"cseed-0013","at":1700000000000},{"id":"cseed-0013","at":1700000000001},{"id":"cseed-0013","at":1700000000002},{"id":"cseed-0013","at":1700000000003},{"id":"cseed-0013","at":1700000000004},{"id":"cseed-0014","at":1700000000005}]'::jsonb,'chakra',1234,'stock','{"free":42,"inv":37,"pm":129,"pl":28}'::jsonb,'pulls','[]'::jsonb,'market',jsonb_build_object('listings',jsonb_build_array(jsonb_build_object('seller','QAadvA_'||suffix,'status','active','cardId','cseed-0089','reservedCopy','{"id":"cseed-0089","at":1700000000000}'::jsonb))));
+ insert into public.kizuna_player_states(user_id,snapshot) values(a,original),(b,'{"owned":[],"pulls":[],"chakra":500}');
+ if has_function_privilege('anon','public.kizuna_adventure(text,jsonb)','execute') or not has_function_privilege('authenticated','public.kizuna_adventure(text,jsonb)','execute') then raise exception 'RPC grants';end if;
+ if has_table_privilege('authenticated','kizuna_private.kizuna_adventure_players','select,insert,update,delete') or has_table_privilege('authenticated','public.kizuna_sanctuaries','insert,update,delete') or has_table_privilege('authenticated','public.kizuna_adventure_definitions','insert,update,delete') then raise exception 'Direct writes exposed';end if;
+ perform set_config('request.jwt.claim.sub',a::text,true);
+ result:=public.kizuna_adventure('get');
+ if result#>'{state,claims}'<>'{}'::jsonb or result#>>'{state,sanctuary,public}'<>'false' then raise exception 'Not private and empty initially';end if;
+ begin perform public.kizuna_adventure('definition_save','{}');raise exception 'Player modified definitions';exception when insufficient_privilege then if sqlerrm<>'ADMIN_REQUIRED' then raise;end if;end;
+ begin perform public.kizuna_adventure('claim','{"id":"saiyan-rivals"}');raise exception 'Missing cards accepted';exception when raise_exception then if sqlerrm<>'REQUIREMENTS_NOT_MET' then raise;end if;end;
+ result:=public.kizuna_adventure('claim','{"id":"rivals-konoha"}');
+ again:=public.kizuna_adventure('claim','{"id":"rivals-konoha"}');
+ if result->'state'<>again->'state' or result->'revision'<>again->'revision' then raise exception 'Claim not idempotent';end if;
+ result:=public.kizuna_adventure('awaken','{"id":"cseed-0013","level":1}');
+ result:=public.kizuna_adventure('awaken','{"id":"cseed-0013","level":2}');
+ again:=public.kizuna_adventure('awaken','{"id":"cseed-0013","level":2}');
+ if result->'revision'<>again->'revision' then raise exception 'Awakening not idempotent';end if;
+ begin perform public.kizuna_adventure('awaken','{"id":"cseed-0089","level":1}');raise exception 'Escrow used for awakening';exception when raise_exception then if sqlerrm<>'REQUIREMENTS_NOT_MET' then raise;end if;end;
+ result:=public.kizuna_adventure('visit','{"universe":"Naruto"}');
+ result:=public.kizuna_adventure('claim','{"id":"daily-explore"}');
+ if not exists(select 1 from jsonb_object_keys(result#>'{state,claims}') k where k='daily-explore:'||to_char(now() at time zone 'UTC','YYYY-MM-DD')) then raise exception 'Daily UTC period';end if;
+ begin perform public.kizuna_adventure('visit','{"universe":"Invented universe"}');raise exception 'Unknown universe accepted';exception when raise_exception then if sqlerrm<>'INVALID_UNIVERSE' then raise;end if;end;
+ payload:=jsonb_build_object('revision',(result->>'revision')::bigint,'settings','{"public":true,"theme":"aurora","frame":"awakened","decoration":"orbits","title":"Les liens de Konoha","featured":"","cards":["cseed-0013","cseed-0014"],"favorites":["cseed-0014"]}'::jsonb);
+ result:=public.kizuna_adventure('sanctuary',payload);
+ if not exists(select 1 from public.kizuna_sanctuaries where user_id=a and is_public) then raise exception 'Sanctuary not published';end if;
+ if exists(select 1 from public.kizuna_sanctuaries where user_id=a and (presentation::text like '%chakra%' or presentation#>'{settings,favorites}' is not null or presentation::text like '%example.invalid%')) then raise exception 'Private fields leaked';end if;
+ begin perform public.kizuna_adventure('sanctuary',payload);raise exception 'Stale sanctuary overwritten';exception when raise_exception then if sqlerrm<>'REVISION_CONFLICT' then raise;end if;end;
+ payload:=jsonb_set(payload,'{revision}',result->'revision');payload:=jsonb_set(payload,'{settings,cards}','["cseed-0089"]');
+ begin perform public.kizuna_adventure('sanctuary',payload);raise exception 'Reserved card exposed as free';exception when raise_exception then if sqlerrm<>'OWNED_CARD_REQUIRED' then raise;end if;end;
+ result:=public.kizuna_adventure('private');
+ if exists(select 1 from public.kizuna_sanctuaries where user_id=a and is_public) then raise exception 'Privacy revoke failed';end if;
+ if (select snapshot from public.kizuna_player_states where user_id=a)<>original then raise exception 'Legacy economic snapshot changed';end if;
+ perform set_config('request.jwt.claim.sub',b::text,true);
+ result:=public.kizuna_adventure('get');if result#>'{state,claims}'<>'{}'::jsonb then raise exception 'Cross account claims exposed';end if;
+ perform set_config('request.jwt.claim.sub',admin_id::text,true);
+ payload:=jsonb_build_object('id','qa-event-'||suffix,'kind','event','title','QA event','description','Rollback fixture only','requirements','{"metric":"total","goal":2}'::jsonb,'reward_label','QA badge','starts_at',now()-interval '1 day','ends_at',now()+interval '1 day','enabled',true);
+ result:=public.kizuna_adventure('definition_save',payload);
+ if not exists(select 1 from public.kizuna_adventure_definitions where id='qa-event-'||suffix and enabled) then raise exception 'Admin event creation failed';end if;
+ begin perform public.kizuna_adventure('definition_save',payload);raise exception 'Definition stale update accepted';exception when raise_exception then if sqlerrm<>'REVISION_CONFLICT' then raise;end if;end;
+ perform set_config('request.jwt.claim.sub',a::text,true);
+ result:=public.kizuna_adventure('claim',jsonb_build_object('id','qa-event-'||suffix));
+ if result#>>array['state','claims','qa-event-'||suffix,'label']<>'QA badge' then raise exception 'Active event claim failed';end if;
+ update public.kizuna_adventure_definitions set ends_at=now()-interval '1 hour' where id='qa-event-'||suffix;
+ begin perform public.kizuna_adventure('claim',jsonb_build_object('id','qa-event-'||suffix));raise exception 'Ended event accepted';exception when raise_exception then if sqlerrm<>'EVENT_INACTIVE' then raise;end if;end;
+ perform set_config('request.jwt.claim.sub','',true);
+ begin perform public.kizuna_adventure('get');raise exception 'Missing identity accepted';exception when insufficient_privilege then if sqlerrm<>'AUTH_REQUIRED' then raise;end if;end;
+end; $$;
+set local role anon;
+do $$begin
+ if exists(select 1 from public.kizuna_sanctuaries where username like 'QAadvA_%') then raise exception 'RLS exposed private sanctuary';end if;
+end;$$;
+reset role;
+rollback;
+select 'adventure: permissions, claims, awakening, UTC missions, public privacy, admin events and economy preservation passed; all fixtures rolled back' as result;

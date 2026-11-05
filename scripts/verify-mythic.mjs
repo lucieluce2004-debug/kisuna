@@ -1,0 +1,48 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {JSDOM,VirtualConsole} from 'jsdom';
+const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(!/Could not parse CSS/.test(e.message))errors.push(e.message);});
+const dom=new JSDOM(await fs.readFile('dist/index.html','utf8'),{url:'https://kizuna.example/',runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:vc}),w=dom.window,d=w.document;
+const copy=x=>JSON.parse(JSON.stringify(x)),wait=()=>new Promise(r=>setTimeout(r,65));
+// A full free reserve legitimately refreshes its recharge clock during rendering.
+// Keep browser time deterministic so every snapshot field remains comparable.
+const fixedNow=Date.now();w.Date.now=()=>fixedNow;
+const click=s=>{const b=d.querySelector(s);assert.ok(b,s);b.click();return b;};
+w.fetch=async()=>{throw Error('Unexpected network');};w.scrollTo=()=>{};w.confirm=()=>true;w.matchMedia=()=>({matches:true,addListener(){},removeListener(){}});w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};
+try{
+ for(const script of d.scripts){const src=script.getAttribute('src');w.eval(src?await fs.readFile(path.join('dist',src),'utf8'):script.textContent);if(src==='kizuna-config.js')w.KIZUNA_CONFIG={};}await wait();
+ const M=w.KizunaMythic,A=w.KizunaAdventure,G=w.KizunaGame,art=w.KizunaMythicArt;assert.equal(art.manifest.length,197);assert.ok(art.manifest.every(c=>c.levels.length===3));
+ const snapshot={username:'Tester',owned:[{id:'cseed-0013',at:123},{id:'cseed-0015',at:124}],pulls:[],chakra:987,stock:{free:40,inv:23,t:Date.now(),pm:17,pl:7,day:'kept'}};G.applySnapshot(snapshot);const economic=()=>JSON.stringify(G.getSnapshot()),before=economic();
+ A.navigate('awakening','cseed-0013');await wait();
+ // A click deep in the selector must retain the live scrolling list and keyboard focus.
+ const selector=d.querySelector('.km-selector'),list=d.querySelector('.km-card-list'),chosen=list.querySelectorAll('[data-km-select]')[30];list.scrollTop=440;chosen.focus();chosen.click();await wait();
+ assert.equal(d.querySelector('.km-selector'),selector,'Selecting a character keeps the selector mounted');assert.equal(d.querySelector('.km-card-list'),list,'Selecting a character keeps its scrolling list mounted');assert.equal(list.scrollTop,440);assert.equal(d.activeElement,chosen);assert.equal(chosen.getAttribute('aria-pressed'),'true');assert.equal(d.querySelector('.km-stage h2').textContent,chosen.querySelector('strong').textContent);assert.equal(economic(),before);
+ const levelButton=d.querySelector('[data-km-preview-level="1"]');levelButton.focus();levelButton.click();assert.equal(d.activeElement.dataset.kmPreviewLevel,'1','Changing form restores focus without scrolling');assert.equal(d.querySelector('.km-card-list'),list);assert.equal(list.scrollTop,440);
+ M.render();assert.equal(d.querySelector('.km-card-list'),list);assert.equal(list.scrollTop,440,'A refresh of unchanged data does not reset the list');
+ A.navigate('awakening');A.navigate('awakening','cseed-0013');await wait();assert.equal(d.querySelectorAll('[data-km-preview-level]').length,4);assert.equal(d.querySelectorAll('[data-km-select]').length,60);click('[data-km-preview-level="3"]');assert.equal(d.querySelector('.km-composition [data-kma-level]').dataset.kmaLevel,'3');assert.equal(d.querySelector('[data-km-equip]').disabled,true,'Guest can preview but not claim');assert.equal(economic(),before);
+ const narutoArt=art.get('cseed-0013');
+ if(narutoArt.levels[2].illustration){assert.match(d.querySelector('.km-art-credit').textContent,/créée avec l’IA/);assert.equal(d.querySelector('.km-composition [data-kma-portrait]').getAttribute('src'),narutoArt.levels[2].illustration.image);}
+ click('[data-km-preview-level="2"]');
+ if(narutoArt.levels[1].illustration){assert.equal(d.querySelector('.km-art-credit a').getAttribute('href'),narutoArt.levels[1].illustration.source);assert.equal(d.querySelector('.km-art-credit a').getAttribute('rel'),'noopener noreferrer');}
+ click('[data-km-preview-level="0"]');assert.equal(d.querySelector('.km-art-credit'),null,'Original portrait has no misleading awakening credit');assert.equal(d.querySelector('.km-composition [data-kma-portrait]').getAttribute('src'),narutoArt.image);
+ let user='a',pending=null,progress={'cseed-0013':{resonance:6,unlocked:3,selected:0}},calls=[];
+ w.KizunaAccount.getSnapshot=()=>({user:{id:user},profile:{username:'Tester'},loading:false,status:'synced',isAdmin:false,economy:false});
+ w.KizunaAccount.adventureRequest=async()=>({state:w.KizunaAdventureRules.empty(),definitions:w.KizunaAdventureSeed,revision:0,server_now:Date.now()});
+ w.KizunaAccount.mythicRequest=async(action,payload)=>{calls.push({action,payload});if(pending)return new Promise(resolve=>pending.resolve=resolve);if(action==='select')progress[payload.id].selected=payload.level;return {progress:copy(progress),rules:{thresholds:[1,3,6],revision:1}};};d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));await wait();
+ const savedList=d.querySelector('.km-card-list');savedList.scrollTop=360;
+ click('[data-km-preview-level="2"]');click('[data-km-equip="2"]');await wait();assert.equal(M.state('cseed-0013').selected,2);assert.equal(d.querySelector('.km-card-list'),savedList);assert.equal(savedList.scrollTop,360,'Saving an awakening keeps the character list in place');assert.equal(economic(),before);click('[data-km-preview-level="0"]');click('[data-km-equip="0"]');await wait();assert.equal(M.state('cseed-0013').selected,0);
+ progress['cseed-0013'].resonance=7;await M.refresh(true);assert.equal(d.querySelector('.km-card-list').scrollTop,360,'Updated progression preserves scroll even when list content changes');
+ click('[data-km-preview-level="3"]');click('[data-km-equip="3"]');await wait();G.showTab('collection');await wait();assert.ok(d.querySelector('[data-colcard="cseed-0013"] [data-kma-level="3"]'));assert.equal(d.querySelector('[data-colcard="cseed-0015"] [data-kma-level]'),null);
+ const nexusSnapshot=w.KizunaNexus.getSnapshot;w.KizunaNexus.getSnapshot=()=>({owner:'a',loaded:true,state:{bonuses:{mythicPrestige:true}}});
+ w.dispatchEvent(new w.CustomEvent('kizuna:nexus-change'));await wait();assert.equal(d.querySelector('[data-colcard="cseed-0013"] .tcard').classList.contains('knx-mythic-prestige'),true,'Earned prestige decorates a fully awakened equipped Mythic');
+ w.KizunaNexus.getSnapshot=()=>({owner:'another-user',loaded:true,state:{bonuses:{mythicPrestige:true}}});w.dispatchEvent(new w.CustomEvent('kizuna:nexus-change'));await wait();assert.equal(d.querySelector('[data-colcard="cseed-0013"] .tcard').classList.contains('knx-mythic-prestige'),false,'Prestige from another identity is ignored');w.KizunaNexus.getSnapshot=nexusSnapshot;
+ const filter=d.getElementById('kmCollectionFilter');filter.value='complete';filter.dispatchEvent(new w.Event('change',{bubbles:true}));await wait();assert.equal(d.querySelectorAll('#colGrid [data-colcard]').length,1);assert.equal(d.querySelector('#colGrid [data-colcard]').dataset.colcard,'cseed-0013');click('#colFiltersReset');await wait();assert.equal(d.getElementById('kmCollectionFilter').value,'all');assert.equal(economic(),before);
+ G.openCard('cseed-0015');await wait();assert.equal(d.querySelector('#kyaraProfileOverlay [data-ka-card-awakening]'),null,'Non Mythic has no awakening button');G.openCard('cseed-0013');await wait();assert.ok(d.querySelector('#kyaraProfileOverlay [data-ka-card-awakening]'));click('[data-ka-card-awakening]');await wait();assert.equal(d.querySelector('#kyaraProfileOverlay').classList.contains('open'),false);assert.ok(d.querySelector('.km-stage'));
+ pending={};const flight=M.refresh(true);await wait();const resolve=pending.resolve;pending=null;user='b';progress={};d.dispatchEvent(new w.CustomEvent('kizuna:account-change'));resolve({progress:{'cseed-0013':{resonance:99,unlocked:3,selected:3}},rules:{thresholds:[1,3,6]}});await flight;await wait();assert.equal(M.state('cseed-0013').resonance,0,'Previous account cannot leak progression');
+ // The actual server-opening bridge carries per-copy resonance through the rarity sort.
+ user='a';w.KizunaAccount.getSnapshot=()=>({user:{id:'a'},profile:{username:'Tester'},loading:false,status:'synced',economy:true});
+ w.KizunaAccount.economyRequest=async()=>{const s=G.getSnapshot();s.owned.push(...Array.from({length:5},()=>({id:'cseed-0013',at:Date.now()})));s.stock.free--;G.applySnapshot(s,{preserveViews:true});return {result:{cards:Array.from({length:5},()=>({id:'cseed-0013'})),resonance:Array.from({length:5},(_,i)=>({index:i,id:'cseed-0013',delta:1,resonance:i+1,from:i===0?0:i<3?1:2,unlocked:i<2?1:2}))}};};
+ G.openBoosterSelection('mix',1);click('[data-kr-action="open-pack"]');await wait();await wait();assert.match(d.querySelector('.km-resonance-reveal').textContent,/\+1 Résonance/);assert.match(d.querySelector('.km-resonance-reveal').textContent,/Éveil 1 débloqué/);click('[data-kr-action="all"]');await wait();assert.equal(d.querySelectorAll('.km-finale-mark').length,5);click('[data-kr-action="close"]');assert.deepEqual(errors,[]);
+ console.log(JSON.stringify({catalogue:197,forms:591,preview:'all levels, no spend',scroll:'live selector retained; preview, save and refresh preserve list position and focus',selection:'locked guest, equip and original',collection:'Mythic-only appearance, filters, reset',cards:'no non-Mythic awakening button',isolation:'stale account ignored',booster:'per-copy resonance and skippable celebrations',errors}));
+}finally{dom.window.close();}

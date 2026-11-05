@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna Mix — éclat des collectionneurs</title>
+  <desc id="desc">Trois cartes superposées entourent une étoile blanche dans un écusson néon cyan et magenta.</desc>
+  <path d="m128 14 79 32 35 82-35 82-79 32-79-32-35-82 35-82Z" stroke="#4ce7fa" stroke-opacity=".35" stroke-width="3"/>
+  <path d="m44 93 9-22 22-9M181 194l22-9 9-22" stroke="#f15acb" stroke-width="5" stroke-linecap="round"/>
+  <g transform="rotate(-17 106 133)" stroke-linejoin="round">
+    <path d="M61 66h65l10 10v124H61Z" fill="#11111b" stroke="#4ce7fa" stroke-width="5"/>
+    <path d="M73 81h38M73 91h27M73 175h34M73 185h20" stroke="#4ce7fa" stroke-opacity=".65" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(17 150 133)" stroke-linejoin="round">
+    <path d="M120 66h65l10 10v124h-75Z" fill="#11111b" stroke="#f15acb" stroke-width="5"/>
+    <path d="M147 81h34M157 91h24M148 175h33M161 185h20" stroke="#f15acb" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <path d="M91 51h65l12 12v140H88V63Z" fill="#11111b" stroke="#f5f5ff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M101 69h35M101 183h32M143 183h11" stroke="#4ce7fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="m128 82 12 29 30 13-30 13-12 30-13-30-29-13 29-13Z" fill="#4ce7fa" stroke="#11111b" stroke-width="9" stroke-linejoin="round"/>
+  <path d="m128 93 9 22 22 9-22 9-9 22-9-22-22-9 22-9Z" fill="#f5f5ff"/>
+  <path d="m174 45 4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="#f15acb"/>
+  <path d="m77 211 4 4M169 217l4-4" stroke="#4ce7fa" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna — Husbandos</title>
+  <desc id="desc">Deux katanas croisés derrière un masque de samouraï angulaire, dans un blason néon.</desc>
+  <defs>
+    <linearGradient id="steel" x1="53" y1="48" x2="203" y2="202" gradientUnits="userSpaceOnUse"><stop stop-color="#f5f5ff"/><stop offset="1" stop-color="#4ce7fa"/></linearGradient>
+  </defs>
+  <path d="M128 14 207 46 242 128 207 210 128 242 49 210 14 128 49 46Z" fill="none" stroke="#4ce7fa" stroke-width="2" opacity=".38"/>
+  <path d="m128 29 69 28 29 71-29 70-69 29-69-29-29-70 29-71Z" fill="#11111b" fill-opacity=".82"/>
+  <path d="m51 49 26 12 104 116-13 12L61 75Z" fill="url(#steel)" stroke="#11111b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m205 49-26 12L75 177l13 12L195 75Z" fill="#f5f5ff" stroke="#11111b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m164 183 25 28 12-11-25-28ZM92 183l-25 28-12-11 25-28Z" fill="#f15acb" stroke="#11111b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m160 184 25-23M96 184l-25-23" fill="none" stroke="#4ce7fa" stroke-width="6" stroke-linecap="square"/>
+  <path d="m77 112 17-37 34-14 34 14 17 37-9 54-42 32-42-32Z" fill="#11111b" stroke="#4ce7fa" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m92 82 36 17 36-17-8 35-28 18-28-18Z" fill="#f5f5ff"/>
+  <path d="m128 57 9 21-9 17-9-17Z" fill="#f15acb"/>
+  <path d="m96 125 21 7-7 10-13-5Zm64 0-21 7 7 10 13-5Z" fill="#f15acb"/>
+  <path d="m128 139 10 16-10 8-10-8Z" fill="#4ce7fa"/>
+  <path d="m105 160 23 14 23-14M114 184l14 10 14-10" fill="none" stroke="#f5f5ff" stroke-width="5" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="m47 121 6 7-6 7M209 121l-6 7 6 7" fill="none" stroke="#f15acb" stroke-width="4" stroke-linecap="square"/>
+</svg>

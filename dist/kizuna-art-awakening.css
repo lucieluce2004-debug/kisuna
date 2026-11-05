@@ -1,0 +1,99 @@
+/* Phase C · Mythic atelier. These styles only present existing progression and variants. */
+body.kz-art .km-intro{position:relative;display:flex;align-items:center;gap:22px;margin:12px 0 27px;padding:0 0 23px;border-bottom:1px solid #e7b49333;flex-wrap:wrap}
+body.kz-art .km-intro>div:first-child{flex:1;min-width:240px}
+body.kz-art .km-kicker{color:#efb77c;font-size:10px;letter-spacing:.2em}
+body.kz-art .km-intro h2{font:700 clamp(28px,3vw,43px)/1.05 Rajdhani,sans-serif;margin:10px 0;color:#fff5dc}
+body.kz-art .km-intro p{font-size:12px;color:#bfc4cf;line-height:1.7;max-width:660px;margin:0}
+body.kz-art .km-motion{font-size:11px;color:#e7d9c5;border-color:#d1b79944;background:#2c253022;border-radius:7px;min-height:44px;cursor:pointer}
+body.kz-art .km-motion input{width:16px;height:16px;accent-color:#ffd09a}
+body.kz-art .km-atlas{display:grid;grid-template-columns:225px minmax(0,1fr);gap:22px;align-items:start}
+body.kz-art .km-selector{position:sticky;top:94px;border:0;border-right:1px solid #a9b5c633;border-radius:0;background:transparent;padding:0 19px 0 0;max-height:calc(100dvh - 116px);display:flex;flex-direction:column;min-width:0}
+body.kz-art .kaw-atlas-label{display:flex;align-items:center;gap:8px;font:700 19px Rajdhani,sans-serif;margin-bottom:21px;color:#fff1d8}
+body.kz-art .kaw-atlas-label>span{color:#e8ac77;font-size:20px}
+body.kz-art .km-selector label{font-size:10px;letter-spacing:.04em;color:#aebdca;margin-bottom:13px;gap:6px}
+body.kz-art .km-selector input,body.kz-art .km-selector select{height:42px;background:#0e1d2c;border:1px solid #879da446;border-radius:7px;color:#f0ebdf;font:12px Manrope,sans-serif}
+body.kz-art .km-selector>p{font:10px/1.6 Manrope,sans-serif;color:#8fa6b8;margin:0 0 12px}
+body.kz-art .km-card-list{gap:5px;max-height:525px;min-height:130px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#9e766c #162333;padding-right:4px}
+body.kz-art .km-card-list button{position:relative;min-height:76px;gap:10px;border:1px solid transparent;border-radius:8px 2px 8px 2px;padding:7px 8px 7px 5px;background:#1b293b33;color:#fff1dc;transition:background .18s,border-color .18s}
+body.kz-art .km-card-list button:hover{background:#42556533;border-color:#7898aa44}
+body.kz-art .km-card-list button.active{background:linear-gradient(90deg,#b8895a31,#24334477);border-color:#d4ae7877;box-shadow:inset 2px 0 #ffd69a}
+body.kz-art .km-card-list img{width:40px;height:57px;border-radius:3px;flex-shrink:0;object-fit:cover;filter:saturate(.82)}
+body.kz-art .km-card-list strong{font:700 15px/1.1 Rajdhani,sans-serif;color:#fff1dc}
+body.kz-art .km-card-list small{font-size:9px;line-height:1.35;margin-top:4px;color:#a5b6c5}
+body.kz-art .km-card-list em{display:block;font-style:normal;font-size:8px;color:#e6af8f;margin-top:5px}
+body.kz-art .km-card-list b{font-size:10px;color:#ffce8c}
+body.kz-art .km-stage{--kaw-primary:#ff8a9c;--kaw-secondary:#ffe0a7;position:relative;isolation:isolate;padding:27px 28px 24px;border:1px solid #a3b5c329;border-top:2px solid color-mix(in srgb,var(--kaw-primary) 70%,transparent);border-radius:3px 24px 3px 24px;background:radial-gradient(ellipse at 22% 42%,color-mix(in srgb,var(--kaw-primary) 12%,transparent),transparent 55%),linear-gradient(145deg,#101e2c,#0a1422);box-shadow:0 18px 50px #03071233;overflow:hidden}
+body.kz-art .km-stage:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(116deg,transparent 0 32%,#d4ecf402 32.1% 32.3%,transparent 32.4%),radial-gradient(#e4e6dd19 .8px,transparent 1px);background-size:auto,37px 37px;mask-image:linear-gradient(#000,transparent 68%)}
+body.kz-art .km-stage>header{position:relative;display:flex;gap:20px;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid #a7c0ca22}
+body.kz-art .km-stage>header .km-kicker{color:var(--kaw-secondary);font-size:9px;letter-spacing:.17em}
+body.kz-art .km-stage>header h2{font:700 clamp(26px,3vw,42px)/1.05 Rajdhani,sans-serif;color:#fff5dc;margin:10px 0 9px}
+body.kz-art .kaw-ownership{font-size:10px;color:#a3b6c8}.kz-art .kaw-ownership.is-owned{color:#88dbc2}
+body.kz-art .km-progress-seal{display:grid;grid-template-columns:auto auto;align-items:baseline;gap:0 3px;flex-shrink:0;min-width:68px;min-height:68px;box-sizing:border-box;padding:11px 12px 9px;border:1px solid color-mix(in srgb,var(--kaw-primary) 65%,transparent);border-radius:50%;background:radial-gradient(circle,#1b243b,#0c1825);box-shadow:0 0 0 5px color-mix(in srgb,var(--kaw-primary) 5%,transparent);font-family:Rajdhani,sans-serif}
+body.kz-art .km-progress-seal strong{font-size:27px;color:var(--kaw-secondary);line-height:1}.kz-art .km-progress-seal i{font-size:13px;color:#acbbcb;font-style:normal}.kz-art .km-progress-seal small{grid-column:1/-1;color:#c6c5c8;font-size:8px;letter-spacing:.15em}
+body.kz-art .kaw-workshop{display:grid;grid-template-columns:minmax(200px,.9fr) minmax(260px,1fr);gap:26px;padding-top:24px;align-items:start}
+body.kz-art .kaw-altar{position:relative;isolation:isolate;min-width:0;padding:9px 0 0}
+body.kz-art .kaw-orbits{position:absolute;inset:5% -4% 12%;z-index:-1;pointer-events:none;color:var(--kaw-primary)}
+body.kz-art .kaw-orbits>i{position:absolute;inset:12% -8% 9%;border:1px solid color-mix(in srgb,var(--kaw-primary) 34%,transparent);border-radius:48% 52% 46% 54%;transform:rotate(-24deg);box-shadow:0 0 0 18px color-mix(in srgb,var(--kaw-primary) 3%,transparent)}
+body.kz-art .kaw-orbits>i:nth-child(2){inset:3% 1% 2%;border-style:dashed;opacity:.7;transform:rotate(20deg)}
+body.kz-art .kaw-orbits>i:nth-child(3){inset:30% -16% 26%;border-color:color-mix(in srgb,var(--kaw-secondary) 29%,transparent);transform:rotate(34deg)}
+body.kz-art .kaw-orbits>b{position:absolute;left:-9%;top:39%;font:700 58px Rajdhani,serif;color:color-mix(in srgb,var(--kaw-primary) 30%,transparent);writing-mode:vertical-rl}
+body.kz-art .km-composition{position:relative;width:min(100%,270px);max-width:100%;margin:5px auto 0;filter:drop-shadow(0 18px 24px #0007);transform:perspective(900px) rotateY(-4deg);transform-origin:center;animation:kaw-incarnation .45s cubic-bezier(.2,.8,.2,1) both}
+body.kz-art .km-composition>.kma-card{width:100%;aspect-ratio:2/3;max-width:none;box-sizing:border-box;border-radius:9px;min-height:0;border:1px solid color-mix(in srgb,var(--kaw-primary) 65%,#e6ddc1);box-shadow:0 0 0 4px #07111d,0 0 0 5px color-mix(in srgb,var(--kaw-secondary) 33%,transparent),0 22px 50px #02061188}
+body.kz-art .km-composition[data-km-preview="0"]>.kma-card{border-color:#e2c6a5;box-shadow:0 0 0 4px #07111d,0 0 0 5px #c6a6784a,0 22px 50px #02061188}
+body.kz-art .km-composition[data-knx-prestige="true"]>.kma-card{box-shadow:0 0 0 4px #07111d,0 0 0 6px #fce0a1,0 0 40px #a57ad44a,0 22px 50px #02061188}
+body.kz-art .km-preview-label{font:700 9px/1.5 Rajdhani,sans-serif;color:var(--kaw-secondary);letter-spacing:.2em;margin:15px 0 0;transform:none}
+body.kz-art .kaw-plinth{position:relative;height:39px;width:88%;margin:-3px auto 0;text-align:center;color:#91a5b6}
+body.kz-art .kaw-plinth i{display:block;position:absolute;left:0;right:0;top:2px;height:30px;background:linear-gradient(180deg,#34495355,#142030);border:1px solid color-mix(in srgb,var(--kaw-primary) 30%,transparent);border-radius:50%;transform:perspective(200px) rotateX(58deg);box-shadow:0 8px 0 #050c16,0 9px 0 #7b8d9a33}
+body.kz-art .kaw-plinth>span{position:relative;top:26px;font-size:7px;letter-spacing:.2em;text-transform:uppercase}
+body.kz-art .km-art-credit{position:relative;margin:22px 0 0;padding:12px 0 0;border-top:1px solid #a2bdcf22;font-size:9px;color:#9fb0c1;line-height:1.7;text-align:left}
+body.kz-art .km-art-credit summary{color:#c7d4dd;font-size:10px;line-height:1.6;min-height:30px;cursor:pointer}.kz-art .km-art-credit p{margin:8px 0}.kz-art .km-art-credit a{color:#a8dfec}.kz-art .km-art-credit small{font-size:9px}
+body.kz-art .kaw-inscription{padding-top:5px;min-width:0;position:relative}
+body.kz-art .kaw-current-form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:17px}
+body.kz-art .kaw-step-label{font:700 10px Rajdhani,sans-serif;letter-spacing:.19em;color:var(--kaw-secondary)}
+body.kz-art .kaw-form-state{font-size:8px;color:#9fdcc7;padding:5px 7px;border:1px solid #94c8af3d;border-radius:3px;background:#5aab8a0a}.kz-art .kaw-form-state.is-locked{color:#c4c9d0;border-color:#9faeb43d;background:#747d8a0a}
+body.kz-art .km-stage-caption{text-align:left;max-width:none;margin:0}
+body.kz-art .km-stage-caption h3{font:700 clamp(24px,2.3vw,34px)/1.05 Rajdhani,sans-serif;color:#fff3da;margin:0 0 12px}
+body.kz-art .km-stage-caption p{font-size:11px;color:#a8bccb;line-height:1.8;margin:0;min-height:40px}
+body.kz-art .km-levels{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:25px 0 21px}
+body.kz-art .km-levels:before{content:"";position:absolute;left:7%;right:7%;top:48px;height:1px;background:linear-gradient(90deg,#647480,var(--kaw-primary));z-index:0}
+body.kz-art .km-levels button{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;min-width:0;padding:0 0 10px;border:0;border-bottom:2px solid #64728044;background:transparent;border-radius:0;color:#d5dfdf;cursor:pointer;transition:border-color .18s,background .18s}
+body.kz-art .km-levels button:hover{border-bottom-color:var(--kaw-secondary);background:#65859011}
+body.kz-art .km-levels button.active{background:linear-gradient(0deg,color-mix(in srgb,var(--kaw-primary) 11%,transparent),transparent);border-color:var(--kaw-secondary)}
+body.kz-art .kaw-tier-image{position:relative;display:block;width:100%;height:87px;max-width:68px;margin:0 auto 8px;border:1px solid #a7bac533;border-radius:5px;overflow:hidden;box-shadow:0 7px 15px #0005;transition:transform .2s,border-color .2s}
+body.kz-art .kaw-tier-image>.kma-card{width:100%;height:100%;max-width:none;border-radius:3px;min-height:0;aspect-ratio:auto}
+body.kz-art .kaw-tier-image .kma-caption{display:none}
+/* Legacy tier labels style every descendant span. Keep image status tied to real errors. */
+body.kz-art .kaw-tier-image .kma-card>span{margin-top:0}
+body.kz-art .kaw-tier-image .kma-unavailable,body.kz-art .kaw-tier-image .kma-art-warning{display:none}
+body.kz-art .kaw-tier-image .kma-portrait-unavailable .kma-unavailable{display:block}
+body.kz-art .kaw-tier-image .kma-art-fallback:not(.kma-portrait-unavailable) .kma-art-warning{display:block}
+body.kz-art .km-levels button.is-locked .kaw-tier-image{filter:saturate(.25);opacity:.6}
+body.kz-art .km-levels button.active .kaw-tier-image{transform:translateY(-4px);border-color:var(--kaw-secondary);filter:none;opacity:1}
+body.kz-art .km-levels button>b{font:700 14px/1 Rajdhani,sans-serif;color:var(--kaw-secondary);position:absolute;left:4px;top:4px;padding:4px;background:#0a1527db;border-radius:3px;z-index:1}
+body.kz-art .km-levels button>span:not(.kaw-tier-image){font:700 12px/1.2 Rajdhani,sans-serif;margin-top:0;word-break:normal}
+body.kz-art .km-levels button>small{font-size:8px;color:#9fb2c2;margin-top:5px;line-height:1.4;text-align:center}
+body.kz-art .kaw-equipped{position:absolute;right:5px;top:70px;color:#fff2b8;font-style:normal;font-size:11px;text-shadow:0 2px 5px #000}
+body.kz-art .km-resonance{position:relative;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px;padding:14px 0 21px;margin:0;font-size:9px;color:#b2becb;border-top:1px solid #a5c7d222}
+body.kz-art .km-resonance>span:first-child{color:#e1c0d0;font-size:10px}.kz-art .km-resonance strong{font:700 31px Rajdhani,sans-serif;color:#ffb2d1;margin-inline:4px}
+body.kz-art .km-resonance>div{height:5px;width:100%;border-radius:2px;background:#9ab4cd17;margin-top:5px;overflow:hidden}
+body.kz-art .km-resonance i{height:100%;background:linear-gradient(90deg,#bb6ea8,#ffd4ad);box-shadow:0 0 12px #d991a7aa;transition:width .35s ease}
+body.kz-art .km-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:stretch}
+body.kz-art .km-actions button{min-height:47px!important;font-size:10px!important;padding:9px 10px!important;line-height:1.5}
+body.kz-art .km-actions .primary{background:linear-gradient(120deg,#fbd89e,#dea76c)!important;color:#17232b!important;border-color:#ffe7b6!important;box-shadow:0 3px 0 #8a60283d!important;border-radius:11px 3px 11px 3px!important;font-weight:800}
+body.kz-art .km-actions .primary:disabled{background:#233346!important;color:#adbbc8!important;border-color:#58738766!important;opacity:1;box-shadow:none!important;cursor:not-allowed}
+body.kz-art .km-state{font-size:10px;line-height:1.7;color:#a9bdcb;min-height:30px;margin:12px 0}.kz-art .km-state.is-error{color:#ffb1b2}
+body.kz-art .kaw-rules{padding-top:12px;border-top:1px solid #a5c7d222;color:#aabacb;font-size:10px}.kz-art .kaw-rules summary{cursor:pointer;color:#cad7dc;min-height:28px}.kz-art .kaw-rules .km-note{font-size:10px;line-height:1.85;color:#aabacb;margin:8px 0 0}
+body.kz-art .kaw-unlock{display:flex;align-items:center;gap:15px;width:100%;padding:17px 21px;color:#fff2d1;background:linear-gradient(105deg,#483043,#1b283b 75%);border:1px solid #e8b27b66;border-left:4px solid #ffd28e;border-radius:12px 3px 12px 3px;box-sizing:border-box}
+body.kz-art .kaw-unlock>i{font:normal 40px/1 Rajdhani,serif;color:#ffd2a5}.kz-art .kaw-unlock small{display:block;font-size:9px;letter-spacing:.18em;color:#e9b8b2}.kz-art .kaw-unlock strong{display:block;font:700 24px/1.2 Rajdhani,sans-serif;margin-top:5px}.kz-art .kaw-unlock em{display:block;font-style:normal;font-size:11px;color:#d2bdc9;margin-top:5px}
+body.kz-art .kaw-unlock[data-kaw-animate="true"]{animation:kaw-unlock-in .65s cubic-bezier(.2,.8,.2,1) both}
+body.kz-art .km-stage[data-kaw-level="3"] .kaw-orbits{filter:drop-shadow(0 0 12px color-mix(in srgb,var(--kaw-primary) 20%,transparent))}
+@keyframes kaw-incarnation{from{opacity:.3;transform:perspective(900px) rotateY(-17deg) translateY(10px);filter:drop-shadow(0 10px 30px #fff2)}to{opacity:1;transform:perspective(900px) rotateY(-4deg)}}
+@keyframes kaw-unlock-in{from{opacity:0;transform:translateY(12px);box-shadow:0 0 0 8px #e5ac7722}to{opacity:1;transform:none;box-shadow:0 0 0 0 #e5ac7700}}
+@media(min-width:761px) and (max-width:1100px){body.kz-art .km-selector{top:151px;max-height:calc(100dvh - 175px)}}
+@media(max-width:1200px){body.kz-art .km-atlas{grid-template-columns:190px minmax(0,1fr);gap:17px}body.kz-art .km-stage{padding:22px 20px}body.kz-art .kaw-workshop{grid-template-columns:minmax(150px,.83fr) minmax(220px,1fr);gap:20px}body.kz-art .km-composition{width:min(100%,244px)}body.kz-art .km-card-list strong{font-size:14px}body.kz-art .km-selector{padding-right:12px}body.kz-art .km-card-list button{gap:7px;padding-left:4px}body.kz-art .km-card-list img{width:34px;height:48px}body.kz-art .km-levels{gap:5px}body.kz-art .kaw-tier-image{height:76px}body.kz-art .kaw-equipped{top:61px}body.kz-art .km-levels button>span:not(.kaw-tier-image){font-size:11px}body.kz-art .km-levels button>small{font-size:7px}}
+@media(max-width:950px){body.kz-art .km-atlas{grid-template-columns:1fr}body.kz-art .km-selector{position:static;max-height:none;padding:0;border:0;display:grid;grid-template-columns:1fr 1fr;gap:0 15px}body.kz-art .kaw-atlas-label{grid-column:1/-1;margin-bottom:14px}body.kz-art .km-selector>p{grid-column:1/-1}body.kz-art .km-card-list{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));max-height:175px;min-height:0;padding-right:5px;margin-bottom:8px}body.kz-art .km-card-list button{min-height:70px}body.kz-art .km-stage{padding:24px}body.kz-art .kaw-workshop{grid-template-columns:minmax(200px,.85fr) minmax(260px,1fr);gap:28px}body.kz-art .km-composition{width:min(100%,270px)}body.kz-art .kaw-tier-image{height:90px;max-width:70px}body.kz-art .kaw-equipped{top:73px}body.kz-art .km-levels button>span:not(.kaw-tier-image){font-size:12px}body.kz-art .km-levels button>small{font-size:8px}}
+@media(max-width:650px){body.kz-art .km-intro{gap:12px;margin:5px 0 22px}body.kz-art .km-intro>div:first-child{min-width:0;flex-basis:100%}body.kz-art .km-intro h2{font-size:32px}.kz-art .km-intro p{font-size:11px}body.kz-art .km-motion{display:flex;margin:0;padding:10px 12px;font-size:10px}body.kz-art .km-atlas{gap:15px}body.kz-art .km-selector{gap:0 10px}body.kz-art .km-selector label{margin-bottom:11px}body.kz-art .km-selector input,body.kz-art .km-selector select{font-size:11px;padding:9px}body.kz-art .km-card-list{grid-template-columns:1fr 1fr;max-height:157px;gap:5px}body.kz-art .km-card-list strong{font-size:13px}body.kz-art .km-card-list small{font-size:8px}body.kz-art .km-card-list em{font-size:8px}body.kz-art .km-card-list b{display:none}body.kz-art .km-stage{padding:20px 16px;border-radius:3px 18px 3px 18px}body.kz-art .km-stage>header h2{font-size:30px;margin-top:8px}body.kz-art .km-stage>header{padding-bottom:16px;gap:14px}body.kz-art .km-progress-seal{min-width:60px;min-height:60px;padding:9px}body.kz-art .km-progress-seal strong{font-size:24px}body.kz-art .kaw-workshop{grid-template-columns:1fr;gap:28px;padding-top:24px}body.kz-art .kaw-altar{width:100%;max-width:350px;margin:0 auto;padding:0 18px;box-sizing:border-box}body.kz-art .km-composition{width:min(100%,240px)}body.kz-art .kaw-orbits{inset:1% 9% 9%}body.kz-art .kaw-orbits>b{left:-5%;font-size:45px}body.kz-art .km-art-credit{font-size:9px;margin-top:22px}body.kz-art .kaw-inscription{padding-top:20px;border-top:1px solid #a1b5bf26}body.kz-art .kaw-current-form{margin-bottom:16px}body.kz-art .km-stage-caption h3{font-size:29px}body.kz-art .km-stage-caption p{font-size:11px}body.kz-art .kaw-tier-image{height:88px;max-width:66px}body.kz-art .km-levels{gap:8px;margin:23px 0 20px}body.kz-art .km-levels button>small{font-size:8px}body.kz-art .km-levels button>span:not(.kaw-tier-image){font-size:12px}body.kz-art .km-actions{grid-template-columns:1fr}body.kz-art .km-actions button{font-size:11px!important}body.kz-art .kaw-unlock{padding:15px 13px;gap:11px}body.kz-art .kaw-unlock strong{font-size:21px}}
+@media(max-width:390px){body.kz-art .km-stage{padding:17px 12px}body.kz-art .km-levels{gap:5px}body.kz-art .kaw-tier-image{height:76px;max-width:56px}body.kz-art .km-levels button>span:not(.kaw-tier-image){font-size:10px}body.kz-art .km-levels button>small{font-size:7px}body.kz-art .kaw-equipped{top:61px}body.kz-art .km-stage>header h2{font-size:27px}body.kz-art .km-card-list img{width:30px;height:43px}body.kz-art .km-card-list strong{font-size:12px}}
+body.kz-art .km-stage[data-kaw-motion="false"] .km-composition{animation:none;transform:none}
+html[data-km-motion="off"] body.kz-art .km-stage *,html[data-kz-motion="reduced"] body.kz-art .km-stage *,html[data-km-motion="off"] body.kz-art .kaw-unlock{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){body.kz-art .km-stage *,body.kz-art .kaw-unlock{animation:none!important;transition:none!important}body.kz-art .km-composition{transform:none}}

@@ -1,0 +1,21 @@
+{
+  "name": "kizuna-card-club",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:vendor": "node scripts/build-vendor.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/verify-interface.mjs",
+    "preview:local": "node scripts/preview-local.mjs",
+    "test:phases-de": "node scripts/verify-phases-de.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.118.0"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "esbuild": "0.28.2",
+    "jsdom": "26.1.0"
+  }
+}

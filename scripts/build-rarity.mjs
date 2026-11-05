@@ -1,0 +1,13 @@
+import {build} from 'esbuild';
+import fs from 'node:fs/promises';
+const popularity=JSON.parse(await fs.readFile(new URL('../seed/popularity.json',import.meta.url),'utf8'));
+const html=await fs.readFile(new URL('../dist/index.html',import.meta.url),'utf8');
+const artwork=JSON.parse(await fs.readFile(new URL('../dist/assets/character-art.json',import.meta.url),'utf8'));
+const extraRows=JSON.parse(await fs.readFile(new URL('../seed/extra-cards.json',import.meta.url),'utf8').catch(error=>{if(error.code==='ENOENT')return '[]';throw error;}));
+const extras=extraRows.map(row=>row.card||row), favourites={...popularity.bySourceId};
+for(const card of extras)favourites[String(card.sourceId)]=card.fav;
+const seed=html.match(/const SEED_LIST = `([\s\S]*?)`;/)?.[1];if(!seed)throw new Error('Retained catalogue missing');
+const initial=seed.trim().split(/\n+/).map((line,index)=>{const[name,series]=line.trim().split('|'),sourceId=String(artwork[name+'|'+series]?.sourceId||'');return{id:'cseed-'+String(index+1).padStart(4,'0'),sourceId,series,fav:favourites[sourceId]||0};});
+initial.push(...extras.map(card=>({id:card.id,sourceId:String(card.sourceId),series:card.series,fav:card.fav})));
+const contents='export * from "./supabase/functions/_shared/rarity-policy.ts";import {rankAlbumMythics} from "./supabase/functions/_shared/rarity-policy.ts";export const retainedPopularity=Object.freeze('+JSON.stringify(favourites)+');export const retainedExtraCards=Object.freeze('+JSON.stringify(extras)+');const retainedRanks=rankAlbumMythics('+JSON.stringify(initial)+',[]);export const retainedRarityContext=Object.freeze({mythicSources:Object.freeze([...retainedRanks.mythicSources]),legendarySources:Object.freeze([...retainedRanks.legendarySources]),epicSources:Object.freeze([...retainedRanks.epicSources])});export const retainedMythicSources=retainedRarityContext.mythicSources;export const popularitySnapshotAt='+JSON.stringify(popularity.retrievedAt)+';';
+await build({stdin:{contents,resolveDir:process.cwd(),sourcefile:'rarity-browser.ts',loader:'ts'},bundle:true,format:'iife',globalName:'KizunaRarity',platform:'browser',target:'es2022',minify:true,outfile:'dist/kizuna-rarity.js'});

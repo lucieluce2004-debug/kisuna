@@ -1,0 +1,76 @@
+/* Nine vector emblems, shared across the selection and opening experience. */
+.booster-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+body.theme-kizuna #boosters .kb-head h2 {
+  font-size: clamp(30px,3.4vw,44px) !important;
+  font-weight: 600 !important;
+  line-height: 1.1;
+}
+body.theme-kizuna #boosters #kGrid .kp-face {
+  background: radial-gradient(ellipse at 50% 25%,#4ce7fa0b,transparent 65%),linear-gradient(160deg,#191323,#0c0c16 75%) !important;
+  border-color: #49324e !important;
+  color: #f5f5ff !important;
+  box-shadow: inset 0 0 0 1px #ffffff06 !important;
+}
+body.theme-kizuna #boosters #kGrid .kpack.sel .kp-face {
+  border-color: #4ce7fa !important;
+  box-shadow: 0 0 0 1px #4ce7fa55,0 0 28px #4ce7fa12 !important;
+}
+body.theme-kizuna #boosters #kGrid .kp-brand {
+  position: static;
+  color: #b8a4c4 !important;
+  font-size: 8px !important;
+  text-shadow: none !important;
+}
+body.theme-kizuna #boosters #kGrid .kp-title { color: #f5f5ff !important; text-shadow: none !important; }
+body.theme-kizuna #boosters #kGrid .kp-sub,
+body.theme-kizuna #boosters #kGrid .kp-lab { color: #a4a2b6 !important; text-shadow: none !important; }
+body.theme-kizuna #boosters #kGrid .kpack.sel .kp-lab { color: #4ce7fa !important; }
+body.theme-kizuna #boosters #kGrid .kp-mark {
+  width: 96px !important;
+  height: 96px !important;
+  margin: 0 auto 2px;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  overflow: visible;
+}
+body.theme-kizuna #boosters .kb-sel #kMark {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+body.theme-kizuna #kyaraRevealRoot .kr-pack-mark {
+  width: 124px !important;
+  height: 124px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible;
+}
+body.theme-kizuna .reveal-back > strong .booster-logo,
+body.theme-kizuna #openingPack > strong .booster-logo {
+  width: 100%;
+  height: 100%;
+}
+@media(max-width:600px) {
+  body.theme-kizuna #boosters #kGrid .kp-mark { width: 88px !important; height: 88px !important; }
+  body.theme-kizuna #kyaraRevealRoot .kr-pack-mark { width: 110px !important; height: 110px !important; }
+}

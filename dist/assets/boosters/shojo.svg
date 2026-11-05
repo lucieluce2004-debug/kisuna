@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna — Shōjo</title>
+  <desc id="desc">Une fleur de cerisier géométrique à cinq pétales entoure un cœur magenta et une étoile blanche.</desc>
+  <path d="M128 14 207 46 242 128 207 210 128 242 49 210 14 128 49 46Z" fill="#11111b" fill-opacity=".82" stroke="#4ce7fa" stroke-width="2.5" stroke-opacity=".34"/>
+  <defs>
+    <path id="petal" d="M128 119c-18-8-33-28-30-47l16-28 14 13 14-13 16 28c3 19-12 39-30 47Z"/>
+  </defs>
+  <g fill="#191b2a" stroke-width="5" stroke-linejoin="round">
+    <use href="#petal" stroke="#f15acb"/>
+    <use href="#petal" transform="rotate(72 128 128)" stroke="#4ce7fa"/>
+    <use href="#petal" transform="rotate(144 128 128)" stroke="#f15acb"/>
+    <use href="#petal" transform="rotate(216 128 128)" stroke="#4ce7fa"/>
+    <use href="#petal" transform="rotate(288 128 128)" stroke="#f15acb"/>
+  </g>
+  <path d="M128 166 99 140c-16-15-5-40 13-39 7 0 13 4 16 10 3-6 9-10 16-10 18-1 29 24 13 39Z" fill="#32182f" stroke="#f15acb" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m128 117 4 10 11 4-11 4-4 11-4-11-11-4 11-4Z" fill="#f5f5ff"/>
+  <g fill="none" stroke="#4ce7fa" stroke-width="3" stroke-linecap="round">
+    <path d="m128 72 0 14M185 110l-13 5M163 178l-8-10M94 177l8-10M72 111l13 4"/>
+    <path d="m49 194 8 5 9-2M190 197l9 2 8-5" stroke-opacity=".7"/>
+  </g>
+  <path d="m128 207 5 8-5 8-5-8Z" fill="#f5f5ff"/>
+  <path d="m48 96 4 6-4 6-4-6Zm160 0 4 6-4 6-4-6Z" fill="#f5f5ff" fill-opacity=".8"/>
+</svg>
